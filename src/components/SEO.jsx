@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 
 export default function SEO({ title, description, canonical, ogImage }) {
-  const siteName = 'Prestige Wedding Cars – Wynajem Aut do Ślubu Radom & Warszawa';
-  const baseUrl = 'https://prestige-wedding-cars.pl';
+  const siteName = 'Złota Kareta – Wynajem Aut do Ślubu Radom & Warszawa';
+  const baseUrl = 'https://zlota-kareta.pl';
   return (
     <Helmet>
       <title>{title ? `${title} | ${siteName}` : siteName}</title>

@@ -4,7 +4,7 @@ const faqs = [
   {
     question: 'Ile kosztuje wynajem auta do ślubu?',
     answer:
-      'Ceny wynajmu zaczynają się od 800 zł za podstawowy pakiet (3 godziny z szoferem). Koszt zależy od wybranego pojazdu, czasu trwania wynajmu oraz trasy. Rolls-Royce Phantom i Bentley Flying Spur to pakiety premium od 2 000 zł. W cenie zawsze jest dekoracja auta kwiatami, elegancko ubrany szofer i postój na sesję zdjęciową. Skontaktuj się z nami, aby otrzymać indywidualną wycenę.',
+      'Ceny wynajmu zaczynają się od 800 zł za podstawowy pakiet (3 godziny z szoferem). Koszt zależy od wybranego pojazdu, czasu trwania wynajmu oraz trasy. BMW 650i xDrive Gran Coupé i BMW 4 Cabrio to nasz standard – oba pojazdy wyceniane są indywidualnie w zależności od szczegółów zlecenia. W cenie zawsze jest dekoracja auta kwiatami, elegancko ubrany szofer i postój na sesję zdjęciową. Skontaktuj się z nami, aby otrzymać indywidualną wycenę.',
   },
   {
     question: 'Jak wcześnie trzeba rezerwować auto do ślubu?',
@@ -24,7 +24,7 @@ const faqs = [
   {
     question: 'Czy mogę wynająć kilka aut naraz (kortez weselny)?',
     answer:
-      'Oczywiście! Oferujemy kompleksową organizację kortezów weselnych. Dysponujemy flotą 5 pojazdów, które mogą tworzyć elegancki orszak ślubny. Zapewniamy koordynację szoferów, synchronizację tras i opiekę nad całym kortezem. Przy zamówieniu kilku aut jednocześnie oferujemy atrakcyjne rabaty grupowe. Skontaktuj się z nami, aby omówić szczegóły.',
+      'Oczywiście! Oferujemy kompleksową organizację kortezów weselnych. Dysponujemy dwoma pojazdami, które można uzupełnić o zaprzyjaźnione samochody, tworząc elegancki orszak ślubny. Zapewniamy koordynację szoferów, synchronizację tras i opiekę nad całym kortezem. Skontaktuj się z nami, aby omówić szczegóły.',
   },
 ]
 

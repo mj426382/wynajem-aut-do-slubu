@@ -26,15 +26,13 @@ export const content = `
 
 <h3>Popularne konfiguracje korteza</h3>
 
-<p><strong>Skromny kortez (2 auta):</strong> Auto Panny Młodej (główne) + drugie auto dla świadków i rodziców. Idealne na kameralne wesele z bliską rodziną.</p>
+<p><strong>Skromny kortez (2 auta):</strong> BMW 650i Gran Coupé (auto Panny Młodej) + drugie BMW 4 Cabrio dla świadków. Idealne połączenie elegancji i romantyzmu.</p>
 
-<p><strong>Klasyczny kortez (3 auta):</strong> Auto Panny Młodej + auto rodziców + auto dla druhien. Dobry balans między elegancją a kosztami.</p>
-
-<p><strong>Reprezentacyjny kortez (4-5 aut):</strong> Kompletny orszak weselny, gdzie każda z kluczowych grup jedzie oddzielnym, luksusowym pojazdem. Robi największe wrażenie.</p>
+<p><strong>Rozszerzony kortez (3+ aut):</strong> Nasze dwa BMW uzupełnione o samochody znajomych lub zaprzyjaźnionych firm. Zapewniamy koordynację całego konwoju.</p>
 
 <h2>Koordynacja szoferów</h2>
 
-<p>Kluczem do sprawnego korteza jest doskonała koordynacja między szoferami. W Prestige Wedding Cars, przy zamówieniu korteza, wyznaczamy koordynatora, który pełni rolę lidera konwoju:</p>
+<p>Kluczem do sprawnego korteza jest doskonała koordynacja między szoferami. W Złotej Karecie, przy zamówieniu korteza, wyznaczamy koordynatora, który pełni rolę lidera konwoju:</p>
 
 <h3>Rola koordynatora korteza</h3>
 <ul>
@@ -103,11 +101,9 @@ export const content = `
 
 <h2>Ceny korteza weselnego</h2>
 
-<p>Kortez weselny to inwestycja, ale przy naszych pakietach grupowych cena jest bardzo atrakcyjna. Przy zamówieniu 3 aut lub więcej oferujemy 15% rabatu od sumy. Przy zamówieniu wszystkich 5 aut jednocześnie – aż 25% rabatu.</p>
-
-<p>Skontaktuj się z nami, aby otrzymać indywidualną wycenę korteza dla Waszego wesela. Zadzwoń: +48 501 234 567 lub napisz przez formularz kontaktowy.</p>
+<p>Kortez weselny z naszymi BMW to wyjątkowe wrażenie wizualne. Przy zamówieniu obu pojazdów jednocześnie oferujemy atrakcyjny rabat pakietowy. Skontaktuj się z nami, aby otrzymać indywidualną wycenę korteza dla Waszego wesela. Zadzwoń: +48 501 234 567 lub napisz przez formularz kontaktowy.</p>
 
 <h2>Podsumowanie</h2>
 
-<p>Dobrze zorganizowany kortez weselny to jeden z najbardziej efektownych elementów ślubu. Wymaga profesjonalnej koordynacji, doświadczonych szoferów i starannego planowania tras. Prestige Wedding Cars oferuje kompleksową usługę organizacji korteza – od konsultacji, przez trasę, aż po sesję zdjęciową. Daj się zachwycić elegancji ruchu w najczystszej postaci.</p>
+<p>Dobrze zorganizowany kortez weselny to jeden z najbardziej efektownych elementów ślubu. Wymaga profesjonalnej koordynacji, doświadczonych szoferów i starannego planowania tras. Złota Kareta oferuje kompleksową usługę organizacji korteza – od konsultacji, przez trasę, aż po sesję zdjęciową. Daj się zachwycić elegancji ruchu w najczystszej postaci.</p>
 `

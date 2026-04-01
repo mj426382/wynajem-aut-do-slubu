@@ -78,16 +78,13 @@ export const content = `
 <p>Z naszej bazy w Radomiu obsługujemy wszystkie wesela w mieście i promieniu 50 km od centrum. Naszą bazową flotę stanowią:</p>
 
 <ul>
-  <li>Mercedes S-Class – najbardziej popularny wybór radomskich par</li>
-  <li>BMW 7 Series – elegancja i nowoczesność</li>
-  <li>Rolls-Royce Phantom – dla tych, którzy pragną absolutu luksusu</li>
-  <li>Bentley Flying Spur – brytyjski sznyt</li>
-  <li>Lincoln Town Car Stretch – klasyczna limuzyna dla miłośników retro</li>
+  <li>BMW 650i xDrive Gran Coupé (F06) – sportowa elegancja dla nowoczesnych par</li>
+  <li>BMW 4 Cabrio (G23) – romantyczny kabriolet idealny na ciepłe wesela</li>
 </ul>
 
 <h2>Kortez weselny w Radomiu</h2>
 
-<p>Radomskie wesela często organizowane są z całym kortezem – kilkoma autami jadącymi w kolumnie. Możemy zapewnić kompletny kortez z naszych 5 pojazdów, z synchronizacją szoferów i koordynacją trasy. To imponujący widok, który zachwyca gości.</p>
+<p>Radomskie wesela często organizowane są z całym kortezem – kilkoma autami jadącymi w kolumnie. Nasze dwa BMW możemy uzupełnić o zaprzyjaźnione pojazdy w celu stworzenia pełnego korteza. Chętnie skoordynujemy całą trasę i zadbaamy o synchronizację szoferów. To imponujący widok, który zachwyca gości.</p>
 
 <h2>Jak zarezerwować auto do ślubu w Radomiu?</h2>
 

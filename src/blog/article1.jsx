@@ -64,7 +64,7 @@ export const content = `
 
 <h2>Nasze usługi w Warszawie</h2>
 
-<p>Prestige Wedding Cars obsługuje wesela w całej Warszawie i aglomeracji warszawskiej. Nasz szofer przyjedzie do każdej dzielnicy – Mokotów, Żoliborz, Ursynów, Wilanów, Białołęka, Wola czy Praga. Oferujemy:</p>
+<p>Złota Kareta obsługuje wesela w całej Warszawie i aglomeracji warszawskiej. Nasz szofer przyjedzie do każdej dzielnicy – Mokotów, Żoliborz, Ursynów, Wilanów, Białołęka, Wola czy Praga. Oferujemy:</p>
 
 <ul>
   <li>Odbiór Panny Młodej z domu lub hotelu</li>
@@ -77,7 +77,7 @@ export const content = `
 
 <h2>Ile kosztuje wynajem auta do ślubu w Warszawie?</h2>
 
-<p>Ceny wynajmu auta do ślubu w Warszawie są nieco wyższe niż w Radomiu, co wynika z kosztów dojazdu i ewentualnych opłat parkingowych w centrum. Podstawowe pakiety (3 godziny z szoferem) zaczynają się od 1 000 zł za Mercedes S-Class lub BMW 7 Series. Pakiet z Rolls-Roycem Phantom lub Bentleyem to koszt od 2 500 zł. W każdym pakiecie wliczona jest dekoracja florystyczna pojazdu i postój na sesję zdjęciową.</p>
+<p>Ceny wynajmu auta do ślubu w Warszawie są nieco wyższe niż w Radomiu, co wynika z kosztów dojazdu i ewentualnych opłat parkingowych w centrum. Podstawowe pakiety (3 godziny z szoferem) zaczynają się od 1 000 zł za BMW 650i xDrive Gran Coupé lub BMW 4 Cabrio. W każdym pakiecie wliczona jest dekoracja florystyczna pojazdu i postój na sesję zdjęciową.</p>
 
 <h2>Jak zarezerwować?</h2>
 
@@ -87,5 +87,5 @@ export const content = `
 
 <h2>Podsumowanie</h2>
 
-<p>Wynajem luksusowego auta do ślubu w Warszawie to inwestycja, która przyniesie niezapomniane wspomnienia. Profesjonalny szofer, elegancki pojazd i bezstresowy przejazd to fundament udanego dnia ślubu. Prestige Wedding Cars zapewni Wam wszystko, czego potrzeba, aby ten dzień był naprawdę wyjątkowy.</p>
+<p>Wynajem luksusowego auta do ślubu w Warszawie to inwestycja, która przyniesie niezapomniane wspomnienia. Profesjonalny szofer, elegancki pojazd i bezstresowy przejazd to fundament udanego dnia ślubu. Złota Kareta zapewni Wam wszystko, czego potrzeba, aby ten dzień był naprawdę wyjątkowy.</p>
 `

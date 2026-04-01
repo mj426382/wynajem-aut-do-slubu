@@ -16,13 +16,13 @@ export const content = `
 <p>Pierwszym krokiem jest określenie stylu Waszego wesela. Auto powinno harmonizować z ogólną koncepcją uroczystości:</p>
 
 <h3>Wesele glamour i luksusowe</h3>
-<p>Jeśli planujecie wielkie wesele w ekskluzywnej sali, z wyrafinowanym strojem i bogatymi dekoracjami – sięgnijcie po Rolls-Royce Phantom lub Bentley Flying Spur. Te pojazdy są same w sobie dziełem sztuki i doskonale wpisują się w klimat eleganckiej uroczystości.</p>
+<p>Jeśli planujecie wielkie wesele w ekskluzywnej sali, z wyrafinowanym strojem i bogatymi dekoracjami – BMW 650i xDrive Gran Coupé (F06) to doskonały wybór. Sportowo-elegancka sylwetka Gran Coupé robi imponujące wrażenie i doskonale wpisuje się w klimat eleganckiej uroczystości.</p>
 
 <h3>Wesele nowoczesne i eleganckie</h3>
-<p>Dla par preferujących nowoczesny minimalizm i elegancję – Mercedes S-Class lub BMW 7 Series będą idealnym wyborem. Nowoczesne linie, wyrafinowane wnętrza i technologiczne zaawansowanie tych aut wpisują się w aktualny trend ślubny.</p>
+<p>Dla par preferujących nowoczesny minimalizm i elegancję – oba nasze BMW będą idealnym wyborem. Nowoczesne linie, wyrafinowane wnętrza i technologiczne zaawansowanie tych aut wpisują się w aktualny trend ślubny.</p>
 
-<h3>Wesele rustykalne lub retro</h3>
-<p>Jeśli Wasza uroczystość ma klimat rustykalny, angielski lub retro – Lincoln Town Car Stretch jest strzałem w dziesiątkę. Klasyczna limuzyna zachwyca nostalgicznym urokiem i doskonale komponuje się ze stylem vintage.</p>
+<h3>Wesele romantyczne lub plenerowe</h3>
+<p>Jeśli Wasza uroczystość ma klimat romantyczny i planujecie ciepłe, słoneczne wesele wiosną lub latem – BMW 4 Cabrio (G23) jest strzałem w dziesiątkę. Odkryty dach podczas przejazdu do ślubu to niezapomniane doświadczenie.</p>
 
 <h2>2. Zastanów się nad liczbą osób</h2>
 
@@ -30,8 +30,7 @@ export const content = `
 
 <ul>
   <li><strong>Para Młoda (2 osoby)</strong> – każde z naszych aut jest odpowiednie</li>
-  <li><strong>Para + świadkowie (4 osoby)</strong> – większe sedany, takie jak BMW 7 Exclusive lub Mercedes S</li>
-  <li><strong>Para + rodzina (6-8 osób)</strong> – Lincoln Town Car Stretch z pojemnością do 8 pasażerów</li>
+  <li><strong>Para + świadkowie (4 osoby)</strong> – BMW 650i Gran Coupé lub BMW 4 Cabrio – oba mieszczą 4 osoby komfortowo</li>
   <li><strong>Kortez weselny</strong> – kilka aut, każde dla różnych osób lub grup</li>
 </ul>
 
@@ -64,7 +63,7 @@ export const content = `
 
 <h2>5. Opcje dekoracji pojazdu</h2>
 
-<p>Dekoracja auta ślubnego to ważny element estetyczny. W Prestige Wedding Cars oferujemy:</p>
+<p>Dekoracja auta ślubnego to ważny element estetyczny. W Złota Kareta oferujemy:</p>
 
 <h3>Dekoracja standardowa (w cenie)</h3>
 <ul>
@@ -112,5 +111,5 @@ export const content = `
 
 <p>Wybór auta do ślubu powinien być przemyślaną decyzją, uwzględniającą styl wesela, liczbę osób, porę roku i Wasze indywidualne preferencje. Nie kierujcie się wyłącznie ceną – na ślubie liczy się każdy detal, a eleganckie auto to inwestycja w niezapomniane wspomnienia.</p>
 
-<p>Zapraszamy do kontaktu z Prestige Wedding Cars. Chętnie pomożemy Wam wybrać idealne auto i zorganizujemy Wasz ślubny przejazd w najdrobniejszych szczegółach. Zadzwoń: +48 501 234 567.</p>
+<p>Zapraszamy do kontaktu ze Złotą Karetą. Chętnie pomożemy Wam wybrać idealne auto i zorganizujemy Wasz ślubny przejazd w najdrobniejszych szczegółach. Zadzwoń: +48 501 234 567.</p>
 `

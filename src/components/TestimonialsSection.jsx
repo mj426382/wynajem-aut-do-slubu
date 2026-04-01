@@ -2,7 +2,7 @@ const testimonials = [
   {
     stars: '★★★★★',
     quote:
-      'Prestige Wedding Cars spełnił nasze najwyższe oczekiwania! Mercedes S-Class wyglądał przepięknie – biały z różanymi dekoracjami pasował idealnie do naszego ślubu w stylu glamour. Szofer był punktualny, elegancki i bardzo pomocny. Polecamy z całego serca każdej Parze Młodej z Radomia!',
+      'Złota Kareta spełniła nasze najwyższe oczekiwania! BMW 650i Gran Coupé wyglądało przepięknie – eleganckie z różanymi dekoracjami pasowało idealnie do naszego ślubu w stylu glamour. Szofer był punktualny, elegancki i bardzo pomocny. Polecamy z całego serca każdej Parze Młodej z Radomia!',
     name: 'Anna i Tomasz Kowalski',
     location: 'Ślub w Radomiu',
     date: 'Sierpień 2024',
@@ -11,7 +11,7 @@ const testimonials = [
   {
     stars: '★★★★★',
     quote:
-      'Wynajęliśmy Rolls-Royce Phantom na nasz ślub w Warszawie i to było absolutnie magiczne doświadczenie! Wjechanie tym autem przed kościół na Krakowskim Przedmieściu to coś, czego nie zapomnimy do końca życia. Obsługa była profesjonalna, a kierowca znał Warszawę jak własną kieszeń. Dziękujemy!',
+      'Wynajęliśmy BMW 4 Cabrio na nasz ślub w Warszawie i to było absolutnie magiczne doświadczenie! Przyjazd z opuszczonym dachem przed kościół na Krakowskim Przedmieściu to coś, czego nie zapomnimy do końca życia. Obsługa była profesjonalna, a kierowca znał Warszawę jak własną kieszeń. Dziękujemy!',
     name: 'Marta i Krzysztof Nowak',
     location: 'Ślub w Warszawie',
     date: 'Czerwiec 2024',
@@ -20,7 +20,7 @@ const testimonials = [
   {
     stars: '★★★★★',
     quote:
-      'Mieliśmy kameralny ślub w Grójcu i potrzebowaliśmy eleganckiego auta bez przepłacania. Wybraliśmy BMW 7 Series i byliśmy zachwyceni. Szofer zabrał nas na krótką sesję zdjęciową przy sadownikach – te zdjęcia wyglądają fantastycznie! Cena była fair, a jakość usługi – pierwsza klasa.',
+      'Mieliśmy kameralny ślub w Grójcu i potrzebowaliśmy eleganckiego BMW bez przepłacania. Wybraliśmy BMW 650i Gran Coupé i byliśmy zachwyceni. Szofer zabrał nas na krótką sesję zdjęciową przy sadownikach – te zdjęcia wyglądają fantastycznie! Cena była fair, a jakość usługi – pierwsza klasa.',
     name: 'Karolina i Marek Wiśniewski',
     location: 'Ślub w Grójcu',
     date: 'Maj 2024',

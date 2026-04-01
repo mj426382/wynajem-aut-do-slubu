@@ -6,7 +6,7 @@ export default function NotFoundPage() {
     <>
       <SEO
         title="404 – Strona nie istnieje"
-        description="Strona, której szukasz, nie istnieje. Wróć na stronę główną Prestige Wedding Cars."
+        description="Strona, której szukasz, nie istnieje. Wróć na stronę główną Złotej Karety."
       />
       <section className="not-found">
         <div className="not-found__content">

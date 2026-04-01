@@ -1,8 +1,8 @@
 const features = [
   {
     icon: '💎',
-    title: 'Luksusowa flota',
-    desc: "5 ekskluzywnych aut najwyższej klasy – od Mercedesa po Rolls-Royce'a. Każdy pojazd jest regularnie serwisowany i idealnie utrzymany.",
+    title: 'Ekskluzywna flota BMW',
+    desc: 'Dwa starannie wyselekcjonowane BMW – Gran Coupé F06 i Cabrio G23. Każdy pojazd jest regularnie serwisowany i idealnie przygotowany na Twój wielki dzień.',
   },
   {
     icon: '👨‍✈️',
@@ -39,7 +39,7 @@ export default function FeaturesSection() {
         <div className="section-divider" aria-hidden="true"></div>
         <p className="section-subtitle">
           Od ponad dekady sprawiamy, że ślubne przejazdy stają się niezapomnianymi wspomnieniami.
-          Oto co wyróżnia Prestige Wedding Cars.
+          Oto co wyróżnia Złotą Karetę.
         </p>
         <div className="features__grid">
           {features.map((f, i) => (

@@ -17,8 +17,8 @@ export default function Navbar() {
         <Link to="/" className="navbar__logo">
           <span className="navbar__logo-icon">♛</span>
           <div>
-            <span className="navbar__logo-main">Prestige</span>
-            <span className="navbar__logo-sub">Wedding Cars</span>
+            <span className="navbar__logo-main">Złota</span>
+            <span className="navbar__logo-sub">Kareta</span>
           </div>
         </Link>
         <nav className={`navbar__nav${menuOpen ? ' navbar__nav--open' : ''}`} aria-label="Główna nawigacja">

@@ -9,12 +9,12 @@ export default function Footer() {
             <div className="footer__logo">
               <span className="footer__logo-icon">♛</span>
               <div>
-                <span className="footer__logo-main">Prestige</span>
-                <span className="footer__logo-sub">Wedding Cars</span>
+                <span className="footer__logo-main">Złota</span>
+                <span className="footer__logo-sub">Kareta</span>
               </div>
             </div>
             <p className="footer__tagline">
-              Luksusowe auta do ślubu w Radomiu i Warszawie. Twój wyjątkowy dzień zasługuje na wyjątkowe auto. Służymy Państwu od 2010 roku.
+              Wynajem aut do ślubu w Radomiu i Warszawie. Twój wyjątkowy dzień zasługuje na wyjątkowe BMW. Służymy Państwu od 2010 roku.
             </p>
             <div className="footer__social">
               <a
@@ -53,11 +53,8 @@ export default function Footer() {
           <div className="footer__col">
             <h3 className="footer__col-title">Nasza flota</h3>
             <nav className="footer__nav">
-              <a href="/#flota" className="footer__nav-link">Mercedes S-Class</a>
-              <a href="/#flota" className="footer__nav-link">BMW 7 Series</a>
-              <a href="/#flota" className="footer__nav-link">Rolls-Royce Phantom</a>
-              <a href="/#flota" className="footer__nav-link">Bentley Flying Spur</a>
-              <a href="/#flota" className="footer__nav-link">Lincoln Town Car</a>
+              <a href="/#flota" className="footer__nav-link">BMW 650i xDrive Gran Coupé (F06)</a>
+              <a href="/#flota" className="footer__nav-link">BMW 4 Cabrio (G23)</a>
             </nav>
           </div>
 
@@ -74,7 +71,7 @@ export default function Footer() {
               </div>
               <div className="footer__contact-item">
                 <span>✉️</span>
-                <a href="mailto:kontakt@prestige-wedding-cars.pl">kontakt@prestige-wedding-cars.pl</a>
+                <a href="mailto:kontakt@zlota-kareta.pl">kontakt@zlota-kareta.pl</a>
               </div>
               <div className="footer__contact-item">
                 <span>🕐</span>
@@ -86,7 +83,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p className="footer__copyright">
-            &copy; 2024 Prestige Wedding Cars. Wszelkie prawa zastrzeżone.
+            © 2024 Złota Kareta. Wszelkie prawa zastrzeżone.
           </p>
           <p className="footer__love">
             Made with ❤️ for your special day
