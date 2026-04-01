@@ -44,7 +44,7 @@ export const content = `
 
 <p><em>"Mercedes S-Class przed kościołem Świętego Kazimierza w Radomiu to był widok, który oszałamiał. Wszyscy goście robili zdjęcia. Szofer był absolutnie profesjonalny, a wnętrze przepiękne – czułam się jak księżna."</em> – <strong>Ewelina i Paweł, ślub w Radomiu</strong></p>
 
-<p><em>"Wybrałam Mercedesa, bo chciałam czegoś elegackiego, ale nie przytłaczającego. S-Class był idealny – dostojny, ale nie krzykliwy. Zdjęcia przy tym aucie wyszły przepięknie, bo auto samo w sobie jest dziełem sztuki."</em> – <strong>Natalia i Grzegorz, ślub w Kozienicach</strong></p>
+<p><em>"Wybrałam Mercedesa, bo chciałam czegoś eleganckiego, ale nie przytłaczającego. S-Class był idealny – dostojny, ale nie krzykliwy. Zdjęcia przy tym aucie wyszły przepięknie, bo auto samo w sobie jest dziełem sztuki."</em> – <strong>Natalia i Grzegorz, ślub w Kozienicach</strong></p>
 
 <h2>Mercedes S-Class vs inne luksusowe marki</h2>
 

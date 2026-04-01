@@ -13,7 +13,7 @@ export const content = `
 
 <p>Organizacja korteza wymaga starannego planowania i dobrej koordynacji. W tym poradniku podzielimy się naszym wieloletnim doświadczeniem i wyjaśnimy, jak zaplanować idealny orszak ślubny.</p>
 
-<h2>Ile aut w kortezieie weselnym?</h2>
+<h2>Ile aut w kortez weselnym?</h2>
 
 <p>Nie ma jednej właściwej odpowiedzi na to pytanie. Liczba pojazdów zależy od kilku czynników:</p>
 
@@ -45,7 +45,7 @@ export const content = `
   <li>Planowanie trasy z wyprzedzeniem i omijanie utrudnień</li>
 </ul>
 
-<h3>Zasady jazdy w kortezieie</h3>
+<h3>Zasady jazdy w kortez</h3>
 <p>Profesjonalny kortez jeździ w zwartym szyku, zachowując jednolite odstępy między pojazdami. Szoferzy są w stałym kontakcie, a lider konwoju inicjuje każdy manewr. Jeśli jeden pojazd zostaje z tyłu (np. na czerwonym świetle), pozostałe czekają na poboczu lub wyznaczonym miejscu, aż kolumna się zreorganizuje.</p>
 
 <h2>Logistyka korteza – plan krok po kroku</h2>
@@ -90,7 +90,7 @@ export const content = `
 <h3>Trasa "Nowoczesna"</h3>
 <p>Centrum → Most Świętokrzyski → panorama Wisły → wybrane kościoły → nowoczesna sala weselna. Trasa łączy nowoczesną Warszawę z widokami na Wisłę.</p>
 
-<h2>Wskazówki dla fotografów przy kortezieie</h2>
+<h2>Wskazówki dla fotografów przy kortez</h2>
 
 <p>Dobry fotograf wie, że kortez to doskonała okazja na spektakularne ujęcia. Oto jak możemy ułatwić pracę fotografowi:</p>
 
