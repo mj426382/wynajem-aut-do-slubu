@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const cars = [
   {
     id: 1,
@@ -98,9 +100,9 @@ export default function FleetSection() {
                     <li className="fleet-card__feature" key={i}>{f}</li>
                   ))}
                 </ul>
-                <a href="/kontakt" className="btn btn-primary" style={{ display: 'block', textAlign: 'center' }}>
+                <Link to="/kontakt" className="btn btn-primary" style={{ display: 'block', textAlign: 'center' }}>
                   Zapytaj o dostępność
-                </a>
+                </Link>
               </div>
             </article>
           ))}
