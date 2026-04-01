@@ -5,17 +5,17 @@ export default function HeroSection() {
     <section className="hero" aria-label="Sekcja główna">
       <div className="hero__content">
         <span className="hero__diamond">💍</span>
-        <span className="hero__eyebrow">Radom &amp; Warszawa</span>
+        <span className="hero__eyebrow">Auto do ślubu — Radom &amp; Warszawa</span>
         <h1 className="hero__title">
-          Twój Wymarzony Ślub<br />
-          <span className="gold-text">Zasługuje na Wyjątkowe Auto</span>
+          Luksusowe Auto do Ślubu<br />
+          <span className="gold-text">w Radomiu i Warszawie</span>
         </h1>
         <p className="hero__subtitle">
-          Wynajem eleganckich aut do ślubu w Radomiu, Warszawie i okolicach.
-          BMW 650i xDrive Gran Coupé lub BMW 4 Cabrio – spraw, by ten dzień był niezapomniany.
+          Wynajem auta do ślubu w Radomiu, Warszawie i całym Mazowszu.
+          BMW 650i xDrive Gran Coupé lub BMW 4 Cabrio z szoferem — spraw, by Twój ślub był niezapomniany.
         </p>
         <div className="hero__cta">
-          <a href="#flota" className="btn btn-primary">✨ Sprawdź naszą flotę</a>
+          <a href="#flota" className="btn btn-primary">✨ Zobacz nasze samochody</a>
           <a href="tel:+48501234567" className="btn btn-outline">📞 Zadzwoń teraz</a>
         </div>
       </div>

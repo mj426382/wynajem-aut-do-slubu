@@ -4,11 +4,11 @@ export default function CTASection() {
   return (
     <section className="cta" aria-labelledby="cta-title">
       <div className="container">
-        <span className="cta__eyebrow">Dostępne terminy 2024 / 2025</span>
-        <h2 className="cta__title" id="cta-title">Zarezerwuj Auto Już Dziś</h2>
+        <span className="cta__eyebrow">Wolne terminy 2025 / 2026</span>
+        <h2 className="cta__title" id="cta-title">Zarezerwuj Auto do Ślubu w Radomiu lub Warszawie</h2>
         <p className="cta__subtitle">
-          Nie czekaj – terminy weselne wyprzedają się z dużym wyprzedzeniem.
-          Skontaktuj się z nami i zarezerwuj swoje wymarzone auto na wielki dzień.
+          Terminy wynajmu aut do ślubu wyprzedają się z dużym wyprzedzeniem — zwłaszcza w sezonie maj–wrzesień.
+          Skontaktuj się z nami i zarezerwuj swój wymarzony samochód ślubny już dziś.
         </p>
         <a className="cta__phone" href="tel:+48501234567">📞 +48 501 234 567</a>
         <div className="cta__actions">

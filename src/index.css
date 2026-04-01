@@ -428,6 +428,8 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .fleet-card:hover {
@@ -444,6 +446,9 @@ p:last-child { margin-bottom: 0; }
 
 .fleet-card__body {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .fleet-card__subtitle {
@@ -473,6 +478,7 @@ p:last-child { margin-bottom: 0; }
   flex-direction: column;
   gap: 0.4rem;
   margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .fleet-card__feature {

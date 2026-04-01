@@ -2,29 +2,29 @@ import { useState } from 'react'
 
 const faqs = [
   {
-    question: 'Ile kosztuje wynajem auta do ślubu?',
+    question: 'Ile kosztuje wynajem auta do ślubu w Radomiu lub Warszawie?',
     answer:
-      'Ceny wynajmu zaczynają się od 800 zł za podstawowy pakiet (3 godziny z szoferem). Koszt zależy od wybranego pojazdu, czasu trwania wynajmu oraz trasy. BMW 650i xDrive Gran Coupé i BMW 4 Cabrio to nasz standard – oba pojazdy wyceniane są indywidualnie w zależności od szczegółów zlecenia. W cenie zawsze jest dekoracja auta kwiatami, elegancko ubrany szofer i postój na sesję zdjęciową. Skontaktuj się z nami, aby otrzymać indywidualną wycenę.',
+      'Ceny wynajmu auta do ślubu w Radomiu i Warszawie zaczynają się od 800 zł za pakiet podstawowy (3 godziny z szoferem). Koszt wynajmu BMW 650i xDrive Gran Coupé lub BMW 4 Cabrio zależy od czasu trwania i trasy. W cenie zawsze zawarta jest dekoracja kwiatowa auta, elegancko ubrany szofer oraz postój na sesję zdjęciową. Skontaktuj się z nami po indywidualną wycenę.',
   },
   {
-    question: 'Jak wcześnie trzeba rezerwować auto do ślubu?',
+    question: 'Jak wcześnie trzeba rezerwować samochód do ślubu?',
     answer:
-      'Terminy weselne wyprzedają się bardzo szybko – szczególnie na miesiące od maja do września. Zalecamy rezerwację z co najmniej 6-miesięcznym wyprzedzeniem. Niektóre popularne daty (soboty wakacyjne) bywają zarezerwowane z rocznym lub nawet dłuższym wyprzedzeniem. Rezerwacja wymaga wpłaty zadatku w wysokości 30% ceny usługi.',
+      'Terminy na wynajem auta do ślubu w Radomiu i Warszawie wyprzedają się bardzo szybko — szczególnie od maja do września. Zalecamy rezerwację z co najmniej 6-miesięcznym wyprzedzeniem. Popularne soboty letnie bywają zajęte z rocznym lub dłuższym wyprzedzeniem. Rezerwacja wymaga wpłaty zadatku w wysokości 30% ceny.',
   },
   {
-    question: 'Czy możliwa jest dekoracja pojazdu?',
+    question: 'Czy auto ślubne jest dekorowane?',
     answer:
-      'Tak – bezpłatna dekoracja florystyczna jest wliczona w cenę każdego pakietu! Standardowo oferujemy białe wstążki, bukiet kwiatów na masce oraz dekorację wnętrza. Na życzenie możemy dostosować kolory i styl dekoracji do motywu przewodniego Waszego wesela. Przed ślubem omawiamy szczegóły dekoracji podczas spotkania konsultacyjnego.',
+      'Tak — bezpłatna dekoracja florystyczna samochodu ślubnego jest wliczona w każdy pakiet! Oferujemy białe wstążki, bukiet kwiatów na masce i dekorację wnętrza. Na życzenie dostosowujemy kolory i styl do motywu Waszego wesela. Szczegóły ustalamy podczas spotkania konsultacyjnego.',
   },
   {
-    question: 'Jaki jest obszar obsługi?',
+    question: 'Jaki obszar obejmuje wynajem auta do ślubu?',
     answer:
-      'Obsługujemy wesela w Radomiu, Warszawie i całym województwie mazowieckim. Bezpłatny dojazd obejmuje promień do 50 km od Radomia lub Warszawy. Za dojazd poza ten promień naliczamy dodatkową opłatę w wysokości 3 zł/km. Obsługujemy również wesela w województwach łódzkim, świętokrzyskim i lubelskim na zamówienie.',
+      'Obsługujemy wynajem auta do ślubu w Radomiu, Warszawie i całym województwie mazowieckim — m.in. Grójec, Kozienice, Białobrzegi, Zwoleń, Pionki, Nowe Miasto nad Pilicą. Bezpłatny dojazd do 50 km od Radomia lub Warszawy. Poza tym promieniem naliczana jest opłata 3 zł/km. Obsługujemy też wesela w województwach łódzkim, świętokrzyskim i lubelskim.',
   },
   {
-    question: 'Czy mogę wynająć kilka aut naraz (kortez weselny)?',
+    question: 'Czy mogę zamówić kilka aut do ślubu (kortez weselny)?',
     answer:
-      'Oczywiście! Oferujemy kompleksową organizację kortezów weselnych. Dysponujemy dwoma pojazdami, które można uzupełnić o zaprzyjaźnione samochody, tworząc elegancki orszak ślubny. Zapewniamy koordynację szoferów, synchronizację tras i opiekę nad całym kortezem. Skontaktuj się z nami, aby omówić szczegóły.',
+      'Tak! Organizujemy korteze weselne z kilkoma pojazdami. Dysponujemy dwoma BMW, które możemy uzupełnić o zaprzyjaźnione samochody ślubne — tworząc elegancki orszak. Zapewniamy koordynację szoferów i synchronizację tras. Skontaktuj się z nami, aby omówić szczegóły.',
   },
 ]
 
@@ -38,10 +38,10 @@ export default function FAQSection() {
   return (
     <section className="faq" id="faq" aria-labelledby="faq-title">
       <div className="container">
-        <h2 className="section-title" id="faq-title">Często Zadawane Pytania</h2>
+        <h2 className="section-title" id="faq-title">Pytania o Wynajem Auta do Ślubu</h2>
         <div className="section-divider" aria-hidden="true"></div>
         <p className="section-subtitle">
-          Masz pytania dotyczące wynajmu auta do ślubu? Znajdź odpowiedzi poniżej.
+          Planujesz wynajem auta do ślubu w Radomiu lub Warszawie? Znajdź odpowiedzi na najczęściej zadawane pytania.
         </p>
         <div className="faq__list" role="list">
           {faqs.map((faq, i) => (

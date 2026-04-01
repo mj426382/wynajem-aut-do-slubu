@@ -2,7 +2,7 @@ const testimonials = [
   {
     stars: '★★★★★',
     quote:
-      'Złota Kareta spełniła nasze najwyższe oczekiwania! BMW 650i Gran Coupé wyglądało przepięknie – eleganckie z różanymi dekoracjami pasowało idealnie do naszego ślubu w stylu glamour. Szofer był punktualny, elegancki i bardzo pomocny. Polecamy z całego serca każdej Parze Młodej z Radomia!',
+      'Złota Kareta zapewniła nam wymarzone auto do ślubu w Radomiu! BMW 650i Gran Coupé wyglądało przepięknie — eleganckie, z kwiatowymi dekoracjami pasowało idealnie do naszego ślubu w stylu glamour. Szofer był punktualny i bardzo pomocny. Gorąco polecamy każdej Parze Młodej szukającej samochodu ślubnego w Radomiu!',
     name: 'Anna i Tomasz Kowalski',
     location: 'Ślub w Radomiu',
     date: 'Sierpień 2024',
@@ -11,7 +11,7 @@ const testimonials = [
   {
     stars: '★★★★★',
     quote:
-      'Wynajęliśmy BMW 4 Cabrio na nasz ślub w Warszawie i to było absolutnie magiczne doświadczenie! Przyjazd z opuszczonym dachem przed kościół na Krakowskim Przedmieściu to coś, czego nie zapomnimy do końca życia. Obsługa była profesjonalna, a kierowca znał Warszawę jak własną kieszeń. Dziękujemy!',
+      'Wynajęliśmy BMW 4 Cabrio na nasz ślub w Warszawie i to było absolutnie magiczne! Przyjazd z opuszczonym dachem pod kościół na Krakowskim Przedmieściu to coś, czego nie zapomnimy. Złota Kareta to najlepszy wybór, jeśli szukacie auta do ślubu w Warszawie. Obsługa profesjonalna, kierowca znał miasto doskonale.',
     name: 'Marta i Krzysztof Nowak',
     location: 'Ślub w Warszawie',
     date: 'Czerwiec 2024',
@@ -20,9 +20,9 @@ const testimonials = [
   {
     stars: '★★★★★',
     quote:
-      'Mieliśmy kameralny ślub w Grójcu i potrzebowaliśmy eleganckiego BMW bez przepłacania. Wybraliśmy BMW 650i Gran Coupé i byliśmy zachwyceni. Szofer zabrał nas na krótką sesję zdjęciową przy sadownikach – te zdjęcia wyglądają fantastycznie! Cena była fair, a jakość usługi – pierwsza klasa.',
+      'Mieliśmy kameralny ślub w okolicach Radomia i potrzebowaliśmy eleganckiego BMW. Wybraliśmy BMW 650i Gran Coupé — byliśmy zachwyceni. Szofer zabrał nas na krótką sesję zdjęciową — zdjęcia są fantastyczne! Cena uczciwa, jakość usługi najwyższa. Polecamy Złotą Karetę jako samochód do ślubu w całym Mazowszu.',
     name: 'Karolina i Marek Wiśniewski',
-    location: 'Ślub w Grójcu',
+    location: 'Ślub k. Radomia',
     date: 'Maj 2024',
     avatar: '🤵',
   },
@@ -32,10 +32,10 @@ export default function TestimonialsSection() {
   return (
     <section className="testimonials" id="opinie" aria-labelledby="testimonials-title">
       <div className="container">
-        <h2 className="section-title" id="testimonials-title">Co Mówią Nasze Pary Młode</h2>
+        <h2 className="section-title" id="testimonials-title">Opinie Par Młodych z Radomia i Warszawy</h2>
         <div className="section-divider" aria-hidden="true"></div>
         <p className="section-subtitle">
-          Zaufały nam setki par z Radomia, Warszawy i okolic. Przeczytaj ich opinie.
+          Zaufały nam pary z Radomia, Warszawy i całego Mazowsza szukające luksusowego auta do ślubu. Przeczytaj ich opinie.
         </p>
         <div className="testimonials__grid">
           {testimonials.map((t, i) => (
