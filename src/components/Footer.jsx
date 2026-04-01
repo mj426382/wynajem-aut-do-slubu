@@ -71,7 +71,7 @@ export default function Footer() {
               </div>
               <div className="footer__contact-item">
                 <span>✉️</span>
-                <a href="mailto:kontakt@zlota-kareta.pl">kontakt@zlota-kareta.pl</a>
+                <a href="mailto:kontakt@slubnakareta.pl">kontakt@slubnakareta.pl</a>
               </div>
               <div className="footer__contact-item">
                 <span>🕐</span>

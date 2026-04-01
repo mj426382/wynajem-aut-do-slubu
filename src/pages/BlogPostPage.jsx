@@ -36,7 +36,7 @@ export default function BlogPostPage() {
       <SEO
         title={article.title}
         description={article.excerpt}
-        canonical={`https://zlota-kareta.pl/blog/${article.slug}`}
+        canonical={`https://slubnakareta.pl/blog/${article.slug}`}
       />
       <article className="blog-post">
         <div className="container">

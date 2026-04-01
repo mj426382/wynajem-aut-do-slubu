@@ -12,9 +12,9 @@ const jsonLd = {
   '@type': 'LocalBusiness',
   name: 'Złota Kareta',
   description: 'Wynajem aut do ślubu w Radomiu i Warszawie – BMW 650i xDrive F06 i BMW 4 Cabrio G23',
-  url: 'https://zlota-kareta.pl',
+  url: 'https://slubnakareta.pl',
   telephone: '+48501234567',
-  email: 'kontakt@zlota-kareta.pl',
+  email: 'kontakt@slubnakareta.pl',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'ul. Żeromskiego 1',
@@ -37,7 +37,7 @@ export default function HomePage() {
       <SEO
         title="Wynajem Aut do Ślubu Radom Warszawa"
         description="Złota Kareta – wynajem aut do ślubu w Radomiu i Warszawie. BMW 650i xDrive Gran Coupé F06 i BMW 4 Cabrio G23. Profesjonalna obsługa, dekoracja kwiatami. Zadzwoń: +48 501 234 567"
-        canonical="https://zlota-kareta.pl"
+        canonical="https://slubnakareta.pl"
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
