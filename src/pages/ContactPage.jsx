@@ -132,6 +132,7 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+            </div>
 
           </div>
         </div>
