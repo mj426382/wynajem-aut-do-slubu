@@ -1,4 +1,4 @@
-import SEO from '../components/SEO'
+﻿import SEO from '../components/SEO'
 
 export default function ContactPage() {
   return (
@@ -6,7 +6,7 @@ export default function ContactPage() {
       <SEO
         title="Kontakt – Wynajem Aut do Ślubu"
         description="Skontaktuj się ze Złotą Karetą. Zadzwoń: +48 501 234 567 lub napisz do nas. Obsługujemy Radom, Warszawę i okolice."
-        canonical="https://slubnakareta.pl/kontakt"
+        canonical="https://autodoslubuwarszawa.pl/kontakt"
       />
       <section className="contact-page">
         <div className="container">
@@ -22,14 +22,14 @@ export default function ContactPage() {
             <div className="contact-form">
               <h2>Wyślij zapytanie</h2>
               <form
-                action="https://formsubmit.co/kontakt@slubnakareta.pl"
+                action="https://formsubmit.co/kontakt@autodoslubuwarszawa.pl"
                 method="POST"
                 noValidate
               >
                 <input type="hidden" name="_subject" value="Zapytanie o wynajem auta do ślubu" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="https://slubnakareta.pl/kontakt?success=true" />
+                <input type="hidden" name="_next" value="https://autodoslubuwarszawa.pl/kontakt?success=true" />
 
                 <div className="form-group">
                   <label htmlFor="name">Imię i nazwisko *</label>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                   </div>
                   <div className="contact-info-item">
                     <span className="contact-info-item__icon">✉️</span>
-                    <a href="mailto:kontakt@slubnakareta.pl">kontakt@slubnakareta.pl</a>
+                    <a href="mailto:kontakt@autodoslubuwarszawa.pl">kontakt@autodoslubuwarszawa.pl</a>
                   </div>
                 </address>
               </div>

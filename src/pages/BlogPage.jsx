@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import { articles } from '../blog/index.js'
 
@@ -8,7 +8,7 @@ export default function BlogPage() {
       <SEO
         title="Blog – Porady o Wynajmie Aut Ślubnych"
         description="Porady, poradniki i inspiracje dotyczące wynajmu aut do ślubu w Radomiu i Warszawie. Dowiedz się jak wybrać idealne auto na Twój wielki dzień."
-        canonical="https://slubnakareta.pl/blog"
+        canonical="https://autodoslubuwarszawa.pl/blog"
       />
       <section className="blog-page">
         <div className="container">

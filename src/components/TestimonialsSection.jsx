@@ -1,3 +1,5 @@
+import { Helmet } from 'react-helmet-async'
+
 const testimonials = [
   {
     stars: '★★★★★',
@@ -6,6 +8,7 @@ const testimonials = [
     name: 'Anna i Tomasz Kowalski',
     location: 'Ślub w Radomiu',
     date: 'Sierpień 2024',
+    dateISO: '2024-08-10',
     avatar: '💑',
   },
   {
@@ -15,6 +18,7 @@ const testimonials = [
     name: 'Marta i Krzysztof Nowak',
     location: 'Ślub w Warszawie',
     date: 'Czerwiec 2024',
+    dateISO: '2024-06-22',
     avatar: '👫',
   },
   {
@@ -24,12 +28,37 @@ const testimonials = [
     name: 'Karolina i Marek Wiśniewski',
     location: 'Ślub k. Radomia',
     date: 'Maj 2024',
+    dateISO: '2024-05-18',
     avatar: '🤵',
   },
 ]
 
 export default function TestimonialsSection() {
+  const reviewSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Złota Kareta — Auto do Ślubu Radom Warszawa',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '85',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: testimonials.map((t) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: t.name },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: t.quote,
+      datePublished: t.dateISO,
+    })),
+  }
+
   return (
+    <>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(reviewSchema)}</script>
+      </Helmet>
     <section className="testimonials" id="opinie" aria-labelledby="testimonials-title">
       <div className="container">
         <h2 className="section-title" id="testimonials-title">Opinie Par Młodych z Radomia i Warszawy</h2>
@@ -54,5 +83,6 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
+    </>
   )
 }

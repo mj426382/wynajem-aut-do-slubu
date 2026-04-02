@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+﻿import { useParams, Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import { articles } from '../blog/index.js'
 
@@ -36,7 +36,7 @@ export default function BlogPostPage() {
       <SEO
         title={article.title}
         description={article.excerpt}
-        canonical={`https://slubnakareta.pl/blog/${article.slug}`}
+        canonical={`https://autodoslubuwarszawa.pl/blog/${article.slug}`}
       />
       <article className="blog-post">
         <div className="container">

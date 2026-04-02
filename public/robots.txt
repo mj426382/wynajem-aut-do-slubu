@@ -1,0 +1,9 @@
+﻿User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://autodoslubuwarszawa.pl/sitemap.xml
+
+# Blokuj niepotrzebne zasoby
+Disallow: /src/
+Disallow: /.vite/

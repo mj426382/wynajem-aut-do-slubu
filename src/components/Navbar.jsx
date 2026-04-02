@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [locOpen, setLocOpen] = useState(false)
+  const locRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -11,10 +13,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (locRef.current && !locRef.current.contains(e.target)) setLocOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  const close = () => { setMenuOpen(false); setLocOpen(false) }
+
   return (
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__container">
-        <Link to="/" className="navbar__logo">
+        <Link to="/" className="navbar__logo" onClick={close}>
           <span className="navbar__logo-icon">♛</span>
           <div>
             <span className="navbar__logo-main">Złota</span>
@@ -25,23 +37,55 @@ export default function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) => isActive ? 'navbar__link navbar__link--active' : 'navbar__link'}
-            onClick={() => setMenuOpen(false)}
+            onClick={close}
             end
           >
             Strona główna
           </NavLink>
-          <a href="/#flota" className="navbar__link" onClick={() => setMenuOpen(false)}>Flota</a>
+          <a href="/#flota" className="navbar__link" onClick={close}>Flota</a>
+
+          {/* Locations dropdown */}
+          <div className="navbar__dropdown" ref={locRef}>
+            <button
+              className="navbar__link navbar__dropdown-btn"
+              onClick={() => setLocOpen(!locOpen)}
+              aria-expanded={locOpen}
+              aria-haspopup="true"
+            >
+              Lokalizacje <span className="navbar__dropdown-arrow" aria-hidden="true">{locOpen ? '▲' : '▼'}</span>
+            </button>
+            {locOpen && (
+              <ul className="navbar__dropdown-menu" role="menu">
+                <li role="menuitem">
+                  <NavLink to="/auto-do-slubu-radom" className="navbar__dropdown-item" onClick={close}>
+                    📍 Auto do ślubu Radom
+                  </NavLink>
+                </li>
+                <li role="menuitem">
+                  <NavLink to="/auto-do-slubu-warszawa" className="navbar__dropdown-item" onClick={close}>
+                    📍 Auto do ślubu Warszawa
+                  </NavLink>
+                </li>
+                <li role="menuitem">
+                  <NavLink to="/auto-do-slubu-mazowieckie" className="navbar__dropdown-item" onClick={close}>
+                    📍 Auto do ślubu Mazowieckie
+                  </NavLink>
+                </li>
+              </ul>
+            )}
+          </div>
+
           <NavLink
             to="/blog"
             className={({ isActive }) => isActive ? 'navbar__link navbar__link--active' : 'navbar__link'}
-            onClick={() => setMenuOpen(false)}
+            onClick={close}
           >
             Blog
           </NavLink>
           <NavLink
             to="/kontakt"
             className={({ isActive }) => isActive ? 'navbar__link navbar__link--active' : 'navbar__link'}
-            onClick={() => setMenuOpen(false)}
+            onClick={close}
           >
             Kontakt
           </NavLink>

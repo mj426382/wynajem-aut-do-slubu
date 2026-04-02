@@ -1,0 +1,225 @@
+name: 📝 Daily blog post (GPT)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"   # codziennie 06:00 UTC
+
+jobs:
+  generate-blog:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate blog post and push directly to main
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          pip install requests -q
+          python3 << 'PYEOF'
+          import os, json, requests, re, sys, subprocess, time
+          from datetime import datetime
+          from pathlib import Path
+
+          def run(cmd):
+              result = subprocess.run(
+                  cmd, shell=isinstance(cmd, str),
+                  check=True, capture_output=True, text=True
+              )
+              if result.stdout:
+                  print(result.stdout)
+              return result.stdout.strip()
+
+          # ── Gather existing posts ───────────────────────────────────────────
+          posts_dir = Path("src/blog")
+          existing_titles = []
+          existing_slugs = []
+          for jsx_file in sorted(posts_dir.glob("article*.jsx")):
+              text = jsx_file.read_text(encoding="utf-8")
+              m = re.search(r"export\s+const\s+title\s*=\s*['\"]([^'\"]+)['\"]", text)
+              s = re.search(r"export\s+const\s+slug\s*=\s*['\"]([^'\"]+)['\"]", text)
+              if m:
+                  existing_titles.append(m.group(1))
+              if s:
+                  existing_slugs.append(s.group(1))
+
+          # Determine next article number
+          nums = []
+          for jsx_file in posts_dir.glob("article*.jsx"):
+              n = re.search(r"article(\d+)\.jsx$", jsx_file.name)
+              if n:
+                  nums.append(int(n.group(1)))
+          next_num = max(nums, default=0) + 1
+
+          now = datetime.now()
+          date_str = now.strftime("%Y-%m-%d")
+          titles_str = "\n".join(f"- {t}" for t in existing_titles)
+
+          # ── Prompts ─────────────────────────────────────────────────────────
+          SYSTEM_PROMPT = (
+              "Jesteś doświadczonym copywriterem SEO i strategiem contentu dla Złotej Karety "
+              "(autodoslubuwarszawa.pl) — polskiej firmy wynajmującej luksusowe BMW do ślubu "
+              "w Warszawie, Radomiu i całym województwie mazowieckim.\n\n"
+              "OFERTA FIRMY (naturalnie wplataj w artykuły):\n"
+              "- BMW 650i xDrive Gran Coupé (F06) — silnik V8 450 KM, napęd 4×4, skórzana tapicerka\n"
+              "- BMW 4 Cabrio (G23) — elektryczny miękki dach otwierający się w 18 sekund, idealne na lato\n"
+              "- Profesjonalny szofer w cenie — elegancki, punktualny, dyskretny\n"
+              "- Bezpłatna dekoracja florystyczna — wstążki, bukiet na masce, wnętrze\n"
+              "- Postój na sesję zdjęciową bez pośpiechu\n"
+              "- Bezpłatny dojazd w promieniu 50 km od Radomia lub Warszawy\n"
+              "- Korteze weselne — kilka aut naraz\n"
+              "- Ceny od 800 zł (Radom) / 1000 zł (Warszawa) za pakiet 3h\n\n"
+              "OBSZARY OBSŁUGI:\n"
+              "- Warszawa i wszystkie dzielnice (Mokotów, Wilanów, Żoliborz, Ursynów, Praga, Wola…)\n"
+              "- Radom i okolice 50 km (Kozienice, Białobrzegi, Zwoleń, Pionki, Grójec…)\n"
+              "- Całe województwo mazowieckie\n\n"
+              "GŁÓWNE OBSZARY POZYCJONOWANIA (priorytetowe tematy artykułów):\n"
+              "- Wynajem auta do ślubu w konkretnych miastach Mazowsza\n"
+              "- Jak wybrać idealne auto ślubne — poradniki dla Pary Młodej\n"
+              "- Planowanie transportu ślubnego — trasy, logistyka, korteże\n"
+              "- Sesje zdjęciowe z autem ślubnym — lokalizacje w Warszawie i Radomiu\n"
+              "- Trendy ślubne — styl, dekoracje, samochody ślubne\n"
+              "- Kabriolet vs Gran Coupé — który wybrać na ślub?\n"
+              "- BMW do ślubu — dlaczego to najlepszy wybór\n"
+              "- Ślub w konkretnych kościołach / salach weselnych Warszawy lub Radomia\n"
+              "- Kortez weselny — organizacja i koszt\n"
+              "- Sezon ślubny — kiedy rezerwować auto?\n\n"
+              "ZASADY PISANIA ARTYKUŁÓW:\n"
+              "1. Język: ciepły, elegancki, romantyczny — ale konkretny. Zwracaj się 'Wy', 'Wasza Para', 'Twój ślub'.\n"
+              "2. Styl: wciągający — jak poradnik dla Pary Młodej, nie jak reklama.\n"
+              "3. Struktura: wciągający wstęp (emocja lub pytanie) → 3-5 sekcji H2 → podsumowanie z CTA.\n"
+              "4. SEO On-Page:\n"
+              "   - Główna fraza kluczowa w tytule i pierwszym paragrafie.\n"
+              "   - Frazy LSI naturalnie w treści (np. 'samochód ślubny', 'auto na wesele', 'wynajem limuzyny').\n"
+              "   - Naturalne wzmianki o BMW 650i lub BMW 4 Cabrio (max 2-3 razy).\n"
+              "5. Długość: 500-700 słów w formacie HTML (pole 'content').\n"
+              "6. Format pola 'content': czysty HTML — używaj <h2>, <h3>, <p>, <ul><li>, <strong>.\n"
+              "   NIE używaj Markdown (##, **, -).\n"
+              "7. Zakończ artykuł wezwaniem do działania z linkiem do strony kontaktowej:\n"
+              "   <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? "
+              "<a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>\n"
+              "8. slug: tylko małe litery ASCII, myślniki zamiast spacji, bez polskich znaków, max 60 znaków.\n"
+              "9. tags: 3-5 tagów — konkretne, po polsku.\n"
+              "10. readTime: format '7 min' (szacuj 200 słów/minutę).\n"
+              "11. category: jedna z: Warszawa / Radom / Mazowsze / Porady / Trendy / Planowanie / BMW.\n"
+              "12. emoji: jeden emoji pasujący do tematu.\n"
+              "13. NIGDY nie powtarzaj tematów z listy istniejących artykułów."
+          )
+
+          USER_PROMPT = (
+              f"Data publikacji: {date_str}\n\n"
+              f"Istniejące artykuły na blogu (NIE powtarzaj tych tematów):\n{titles_str}\n\n"
+              "Napisz nowy artykuł SEO dla Złotej Karety. Priorytetowo wybieraj tematy:\n"
+              "- wynajem auta do ślubu w konkretnym mieście Mazowsza (np. Grójec, Kozienice, Piaseczno, Pruszków)\n"
+              "- porady jak zaplanować transport ślubny krok po kroku\n"
+              "- kabriolet BMW na ślub latem — dlaczego warto?\n"
+              "- kortez weselny — jak zorganizować i ile kosztuje?\n"
+              "- najlepsze lokalizacje do sesji zdjęciowych z autem w Warszawie\n"
+              "- ślub w konkretnym kościele lub sali weselnej w Radomiu / Warszawie\n"
+              "- jak wcześnie rezerwować auto do ślubu i dlaczego to ważne?\n"
+              "- dekoracja auta ślubnego — trendy i pomysły\n"
+              "- luksusowe BMW vs inne auta na ślub — porównanie\n"
+              "- cokolwiek jeszcze NIE było omówione. Skup się na ślubach, transporcie ślubnym i BMW.\n\n"
+              "Zwróć WYŁĄCZNIE surowy obiekt JSON (zero markdown, zero ```, zero komentarzy przed/po), "
+              "w tym DOKŁADNYM formacie:\n"
+              "{\n"
+              '  "slug": "slug-bez-polskich-znakow-max-60-znakow",\n'
+              '  "title": "Tytuł SEO 55-70 znaków z główną frazą kluczową",\n'
+              '  "excerpt": "Opis 140-160 znaków z główną frazą SEO. Zachęca do przeczytania.",\n'
+              '  "content": "Treść 500-700 słów w czystym HTML. Używaj <h2> <h3> <p> <ul> <li> <strong>. '
+              'Zakończ CTA z linkiem do /kontakt.",\n'
+              '  "emoji": "🌹",\n'
+              f'  "date": "{date_str}",\n'
+              '  "readTime": "6 min",\n'
+              '  "category": "jedna z: Warszawa / Radom / Mazowsze / Porady / Trendy / Planowanie / BMW",\n'
+              '  "tags": ["tag1", "tag2", "tag3", "tag4"]\n'
+              "}"
+          )
+
+          # ── Call GitHub Models API ──────────────────────────────────────────
+          token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+          if not token:
+              print("ERROR: GH_TOKEN not set"); sys.exit(1)
+
+          resp = requests.post(
+              "https://models.inference.ai.azure.com/chat/completions",
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              json={
+                  "model": "gpt-4o",
+                  "messages": [
+                      {"role": "system", "content": SYSTEM_PROMPT},
+                      {"role": "user", "content": USER_PROMPT},
+                  ],
+                  "max_tokens": 3000,
+                  "temperature": 0.75,
+                  "response_format": {"type": "json_object"},
+              },
+              timeout=180,
+          )
+          print(f"API status: {resp.status_code}")
+          if resp.status_code != 200:
+              print(resp.text); sys.exit(1)
+
+          raw = resp.json()["choices"][0]["message"]["content"].strip()
+          raw = re.sub(r"^```\w*\n?", "", raw)
+          raw = re.sub(r"\n?```$", "", raw)
+
+          try:
+              article = json.loads(raw.strip())
+          except json.JSONDecodeError as e:
+              print(f"JSON parse error: {e}\nRaw: {raw[:500]}"); sys.exit(1)
+
+          slug = article["slug"]
+
+          # ── Validation ──────────────────────────────────────────────────────
+          if slug in existing_slugs:
+              print(f"ERROR: Slug '{slug}' already exists!"); sys.exit(1)
+
+          # ── Escape helpers ──────────────────────────────────────────────────
+          def esc(s):
+              """Escape for JS template literal (backtick string)."""
+              s = str(s)
+              s = s.replace("\\n", "\n").replace("\\t", "\t")
+              return s.replace("`", "\\`").replace("${", "\\${")
+
+          def esc_sq(s):
+              return str(s).replace("\\", "\\\\").replace("'", "\\'")
+
+          tags_list = article.get("tags", [])
+          tags_js = "[" + ", ".join(f"'{esc_sq(t)}'" for t in tags_list) + "]"
+
+          jsx_content = (
+              f"export const slug = '{esc_sq(slug)}'\n"
+              f"export const title = '{esc_sq(article['title'])}'\n"
+              f"export const date = '{article['date']}'\n"
+              f"export const readTime = '{esc_sq(article['readTime'])}'\n"
+              f"export const category = '{esc_sq(article['category'])}'\n"
+              f"export const excerpt = '{esc_sq(article['excerpt'])}'\n"
+              f"export const emoji = '{esc_sq(article.get('emoji', '💍'))}'\n"
+              f"export const tags = {tags_js}\n\n"
+              "export const content = `\n"
+              f"{esc(article['content'])}\n"
+              "`\n"
+          )
+
+          out_file = posts_dir / f"article{next_num}.jsx"
+          out_file.write_text(jsx_content, encoding="utf-8")
+          print(f"Saved: {out_file}")
+
+          # ── Git push directly to main ────────────────────────────────────────
+          commit_msg = f"feat(blog): {article['title']} ({date_str})"
+
+          run("git config user.name 'github-actions[bot]'")
+          run("git config user.email 'github-actions[bot]@users.noreply.github.com'")
+          run("git add src/blog/")
+          run(["git", "commit", "-m", commit_msg])
+          run(["git", "push", "origin", "main"])
+
+          print(f"✅ Pushed article{next_num}.jsx to main — Vercel redeploy triggered automatically.")
+          PYEOF

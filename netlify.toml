@@ -1,0 +1,24 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# ============================================================
+# PRZEKIEROWANIE: AutoDoSlubuRadom.pl → AutoDoSlubuWarszawa.pl
+# ============================================================
+# Jeśli Twój hosting to Vercel, dodaj domenę AutoDoSlubuRadom.pl
+# w panelu: Project Settings → Domains → Add domain
+# Vercel automatycznie doda redirect 308 na primary domain.
+#
+# Alternatywnie poniższy redirect działa dla każdego hosta Vercel.
+
+[[redirects]]
+  from = "https://autodosluburadом.pl/*"
+  to = "https://autodoslubuwarszawa.pl/:splat"
+  status = 301
+  force = true
+
+# SPA fallback dla React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

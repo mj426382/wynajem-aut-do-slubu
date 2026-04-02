@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -14,13 +14,14 @@ export default function Footer() {
               </div>
             </div>
             <p className="footer__tagline">
-              Wynajem aut do ślubu w Radomiu i Warszawie. Twój wyjątkowy dzień zasługuje na wyjątkowe BMW. Służymy Państwu od 2010 roku.
+              Wynajem aut do ślubu w Radomiu, Warszawie i na całym Mazowszu.
+              Twój wyjątkowy dzień zasługuje na wyjątkowe BMW. Służymy Państwu od 2010 roku.
             </p>
             <div className="footer__social">
               <a
                 href="https://facebook.com"
                 className="footer__social-link"
-                aria-label="Facebook"
+                aria-label="Facebook — Złota Kareta"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -29,7 +30,7 @@ export default function Footer() {
               <a
                 href="https://instagram.com"
                 className="footer__social-link"
-                aria-label="Instagram"
+                aria-label="Instagram — Złota Kareta"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -40,7 +41,7 @@ export default function Footer() {
 
           <div className="footer__col">
             <h3 className="footer__col-title">Nawigacja</h3>
-            <nav className="footer__nav">
+            <nav className="footer__nav" aria-label="Nawigacja stopka">
               <Link to="/" className="footer__nav-link">Strona główna</Link>
               <a href="/#flota" className="footer__nav-link">Nasza flota</a>
               <a href="/#cechy" className="footer__nav-link">Dlaczego my?</a>
@@ -51,8 +52,11 @@ export default function Footer() {
           </div>
 
           <div className="footer__col">
-            <h3 className="footer__col-title">Nasza flota</h3>
-            <nav className="footer__nav">
+            <h3 className="footer__col-title">Obsługiwane miasta</h3>
+            <nav className="footer__nav" aria-label="Obsługiwane lokalizacje">
+              <Link to="/auto-do-slubu-radom" className="footer__nav-link">Auto do ślubu Radom</Link>
+              <Link to="/auto-do-slubu-warszawa" className="footer__nav-link">Auto do ślubu Warszawa</Link>
+              <Link to="/auto-do-slubu-mazowieckie" className="footer__nav-link">Auto do ślubu Mazowieckie</Link>
               <a href="/#flota" className="footer__nav-link">BMW 650i xDrive Gran Coupé (F06)</a>
               <a href="/#flota" className="footer__nav-link">BMW 4 Cabrio (G23)</a>
             </nav>
@@ -71,7 +75,7 @@ export default function Footer() {
               </div>
               <div className="footer__contact-item">
                 <span>✉️</span>
-                <a href="mailto:kontakt@slubnakareta.pl">kontakt@slubnakareta.pl</a>
+                <a href="mailto:kontakt@autodoslubuwarszawa.pl">kontakt@autodoslubuwarszawa.pl</a>
               </div>
               <div className="footer__contact-item">
                 <span>🕐</span>
@@ -83,7 +87,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © 2024 Złota Kareta. Wszelkie prawa zastrzeżone.
+            © 2026 Złota Kareta. Wszelkie prawa zastrzeżone.
           </p>
           <p className="footer__love">
             Made with ❤️ for your special day

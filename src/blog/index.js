@@ -1,7 +1,7 @@
-import * as article1 from './article1'
-import * as article2 from './article2'
-import * as article3 from './article3'
-import * as article4 from './article4'
-import * as article5 from './article5'
+// Auto-discovers all article*.jsx files — no manual imports needed when adding new posts
+const modules = import.meta.glob('./article*.jsx', { eager: true })
 
-export const articles = [article1, article2, article3, article4, article5]
+export const articles = Object.values(modules)
+  .map((m) => m)
+  // sort newest first by date field
+  .sort((a, b) => (a.date < b.date ? 1 : -1))
