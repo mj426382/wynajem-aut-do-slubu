@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-radom'
-export const title = 'Wynajem Auta do Ślubu w Radomiu – Lokalny Poradnik 2024'
-export const date = '2024-02-20'
+export const title = 'Wynajem Auta do Ślubu w Radomiu – Lokalny Poradnik 2025'
+export const date = '2025-02-20'
 export const readTime = '9 min'
 export const category = 'Radom'
 export const excerpt = 'Planujesz ślub w Radomiu? Dowiedz się, dlaczego warto wybrać lokalną firmę do wynajmu aut ślubnych i poznaj najpiękniejsze miejsca weselne w mieście.'

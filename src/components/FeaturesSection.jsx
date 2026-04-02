@@ -35,11 +35,11 @@ export default function FeaturesSection() {
   return (
     <section className="features" id="cechy" aria-labelledby="features-title">
       <div className="container">
-        <h2 className="section-title" id="features-title">Dlaczego Wybrać Złotą Karetę?</h2>
+        <h2 className="section-title" id="features-title">Dlaczego Wybrać AutoDoŚlubu Warszawa & Radom?</h2>
         <div className="section-divider" aria-hidden="true"></div>
         <p className="section-subtitle">
           Wynajem auta do ślubu w Radomiu i Warszawie z profesjonalną obsługą.
-          Oto co wyróżnia Złotą Karetę spośród innych firm oferujących samochody ślubne w Mazowszu.
+          Oto co wyróżnia AutoDoŚlubu Warszawa & Radom spośród innych firm oferujących samochody ślubne w Mazowszu.
         </p>
         <div className="features__grid">
           {features.map((f, i) => (

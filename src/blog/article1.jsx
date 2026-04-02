@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-warszawa'
-export const title = 'Wynajem Auta do Ślubu w Warszawie – Poradnik 2024'
-export const date = '2024-03-15'
+export const title = 'Wynajem Auta do Ślubu w Warszawie – Poradnik 2025'
+export const date = '2025-03-15'
 export const readTime = '8 min'
 export const category = 'Warszawa'
 export const excerpt = 'Planujesz ślub w Warszawie i szukasz luksusowego auta? Poznaj najlepsze opcje, trasy oraz wskazówki, jak wybrać idealne auto ślubne w stolicy.'
@@ -64,7 +64,7 @@ export const content = `
 
 <h2>Nasze usługi w Warszawie</h2>
 
-<p>Złota Kareta obsługuje wesela w całej Warszawie i aglomeracji warszawskiej. Nasz szofer przyjedzie do każdej dzielnicy – Mokotów, Żoliborz, Ursynów, Wilanów, Białołęka, Wola czy Praga. Oferujemy:</p>
+<p>AutoDoŚlubu Warszawa & Radom obsługuje wesela w całej Warszawie i aglomeracji warszawskiej. Nasz szofer przyjedzie do każdej dzielnicy – Mokotów, Żoliborz, Ursynów, Wilanów, Białołęka, Wola czy Praga. Oferujemy:</p>
 
 <ul>
   <li>Odbiór Panny Młodej z domu lub hotelu</li>
@@ -87,5 +87,5 @@ export const content = `
 
 <h2>Podsumowanie</h2>
 
-<p>Wynajem luksusowego auta do ślubu w Warszawie to inwestycja, która przyniesie niezapomniane wspomnienia. Profesjonalny szofer, elegancki pojazd i bezstresowy przejazd to fundament udanego dnia ślubu. Złota Kareta zapewni Wam wszystko, czego potrzeba, aby ten dzień był naprawdę wyjątkowy.</p>
+<p>Wynajem luksusowego auta do ślubu w Warszawie to inwestycja, która przyniesie niezapomniane wspomnienia. Profesjonalny szofer, elegancki pojazd i bezstresowy przejazd to fundament udanego dnia ślubu. AutoDoŚlubu Warszawa & Radom zapewni Wam wszystko, czego potrzeba, aby ten dzień był naprawdę wyjątkowy.</p>
 `

@@ -1,6 +1,6 @@
 export const slug = 'jak-wybrac-auto-do-slubu'
 export const title = 'Jak Wybrać Auto do Ślubu – Kompletny Poradnik dla Pary Młodej'
-export const date = '2024-01-10'
+export const date = '2025-01-10'
 export const readTime = '10 min'
 export const category = 'Poradnik'
 export const excerpt = 'Jak wybrać idealne auto do ślubu? Kompletny przewodnik: styl wesela, liczba osób, sezon, dekoracje i pytania, które warto zadać firmie wynajmu.'
@@ -63,7 +63,7 @@ export const content = `
 
 <h2>5. Opcje dekoracji pojazdu</h2>
 
-<p>Dekoracja auta ślubnego to ważny element estetyczny. W Złota Kareta oferujemy:</p>
+<p>Dekoracja auta ślubnego to ważny element estetyczny. W AutoDoŚlubu Warszawa & Radom oferujemy:</p>
 
 <h3>Dekoracja standardowa (w cenie)</h3>
 <ul>

@@ -7,8 +7,8 @@ const testimonials = [
       'AutoDoŚlubu Warszawa & Radom zapewniła nam wymarzone auto do ślubu w Radomiu! BMW 650i Gran Coupé wyglądało przepięknie — eleganckie, z kwiatowymi dekoracjami pasowało idealnie do naszego ślubu w stylu glamour. Szofer był punktualny i bardzo pomocny. Gorąco polecamy każdej Parze Młodej szukającej samochodu ślubnego w Radomiu!',
     name: 'Anna i Tomasz Kowalski',
     location: 'Ślub w Radomiu',
-    date: 'Sierpień 2024',
-    dateISO: '2024-08-10',
+    date: 'Sierpień 2025',
+    dateISO: '2025-08-10',
     avatar: '💑',
   },
   {
@@ -17,8 +17,8 @@ const testimonials = [
       'Wynajęliśmy BMW 4 Cabrio na nasz ślub w Warszawie i to było absolutnie magiczne! Przyjazd z opuszczonym dachem pod kościół na Krakowskim Przedmieściu to coś, czego nie zapomnimy. AutoDoŚlubu Warszawa & Radom to najlepszy wybór, jeśli szukacie auta do ślubu w Warszawie. Obsługa profesjonalna, kierowca znał miasto doskonale.',
     name: 'Marta i Krzysztof Nowak',
     location: 'Ślub w Warszawie',
-    date: 'Czerwiec 2024',
-    dateISO: '2024-06-22',
+    date: 'Czerwiec 2025',
+    dateISO: '2025-06-22',
     avatar: '👫',
   },
   {
@@ -27,8 +27,8 @@ const testimonials = [
       'Mieliśmy kameralny ślub w okolicach Radomia i potrzebowaliśmy eleganckiego BMW. Wybraliśmy BMW 650i Gran Coupé — byliśmy zachwyceni. Szofer zabrał nas na krótką sesję zdjęciową — zdjęcia są fantastyczne! Cena uczciwa, jakość usługi najwyższa. Polecamy AutoDoŚlubu Warszawa & Radom jako samochód do ślubu w całym Mazowszu.',
     name: 'Karolina i Marek Wiśniewski',
     location: 'Ślub k. Radomia',
-    date: 'Maj 2024',
-    dateISO: '2024-05-18',
+    date: 'Maj 2025',
+    dateISO: '2025-05-18',
     avatar: '🤵',
   },
 ]
