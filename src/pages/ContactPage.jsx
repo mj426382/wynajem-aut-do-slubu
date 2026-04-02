@@ -22,7 +22,7 @@ export default function ContactPage() {
             <div className="contact-form">
               <h2>Wyślij zapytanie</h2>
               <form
-                action="https://formsubmit.co/kontakt@autodoslubuwarszawa.pl"
+                action="https://formsubmit.co/janmat.jdg@gmail.com"
                 method="POST"
                 noValidate
               >
