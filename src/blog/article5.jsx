@@ -101,7 +101,7 @@ export const content = `
 
 <h2>Ceny korteza weselnego</h2>
 
-<p>Kortez weselny z naszymi BMW to wyjątkowe wrażenie wizualne. Przy zamówieniu obu pojazdów jednocześnie oferujemy atrakcyjny rabat pakietowy. Skontaktuj się z nami, aby otrzymać indywidualną wycenę korteza dla Waszego wesela. Zadzwoń: +48 501 234 567 lub napisz przez formularz kontaktowy.</p>
+<p>Kortez weselny z naszymi BMW to wyjątkowe wrażenie wizualne. Przy zamówieniu obu pojazdów jednocześnie oferujemy atrakcyjny rabat pakietowy. Skontaktuj się z nami, aby otrzymać indywidualną wycenę korteza dla Waszego wesela. Zadzwoń: +48 881 358 838 lub napisz przez formularz kontaktowy.</p>
 
 <h2>Podsumowanie</h2>
 

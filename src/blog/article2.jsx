@@ -88,7 +88,7 @@ export const content = `
 
 <h2>Jak zarezerwować auto do ślubu w Radomiu?</h2>
 
-<p>Zapraszamy do kontaktu telefonicznego pod numer +48 501 234 567 lub na spotkanie konsultacyjne w naszym biurze przy ul. Żeromskiego 1. Chętnie omówimy szczegóły Waszego ślubu i zaproponujemy najlepsze rozwiązanie.</p>
+<p>Zapraszamy do kontaktu telefonicznego pod numer +48 881 358 838 lub przez formularz kontaktowy na stronie. Chętnie omówimy szczegóły Waszego ślubu i zaproponujemy najlepsze rozwiązanie.</p>
 
 <p>Rezerwujcie z wyprzedzeniem – terminy na sezon 2025 już teraz są wypełniane. Nie ryzykujcie, że Wasze wymarzone auto będzie niedostępne na Wasz dzień!</p>
 `

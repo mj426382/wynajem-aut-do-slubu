@@ -5,7 +5,7 @@ export default function ContactPage() {
     <>
       <SEO
         title="Kontakt – Wynajem Aut do Ślubu"
-        description="Skontaktuj się ze Złotą Karetą. Zadzwoń: +48 501 234 567 lub napisz do nas. Obsługujemy Radom, Warszawę i okolice."
+        description="Skontaktuj się ze Złotą Karetą. Zadzwoń: +48 881 358 838 lub napisz do nas. Obsługujemy Radom, Warszawę i okolice."
         canonical="https://autodoslubuwarszawa.pl/kontakt"
       />
       <section className="contact-page">
@@ -61,7 +61,7 @@ export default function ContactPage() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    placeholder="+48 501 234 567"
+                    placeholder="+48 881 358 838"
                     autoComplete="tel"
                   />
                 </div>

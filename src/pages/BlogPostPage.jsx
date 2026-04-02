@@ -70,7 +70,7 @@ export default function BlogPostPage() {
             <p>Skontaktuj się z nami i zarezerwuj swoje wymarzone auto. Terminy wyprzedają się szybko!</p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/kontakt" className="btn btn-primary">✉️ Zapytaj o dostępność</Link>
-              <a href="tel:+48501234567" className="btn btn-outline">📞 +48 501 234 567</a>
+              <a href="tel:+48881358838" className="btn btn-outline">📞 +48 881 358 838</a>
             </div>
           </div>
 

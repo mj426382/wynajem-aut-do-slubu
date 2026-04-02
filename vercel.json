@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "autodoslubuRadom.pl" }],
+      "has": [{ "type": "host", "value": "autodosluburadom.pl" }],
       "destination": "https://autodoslubuwarszawa.pl/$1",
       "permanent": true
     }

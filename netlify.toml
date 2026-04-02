@@ -12,7 +12,7 @@
 # Alternatywnie poniższy redirect działa dla każdego hosta Vercel.
 
 [[redirects]]
-  from = "https://autodosluburadом.pl/*"
+  from = "https://autodosluburadom.pl/*"
   to = "https://autodoslubuwarszawa.pl/:splat"
   status = 301
   force = true

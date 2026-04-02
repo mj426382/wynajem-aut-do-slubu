@@ -56,5 +56,5 @@ export const content = `
 
 <p>BMW 650i xDrive Gran Coupé to jedno z dwóch aut w naszej flocie. Terminy wyprzedają się szybko, szczególnie soboty w sezonie ślubnym (maj-wrzesień). Zalecamy rezerwację z co najmniej 6-miesięcznym wyprzedzeniem.</p>
 
-<p>Zapraszamy do kontaktu: +48 501 234 567. Opiszcie swój dzień ślubu, a my przygotujemy ofertę szytą na miarę.</p>
+<p>Zapraszamy do kontaktu: +48 881 358 838. Opiszcie swój dzień ślubu, a my przygotujemy ofertę szytą na miarę.</p>
 `

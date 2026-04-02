@@ -81,7 +81,7 @@ export const content = `
 
 <h2>Jak zarezerwować?</h2>
 
-<p>Rezerwacja auta do ślubu w Warszawie jest prosta. Wystarczy skontaktować się z nami telefonicznie pod numer +48 501 234 567 lub wypełnić formularz kontaktowy na stronie. Podaj datę ślubu, pożądany pojazd, planowaną trasę i liczbę godzin. Odpiszemy lub oddzwonimy z dostępnością i ofertą cenową w ciągu 24 godzin.</p>
+<p>Rezerwacja auta do ślubu w Warszawie jest prosta. Wystarczy skontaktować się z nami telefonicznie pod numer +48 881 358 838 lub wypełnić formularz kontaktowy na stronie. Podaj datę ślubu, pożądany pojazd, planowaną trasę i liczbę godzin. Odpiszemy lub oddzwonimy z dostępnością i ofertą cenową w ciągu 24 godzin.</p>
 
 <p>Pamiętaj – im wcześniej rezerwujesz, tym większa szansa na uzyskanie wybranego pojazdu w preferowanym terminie. Szczególnie ważne jest to w sezonie ślubnym (maj-wrzesień), kiedy terminy rozchodzą się jak świeże bułeczki.</p>
 
