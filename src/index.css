@@ -1298,6 +1298,26 @@ p:last-child { margin-bottom: 0; }
   color: rgba(255,255,255,0.4);
 }
 
+.footer__powered {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.25);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.footer__powered-link {
+  color: rgba(201,168,76,0.5);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer__powered-link:hover {
+  color: var(--gold);
+}
+
 /* ===== 404 PAGE ===== */
 .not-found {
   min-height: 80vh;

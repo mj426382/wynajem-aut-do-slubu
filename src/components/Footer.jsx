@@ -93,6 +93,17 @@ export default function Footer() {
             Made with ❤️ for your special day
           </p>
         </div>
+        <div className="footer__powered">
+          Powered by{' '}
+          <a
+            href="https://jan-map.pl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__powered-link"
+          >
+            jan-map.pl
+          </a>
+        </div>
       </div>
     </footer>
   )
