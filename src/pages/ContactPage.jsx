@@ -1,6 +1,29 @@
-﻿import SEO from '../components/SEO'
+﻿import { useState } from 'react'
+import SEO from '../components/SEO'
 
 export default function ContactPage() {
+  const [sending, setSending] = useState(false)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setSending(true)
+    const form = e.target
+    const data = new FormData(form)
+    try {
+      await fetch('https://formsubmit.co/janmat.jdg@gmail.com', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data,
+      })
+      form.reset()
+      window.alert('Zapytanie zostało wysłane! Odezwiemy się najszybciej jak to możliwe.')
+    } catch {
+      window.alert('Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub zadzwoń do nas.')
+    } finally {
+      setSending(false)
+    }
+  }
+
   return (
     <>
       <SEO
@@ -21,15 +44,10 @@ export default function ContactPage() {
           <div className="contact-page__grid">
             <div className="contact-form">
               <h2>Wyślij zapytanie</h2>
-              <form
-                action="https://formsubmit.co/janmat.jdg@gmail.com"
-                method="POST"
-                noValidate
-              >
+              <form onSubmit={handleSubmit} noValidate>
                 <input type="hidden" name="_subject" value="Zapytanie o wynajem auta do ślubu" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="https://autodoslubuwarszawa.pl/kontakt?success=true" />
 
                 <div className="form-group">
                   <label htmlFor="name">Imię i nazwisko *</label>
@@ -86,8 +104,8 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="form-submit">
-                  ✉️ Wyślij zapytanie
+                <button type="submit" className="form-submit" disabled={sending}>
+                  {sending ? 'Wysyłanie…' : '✉️ Wyślij zapytanie'}
                 </button>
               </form>
             </div>
