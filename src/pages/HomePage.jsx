@@ -11,28 +11,15 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': 'https://autodoslubuwarszawa.pl/#business',
-  name: 'Złota Kareta — Auto do Ślubu Radom Warszawa',
+  name: 'AutoDoŚlubu Warszawa & Radom',
   description: 'Wynajem auta do ślubu w Radomiu i Warszawie — BMW 650i xDrive Gran Coupé F06 i BMW 4 Cabrio G23 z szoferem. Obsługujemy całe Mazowsze.',
   url: 'https://autodoslubuwarszawa.pl',
-  telephone: '+48501234567',
-  email: 'kontakt@autodoslubuwarszawa.pl',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'ul. Żeromskiego 1',
-    addressLocality: 'Radom',
-    postalCode: '26-600',
-    addressCountry: 'PL',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 51.4027,
-    longitude: 21.1471,
-  },
-  hasMap: 'https://maps.google.com/?q=Radom,+ul.+Żeromskiego+1',
+  telephone: '+48881358838',
+  email: 'janmat.jdg@gmail.com',
   sameAs: [
     'https://facebook.com/zloTakareta',
     'https://instagram.com/zlotakareta',
-    'https://autodoslubuRadom.pl',
+    'https://autodosluburadom.pl',
   ],
   areaServed: ['Radom', 'Warszawa', 'Mazowsze', 'Grójec', 'Kozienice', 'Białobrzegi', 'Zwoleń', 'Pionki'],
   priceRange: '$$',
@@ -54,8 +41,8 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Auto do Ślubu Radom Warszawa — Wynajem BMW | Złota Kareta"
-        description="Wynajem auta do ślubu w Radomiu i Warszawie. BMW 650i xDrive Gran Coupé F06 i BMW 4 Cabrio G23 z szoferem. Obsługujemy całe Mazowsze. Bezpłatna dekoracja kwiatowa. ☎ +48 501 234 567"
+        title="Auto do Ślubu Radom Warszawa — Wynajem BMW | AutoDoŚlubu Warszawa & Radom"
+        description="Wynajem auta do ślubu w Radomiu i Warszawie. BMW 650i xDrive Gran Coupé F06 i BMW 4 Cabrio G23 z szoferem. Obsługujemy całe Mazowsze. Bezpłatna dekoracja kwiatowa. ☎ +48 881 358 838"
         canonical="https://autodoslubuwarszawa.pl"
       />
       <Helmet>

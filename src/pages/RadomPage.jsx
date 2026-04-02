@@ -15,19 +15,11 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': 'https://autodoslubuwarszawa.pl/auto-do-slubu-radom#business',
-  name: 'Złota Kareta — Auto do Ślubu Radom',
+  name: 'AutoDoŚlubu Warszawa & Radom — Auto do Ślubu Radom',
   description: 'Wynajem luksusowego auta do ślubu w Radomiu — BMW 650i xDrive Gran Coupé F06 i BMW 4 Cabrio G23 z szoferem. Obsługujemy Radom i okolice.',
   url: 'https://autodoslubuwarszawa.pl/auto-do-slubu-radom',
-  telephone: '+48501234567',
-  email: 'kontakt@autodoslubuwarszawa.pl',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'ul. Żeromskiego 1',
-    addressLocality: 'Radom',
-    postalCode: '26-600',
-    addressCountry: 'PL',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 51.4027, longitude: 21.1471 },
+  telephone: '+48881358838',
+  email: 'janmat.jdg@gmail.com',
   areaServed: ['Radom', 'Kozienice', 'Białobrzegi', 'Zwoleń', 'Pionki', 'Grójec', 'Nowe Miasto nad Pilicą'],
   priceRange: '$$',
   openingHoursSpecification: [
@@ -77,8 +69,8 @@ export default function RadomPage() {
   return (
     <>
       <SEO
-        title="Auto do Ślubu Radom — BMW z Szoferem | Złota Kareta"
-        description="Wynajem luksusowego auta do ślubu w Radomiu. BMW 650i Gran Coupé i BMW 4 Cabrio z eleganckim szoferem. Bezpłatna dekoracja kwiatowa. Obsługujemy Radom i okolice 50 km. ☎ +48 501 234 567"
+        title="Auto do Ślubu Radom — BMW z Szoferem | AutoDoŚlubu Warszawa & Radom"
+        description="Wynajem luksusowego auta do ślubu w Radomiu. BMW 650i Gran Coupé i BMW 4 Cabrio z eleganckim szoferem. Bezpłatna dekoracja kwiatowa. Obsługujemy Radom i okolice 50 km. ☎ +48 881 358 838"
         canonical="https://autodoslubuwarszawa.pl/auto-do-slubu-radom"
       />
       <Helmet>
@@ -106,7 +98,7 @@ export default function RadomPage() {
             bezpłatną dekoracją kwiatową i postojem na sesję zdjęciową. Twój wymarzony dzień zasługuje na wyjątkowy samochód.
           </p>
           <div className="hero__cta">
-            <a href="tel:+48501234567" className="btn btn-primary">📞 Zadzwoń teraz</a>
+            <a href="tel:+48881358838" className="btn btn-primary">📞 Zadzwoń teraz</a>
             <Link to="/kontakt" className="btn btn-outline">✉️ Zapytaj o termin</Link>
           </div>
         </div>
@@ -121,7 +113,7 @@ export default function RadomPage() {
             <div className="location-content__text">
               <h2>Luksusowe auto do ślubu w Radomiu</h2>
               <p>
-                Szukasz eleganckiego samochodu na swój ślub w Radomiu? <strong>Złota Kareta</strong> to radomska firma
+                Szukasz eleganckiego samochodu na swój ślub w Radomiu? <strong>AutoDoŚlubu Warszawa & Radom</strong> to radomska firma
                 specjalizująca się w wynajmie luksusowych BMW do ślubu. Od ponad 14 lat dowozimy Pary Młode
                 do największych kościołów i sal weselnych w Radomiu i całym regionie.
               </p>
@@ -181,8 +173,8 @@ export default function RadomPage() {
               <div className="location-sidebar__card">
                 <h3>Zapytaj o termin w Radomiu</h3>
                 <p>Wolne terminy 2026 / 2027 — rezerwuj z wyprzedzeniem!</p>
-                <a href="tel:+48501234567" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
-                  📞 +48 501 234 567
+                <a href="tel:+48881358838" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
+                  📞 +48 881 358 838
                 </a>
                 <Link to="/kontakt" className="btn btn-outline" style={{ display: 'block', textAlign: 'center' }}>
                   ✉️ Formularz kontaktowy
@@ -288,10 +280,10 @@ export default function RadomPage() {
             Terminy na wynajem auta do ślubu w Radomiu wyprzedają się z dużym wyprzedzeniem — szczególnie w sezonie maj–wrzesień.
             Zadzwoń lub napisz, zanim Twój termin zostanie zajęty.
           </p>
-          <a className="cta__phone" href="tel:+48501234567">📞 +48 501 234 567</a>
+          <a className="cta__phone" href="tel:+48881358838">📞 +48 881 358 838</a>
           <div className="cta__actions">
             <Link to="/kontakt" className="btn btn-dark">✉️ Napisz do nas</Link>
-            <a href="tel:+48501234567" className="btn btn-dark">📞 Zadzwoń teraz</a>
+            <a href="tel:+48881358838" className="btn btn-dark">📞 Zadzwoń teraz</a>
           </div>
         </div>
       </section>

@@ -29,8 +29,8 @@ export default function Navbar() {
         <Link to="/" className="navbar__logo" onClick={close}>
           <span className="navbar__logo-icon">♛</span>
           <div>
-            <span className="navbar__logo-main">Złota</span>
-            <span className="navbar__logo-sub">Kareta</span>
+            <span className="navbar__logo-main">AutoDoŚlubu</span>
+            <span className="navbar__logo-sub">Warszawa &amp; Radom</span>
           </div>
         </Link>
         <nav className={`navbar__nav${menuOpen ? ' navbar__nav--open' : ''}`} aria-label="Główna nawigacja">
@@ -89,7 +89,7 @@ export default function Navbar() {
           >
             Kontakt
           </NavLink>
-          <a href="tel:+48501234567" className="navbar__phone">📞 +48 501 234 567</a>
+          <a href="tel:+48881358838" className="navbar__phone">📞 +48 881 358 838</a>
         </nav>
         <button
           className="navbar__hamburger"

@@ -15,19 +15,11 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': 'https://autodoslubuwarszawa.pl/auto-do-slubu-mazowieckie#business',
-  name: 'Złota Kareta — Auto do Ślubu Mazowieckie',
+  name: 'AutoDoŚlubu Warszawa & Radom — Auto do Ślubu Mazowieckie',
   description: 'Wynajem auta do ślubu w całym województwie mazowieckim — BMW z szoferem. Radom, Warszawa, Grójec, Kozienice, Białobrzegi i cały region.',
   url: 'https://autodoslubuwarszawa.pl/auto-do-slubu-mazowieckie',
-  telephone: '+48501234567',
-  email: 'kontakt@autodoslubuwarszawa.pl',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'ul. Żeromskiego 1',
-    addressLocality: 'Radom',
-    postalCode: '26-600',
-    addressCountry: 'PL',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 51.4027, longitude: 21.1471 },
+  telephone: '+48881358838',
+  email: 'janmat.jdg@gmail.com',
   areaServed: [
     'Mazowsze', 'Radom', 'Warszawa', 'Grójec', 'Kozienice', 'Białobrzegi',
     'Zwoleń', 'Pionki', 'Szydłowiec', 'Przysucha', 'Nowe Miasto nad Pilicą',
@@ -97,8 +89,8 @@ export default function MazowieckiePage() {
   return (
     <>
       <SEO
-        title="Auto do Ślubu Mazowieckie — Wynajem BMW | Złota Kareta"
-        description="Wynajem auta do ślubu w całym województwie mazowieckim. BMW z szoferem — Radom, Warszawa, Grójec, Kozienice i okolice. Bezpłatna dekoracja. ☎ +48 501 234 567"
+        title="Auto do Ślubu Mazowieckie — Wynajem BMW | AutoDoŚlubu Warszawa & Radom"
+        description="Wynajem auta do ślubu w całym województwie mazowieckim. BMW z szoferem — Radom, Warszawa, Grójec, Kozienice i okolice. Bezpłatna dekoracja. ☎ +48 881 358 838"
         canonical="https://autodoslubuwarszawa.pl/auto-do-slubu-mazowieckie"
       />
       <Helmet>
@@ -127,7 +119,7 @@ export default function MazowieckiePage() {
             szoferem dotrze do Ciebie, gdziekolwiek na Mazowszu organizujesz ślub.
           </p>
           <div className="hero__cta">
-            <a href="tel:+48501234567" className="btn btn-primary">📞 Zadzwoń teraz</a>
+            <a href="tel:+48881358838" className="btn btn-primary">📞 Zadzwoń teraz</a>
             <Link to="/kontakt" className="btn btn-outline">✉️ Zapytaj o termin</Link>
           </div>
         </div>
@@ -143,7 +135,7 @@ export default function MazowieckiePage() {
               <h2>Wynajem auta do ślubu na Mazowszu</h2>
               <p>
                 Województwo mazowieckie to region pełen pięknych kościołów, dworków i sali weselnych.
-                <strong> Złota Kareta</strong> to jedyna firma w regionie oferująca wynajem luksusowych BMW
+                <strong> AutoDoŚlubu Warszawa & Radom</strong> to jedyna firma w regionie oferująca wynajem luksusowych BMW
                 z szoferem obejmujący całe Mazowsze — od Radomia na południu, przez Warszawę, aż po
                 najdalsze zakątki województwa.
               </p>
@@ -209,8 +201,8 @@ export default function MazowieckiePage() {
               <div className="location-sidebar__card">
                 <h3>Zapytaj o termin na Mazowszu</h3>
                 <p>Wolne terminy 2026 / 2027 — rezerwuj z wyprzedzeniem!</p>
-                <a href="tel:+48501234567" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
-                  📞 +48 501 234 567
+                <a href="tel:+48881358838" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
+                  📞 +48 881 358 838
                 </a>
                 <Link to="/kontakt" className="btn btn-outline" style={{ display: 'block', textAlign: 'center' }}>
                   ✉️ Formularz kontaktowy
@@ -273,10 +265,10 @@ export default function MazowieckiePage() {
             Gdziekolwiek na Mazowszu organizujesz swój ślub — dotrzemy do Ciebie z luksusowym BMW.
             Zadzwoń i sprawdź dostępność terminu.
           </p>
-          <a className="cta__phone" href="tel:+48501234567">📞 +48 501 234 567</a>
+          <a className="cta__phone" href="tel:+48881358838">📞 +48 881 358 838</a>
           <div className="cta__actions">
             <Link to="/kontakt" className="btn btn-dark">✉️ Napisz do nas</Link>
-            <a href="tel:+48501234567" className="btn btn-dark">📞 Zadzwoń teraz</a>
+            <a href="tel:+48881358838" className="btn btn-dark">📞 Zadzwoń teraz</a>
           </div>
         </div>
       </section>

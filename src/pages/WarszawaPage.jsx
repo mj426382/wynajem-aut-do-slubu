@@ -15,18 +15,11 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': 'https://autodoslubuwarszawa.pl/auto-do-slubu-warszawa#business',
-  name: 'Złota Kareta — Auto do Ślubu Warszawa',
+  name: 'AutoDoŚlubu Warszawa & Radom — Auto do Ślubu Warszawa',
   description: 'Wynajem luksusowego auta do ślubu w Warszawie — BMW 650i xDrive Gran Coupé F06 i BMW 4 Cabrio G23 z szoferem. Obsługujemy całą Warszawę i aglomerację.',
   url: 'https://autodoslubuwarszawa.pl/auto-do-slubu-warszawa',
-  telephone: '+48501234567',
-  email: 'kontakt@autodoslubuwarszawa.pl',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'ul. Żeromskiego 1',
-    addressLocality: 'Radom',
-    postalCode: '26-600',
-    addressCountry: 'PL',
-  },
+  telephone: '+48881358838',
+  email: 'janmat.jdg@gmail.com',
   areaServed: ['Warszawa', 'Mokotów', 'Wilanów', 'Żoliborz', 'Ursynów', 'Praga', 'Wola', 'Białołęka', 'Pruszków', 'Piaseczno', 'Legionowo'],
   priceRange: '$$',
   openingHoursSpecification: [
@@ -76,8 +69,8 @@ export default function WarszawaPage() {
   return (
     <>
       <SEO
-        title="Auto do Ślubu Warszawa — Luksusowe BMW z Szoferem | Złota Kareta"
-        description="Wynajem luksusowego auta do ślubu w Warszawie. BMW 650i Gran Coupé i BMW 4 Cabrio z profesjonalnym szoferem. Wszystkie dzielnice Warszawy. Bezpłatna dekoracja. ☎ +48 501 234 567"
+        title="Auto do Ślubu Warszawa — Luksusowe BMW z Szoferem | AutoDoŚlubu Warszawa & Radom"
+        description="Wynajem luksusowego auta do ślubu w Warszawie. BMW 650i Gran Coupé i BMW 4 Cabrio z profesjonalnym szoferem. Wszystkie dzielnice Warszawy. Bezpłatna dekoracja. ☎ +48 881 358 838"
         canonical="https://autodoslubuwarszawa.pl/auto-do-slubu-warszawa"
       />
       <Helmet>
@@ -106,7 +99,7 @@ export default function WarszawaPage() {
             i postój na sesję zdjęciową w najpiękniejszych miejscach Warszawy.
           </p>
           <div className="hero__cta">
-            <a href="tel:+48501234567" className="btn btn-primary">📞 Zadzwoń teraz</a>
+            <a href="tel:+48881358838" className="btn btn-primary">📞 Zadzwoń teraz</a>
             <Link to="/kontakt" className="btn btn-outline">✉️ Zapytaj o termin</Link>
           </div>
         </div>
@@ -122,7 +115,7 @@ export default function WarszawaPage() {
               <h2>Luksusowy samochód ślubny w Warszawie</h2>
               <p>
                 Warszawa to wyjątkowe miejsce na ślub — historyczne kościoły, piękne pałace, nowoczesne sale.
-                <strong> Złota Kareta</strong> zapewni Wam luksusowe auto do ślubu w Warszawie,
+                <strong> AutoDoŚlubu Warszawa & Radom</strong> zapewni Wam luksusowe auto do ślubu w Warszawie,
                 które dopełni ten wyjątkowy dzień. Nasz szofer doskonale zna stolicę — dzielnice,
                 trasy alternatywne i miejsca na piękne zdjęcia.
               </p>
@@ -132,7 +125,7 @@ export default function WarszawaPage() {
                 fotograficzne — to wszystko oferujemy w pakiecie.
               </p>
 
-              <h3>Dlaczego Złota Kareta to najlepsze auto do ślubu w Warszawie?</h3>
+              <h3>Dlaczego AutoDoŚlubu Warszawa & Radom to najlepsze auto do ślubu w Warszawie?</h3>
               <ul className="location-list">
                 <li>✅ Szofer znający Warszawę — alternatywne trasy przy korkach</li>
                 <li>✅ Bezpłatna elegancka dekoracja florystyczna</li>
@@ -186,8 +179,8 @@ export default function WarszawaPage() {
               <div className="location-sidebar__card">
                 <h3>Zapytaj o termin w Warszawie</h3>
                 <p>Wolne terminy 2026 / 2027 — rezerwuj z wyprzedzeniem!</p>
-                <a href="tel:+48501234567" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
-                  📞 +48 501 234 567
+                <a href="tel:+48881358838" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
+                  📞 +48 881 358 838
                 </a>
                 <Link to="/kontakt" className="btn btn-outline" style={{ display: 'block', textAlign: 'center' }}>
                   ✉️ Formularz kontaktowy
@@ -293,10 +286,10 @@ export default function WarszawaPage() {
             Terminy na wynajem auta do ślubu w Warszawie wyprzedają się szybko — szczególnie popularne soboty
             w sezonie letnim. Zarezerwuj swój termin już dziś.
           </p>
-          <a className="cta__phone" href="tel:+48501234567">📞 +48 501 234 567</a>
+          <a className="cta__phone" href="tel:+48881358838">📞 +48 881 358 838</a>
           <div className="cta__actions">
             <Link to="/kontakt" className="btn btn-dark">✉️ Napisz do nas</Link>
-            <a href="tel:+48501234567" className="btn btn-dark">📞 Zadzwoń teraz</a>
+            <a href="tel:+48881358838" className="btn btn-dark">📞 Zadzwoń teraz</a>
           </div>
         </div>
       </section>

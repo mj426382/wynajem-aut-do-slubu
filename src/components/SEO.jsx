@@ -1,7 +1,7 @@
 ﻿import { Helmet } from 'react-helmet-async';
 
 export default function SEO({ title, description, canonical, ogImage, noindex = false }) {
-  const siteName = 'Auto do Ślubu Warszawa & Radom — Złota Kareta';
+  const siteName = 'AutoDoŚlubu Warszawa & Radom';
   const baseUrl = 'https://autodoslubuwarszawa.pl';
   const defaultOgImage = `${baseUrl}/og-image.jpg`;
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
@@ -22,7 +22,7 @@ export default function SEO({ title, description, canonical, ogImage, noindex = 
       <meta property="og:image" content={ogImage || defaultOgImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Złota Kareta — Auto do Ślubu Radom i Warszawa" />
+      <meta property="og:image:alt" content="AutoDoŚlubu Warszawa & Radom — luksusowe BMW z szoferem" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -37,7 +37,7 @@ export default function SEO({ title, description, canonical, ogImage, noindex = 
       <meta name="ICBM" content="51.4027, 21.1471" />
 
       {/* Additional SEO */}
-      <meta name="author" content="Złota Kareta" />
+      <meta name="author" content="AutoDoŚlubu Warszawa & Radom" />
       <meta name="language" content="pl" />
     </Helmet>
   );

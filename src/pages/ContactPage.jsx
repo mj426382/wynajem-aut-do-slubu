@@ -97,30 +97,18 @@ export default function ContactPage() {
                 <h3>Dane kontaktowe</h3>
                 <address style={{ fontStyle: 'normal' }}>
                   <div className="contact-info-item">
-                    <span className="contact-info-item__icon">📍</span>
-                    <span>ul. Żeromskiego 1<br />26-600 Radom</span>
-                  </div>
-                  <div className="contact-info-item">
-                    <span className="contact-info-item__icon">📞</span>
-                    <a href="tel:+48501234567">+48 501 234 567</a>
+                    <span className="contact-info-item__icon">�</span>
+                    <a href="tel:+48881358838">+48 881 358 838</a>
                   </div>
                   <div className="contact-info-item">
                     <span className="contact-info-item__icon">✉️</span>
                     <a href="mailto:kontakt@autodoslubuwarszawa.pl">kontakt@autodoslubuwarszawa.pl</a>
                   </div>
-                </address>
-              </div>
-
-              <div className="contact-info-card">
-                <h3>Godziny pracy</h3>
-                <div className="contact-info-item">
-                  <span className="contact-info-item__icon">🕐</span>
-                  <div>
-                    <p style={{ margin: 0 }}>Poniedziałek – Piątek: <strong>9:00 – 18:00</strong></p>
-                    <p style={{ margin: 0 }}>Sobota: <strong>10:00 – 14:00</strong></p>
-                    <p style={{ margin: 0, color: '#666' }}>Niedziela: nieczynne</p>
+                  <div className="contact-info-item">
+                    <span className="contact-info-item__icon">✉️</span>
+                    <a href="mailto:janmat.jdg@gmail.com">janmat.jdg@gmail.com</a>
                   </div>
-                </div>
+                </address>
               </div>
 
               <div className="contact-info-card">
@@ -145,15 +133,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="map-placeholder">
-                <div className="map-placeholder__icon">📍</div>
-                <div className="map-placeholder__text">
-                  <strong style={{ color: '#fff' }}>ul. Żeromskiego 1</strong><br />
-                  26-600 Radom, Polska<br />
-                  <small>Otwórz w Google Maps</small>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

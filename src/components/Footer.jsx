@@ -9,8 +9,8 @@ export default function Footer() {
             <div className="footer__logo">
               <span className="footer__logo-icon">♛</span>
               <div>
-                <span className="footer__logo-main">Złota</span>
-                <span className="footer__logo-sub">Kareta</span>
+                <span className="footer__logo-main">AutoDoŚlubu</span>
+                <span className="footer__logo-sub">Warszawa &amp; Radom</span>
               </div>
             </div>
             <p className="footer__tagline">
@@ -21,7 +21,7 @@ export default function Footer() {
               <a
                 href="https://facebook.com"
                 className="footer__social-link"
-                aria-label="Facebook — Złota Kareta"
+                aria-label="Facebook — AutoDoŚlubu Warszawa & Radom"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -30,7 +30,7 @@ export default function Footer() {
               <a
                 href="https://instagram.com"
                 className="footer__social-link"
-                aria-label="Instagram — Złota Kareta"
+                aria-label="Instagram — AutoDoŚlubu Warszawa & Radom"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -66,20 +66,16 @@ export default function Footer() {
             <h3 className="footer__col-title">Kontakt</h3>
             <address style={{ fontStyle: 'normal' }}>
               <div className="footer__contact-item">
-                <span>📍</span>
-                <span>ul. Żeromskiego 1<br />26-600 Radom</span>
-              </div>
-              <div className="footer__contact-item">
-                <span>📞</span>
-                <a href="tel:+48501234567">+48 501 234 567</a>
+                <span>�</span>
+                <a href="tel:+48881358838">+48 881 358 838</a>
               </div>
               <div className="footer__contact-item">
                 <span>✉️</span>
                 <a href="mailto:kontakt@autodoslubuwarszawa.pl">kontakt@autodoslubuwarszawa.pl</a>
               </div>
               <div className="footer__contact-item">
-                <span>🕐</span>
-                <span>Pon–Pt: 9:00–18:00<br />Sob: 10:00–14:00</span>
+                <span>✉️</span>
+                <a href="mailto:janmat.jdg@gmail.com">janmat.jdg@gmail.com</a>
               </div>
             </address>
           </div>
@@ -87,7 +83,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © 2026 Złota Kareta. Wszelkie prawa zastrzeżone.
+            © 2026 AutoDoŚlubu Warszawa & Radom. Wszelkie prawa zastrzeżone.
           </p>
           <p className="footer__love">
             Made with ❤️ for your special day

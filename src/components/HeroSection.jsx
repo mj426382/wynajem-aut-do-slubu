@@ -16,7 +16,7 @@ export default function HeroSection() {
         </p>
         <div className="hero__cta">
           <a href="#flota" className="btn btn-primary">✨ Zobacz nasze samochody</a>
-          <a href="tel:+48501234567" className="btn btn-outline">📞 Zadzwoń teraz</a>
+          <a href="tel:+48881358838" className="btn btn-outline">📞 Zadzwoń teraz</a>
         </div>
       </div>
       <div className="hero__scroll" aria-hidden="true">Przewiń</div>

@@ -10,10 +10,10 @@ export default function CTASection() {
           Terminy wynajmu aut do ślubu wyprzedają się z dużym wyprzedzeniem — zwłaszcza w sezonie maj–wrzesień.
           Skontaktuj się z nami i zarezerwuj swój wymarzony samochód ślubny już dziś.
         </p>
-        <a className="cta__phone" href="tel:+48501234567">📞 +48 501 234 567</a>
+        <a className="cta__phone" href="tel:+48881358838">📞 +48 881 358 838</a>
         <div className="cta__actions">
           <Link to="/kontakt" className="btn btn-dark">✉️ Napisz do nas</Link>
-          <a href="tel:+48501234567" className="btn btn-dark">📞 Zadzwoń teraz</a>
+          <a href="tel:+48881358838" className="btn btn-dark">📞 Zadzwoń teraz</a>
         </div>
       </div>
     </section>
