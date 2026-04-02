@@ -102,10 +102,6 @@ export default function ContactPage() {
                   </div>
                   <div className="contact-info-item">
                     <span className="contact-info-item__icon">✉️</span>
-                    <a href="mailto:kontakt@autodoslubuwarszawa.pl">kontakt@autodoslubuwarszawa.pl</a>
-                  </div>
-                  <div className="contact-info-item">
-                    <span className="contact-info-item__icon">✉️</span>
                     <a href="mailto:janmat.jdg@gmail.com">janmat.jdg@gmail.com</a>
                   </div>
                 </address>

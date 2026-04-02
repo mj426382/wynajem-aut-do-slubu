@@ -71,10 +71,6 @@ export default function Footer() {
               </div>
               <div className="footer__contact-item">
                 <span>✉️</span>
-                <a href="mailto:kontakt@autodoslubuwarszawa.pl">kontakt@autodoslubuwarszawa.pl</a>
-              </div>
-              <div className="footer__contact-item">
-                <span>✉️</span>
                 <a href="mailto:janmat.jdg@gmail.com">janmat.jdg@gmail.com</a>
               </div>
             </address>
