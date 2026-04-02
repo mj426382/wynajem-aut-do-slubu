@@ -96,12 +96,12 @@ export default function Footer() {
         <div className="footer__powered">
           Powered by{' '}
           <a
-            href="https://jan-map.pl"
+            href="https://jan-mat.pl"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__powered-link"
           >
-            jan-map.pl
+            jan-mat
           </a>
         </div>
       </div>
