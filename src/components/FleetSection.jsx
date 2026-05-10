@@ -3,32 +3,36 @@ import { Link } from 'react-router-dom'
 const cars = [
   {
     id: 1,
-    emoji: '🏆',
+    image: 'https://github.com/user-attachments/assets/377f8ea3-0177-4a87-9cdf-f73ca58b73dd',
+    imageAlt: 'BMW 650i xDrive Gran Coupé – luksusowe auto do ślubu udekorowane białymi kwiatami',
     name: 'BMW 650i xDrive Gran Coupé (F06)',
     subtitle: 'Auto do ślubu Radom i Warszawa',
     description:
-      'Szukasz luksusowego auta do ślubu w Radomiu lub Warszawie? BMW 650i xDrive Gran Coupé (F06) to czterodrzwiowe coupé z silnikiem V8 450 KM i napędem xDrive. Imponujące i eleganckie – idealne jako samochód ślubny na każdą pogodę, zarówno wiosną, jak i jesienią.',
+      'Majestatyczny BMW 650i xDrive Gran Coupé to kwintesencja luksusu i sportowej elegancji. Czterodrzwiowe coupé napędzane potężnym silnikiem V8 o mocy 450 KM z układem xDrive gwarantuje niezapomniane wejście w każdych warunkach pogodowych. Brązowa skórzana tapicerka, podgrzewane fotele i hipnotyzujący dźwięk sportowego wydechu sprawią, że Wasza droga do ołtarza stanie się wyjątkowym przeżyciem.',
     features: [
       'Silnik V8 450 KM – napęd xDrive 4×4',
-      'Skórzana tapicerka Merino w kolorze kości słoniowej',
-      'Panoramiczny szklany dach',
+      'Ekskluzywna skórzana tapicerka w kolorze brązowym',
+      'Podgrzewane fotele przednie i tylne',
+      'Sportowy wydech – niepowtarzalny, głęboki dźwięk V8',
       'System audio Harman Kardon',
       'Bezpłatna dekoracja florystyczna w cenie',
     ],
   },
   {
     id: 2,
-    emoji: '🌹',
+    image: 'https://github.com/user-attachments/assets/eaa61a2e-36d7-4787-8f85-37ab038848ff',
+    imageAlt: 'BMW 4 Cabrio G23 – białe auto ślubne z odkrytym dachem przed kościołem',
     name: 'BMW 4 Cabrio (G23)',
     subtitle: 'Romantyczne auto ślubne – kabriolet',
     description:
-      'Wynajmij kabriolet na ślub w Radomiu lub Warszawie! BMW 4 Cabrio G23 z elektrycznym miękkim dachem otwierającym się w 18 sekund to najromantyczniejszy wybór na ciepłe wesela. Przyjedź pod kościół lub plener z wiatrem we włosach – zdjęcia będą zachwycające.',
+      'BMW 4 Cabrio G23 to ucieleśnienie romantyzmu i prestiżu – idealne dla Par, które pragną wyróżnić się w wielkim dniu. Elektryczny miękki dach otwiera się w zaledwie 18 sekund, a ekskluzywna koniakowa tapicerka skórzana tworzy wyjątkową, ciepłą atmosferę w kabinie. Stylowy pakiet zewnętrzny Maxton Design nadaje kabrioletowi agresywnego, sportowego charakteru, który zachwyci każdego gościa i zagwarantuje zjawiskowe zdjęcia ślubne.',
     features: [
       'Elektryczny dach miękki – otwiera się w 18 sek.',
+      'Luksusowa tapicerka skórzana w kolorze koniaku',
+      'Pakiet aerodynamiczny Maxton Design',
       'Jazda z odkrytym dachem do 50 km/h',
-      'Skórzana tapicerka w jasnym kolorze',
-      'System audio Hi-Fi BMW',
       'Podgrzewane fotele i ogrzewanie szyi',
+      'System audio Hi-Fi BMW',
     ],
   },
 ]
@@ -46,7 +50,16 @@ export default function FleetSection() {
         <div className="fleet__grid">
           {cars.map((car) => (
             <article className="fleet-card" key={car.id}>
-              <div className="fleet-card__emoji" aria-hidden="true">{car.emoji}</div>
+              <div className="fleet-card__image-wrap">
+                <img
+                  src={car.image}
+                  alt={car.imageAlt}
+                  className="fleet-card__image"
+                  loading="lazy"
+                  width="800"
+                  height="534"
+                />
+              </div>
               <div className="fleet-card__body">
                 <p className="fleet-card__subtitle">{car.subtitle}</p>
                 <h3 className="fleet-card__title">{car.name}</h3>
