@@ -27,8 +27,7 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://autodoslubuwarszawa.pl' },
-    { '@type': 'ListItem', position: 2, name: 'Galeria pojazdów', item: 'https://autodoslubuwarszawa.pl/flota/bmw-4-cabrio' },
-    { '@type': 'ListItem', position: 3, name: 'BMW 4 Cabrio G23', item: 'https://autodoslubuwarszawa.pl/flota/bmw-4-cabrio' },
+    { '@type': 'ListItem', position: 2, name: 'BMW 4 Cabrio G23', item: 'https://autodoslubuwarszawa.pl/flota/bmw-4-cabrio' },
   ],
 }
 
