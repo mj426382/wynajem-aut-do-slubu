@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 const cars = [
   {
     id: 1,
-    image: 'https://github.com/user-attachments/assets/377f8ea3-0177-4a87-9cdf-f73ca58b73dd',
-    imageAlt: 'BMW 650i xDrive Gran Coupé – luksusowe auto do ślubu udekorowane białymi kwiatami',
+    slug: 'bmw-650i-gran-coupe',
+    image: 'https://github.com/user-attachments/assets/6c36b836-e7fb-4ee4-8de3-a218fe13ee09',
+    imageAlt: 'BMW 650i xDrive Gran Coupé – luksusowe auto do ślubu udekorowane białymi kwiatami przed kościołem',
     name: 'BMW 650i xDrive Gran Coupé (F06)',
     subtitle: 'Auto do ślubu Radom i Warszawa',
     description:
@@ -20,6 +21,7 @@ const cars = [
   },
   {
     id: 2,
+    slug: 'bmw-4-cabrio',
     image: 'https://github.com/user-attachments/assets/eaa61a2e-36d7-4787-8f85-37ab038848ff',
     imageAlt: 'BMW 4 Cabrio G23 – białe auto ślubne z odkrytym dachem przed kościołem',
     name: 'BMW 4 Cabrio (G23)',
@@ -69,9 +71,14 @@ export default function FleetSection() {
                     <li className="fleet-card__feature" key={i}>{f}</li>
                   ))}
                 </ul>
-                <Link to="/kontakt" className="btn btn-primary" style={{ display: 'block', textAlign: 'center' }}>
-                  Zapytaj o dostępność
-                </Link>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <Link to={`/flota/${car.slug}`} className="btn btn-outline" style={{ display: 'block', textAlign: 'center' }}>
+                    📸 Zobacz galerię
+                  </Link>
+                  <Link to="/kontakt" className="btn btn-primary" style={{ display: 'block', textAlign: 'center' }}>
+                    Zapytaj o dostępność
+                  </Link>
+                </div>
               </div>
             </article>
           ))}

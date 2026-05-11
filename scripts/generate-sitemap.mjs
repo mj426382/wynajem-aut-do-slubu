@@ -17,6 +17,8 @@ const staticPages = [
   { path: '/auto-do-slubu-radom',       priority: '0.9', changefreq: 'monthly', lastmod: TODAY },
   { path: '/auto-do-slubu-warszawa',    priority: '0.9', changefreq: 'monthly', lastmod: TODAY },
   { path: '/auto-do-slubu-mazowieckie', priority: '0.8', changefreq: 'monthly', lastmod: TODAY },
+  { path: '/flota/bmw-650i-gran-coupe', priority: '0.8', changefreq: 'monthly', lastmod: TODAY },
+  { path: '/flota/bmw-4-cabrio',        priority: '0.8', changefreq: 'monthly', lastmod: TODAY },
   { path: '/kontakt',                   priority: '0.7', changefreq: 'yearly',  lastmod: TODAY },
   { path: '/blog',                      priority: '0.7', changefreq: 'weekly',  lastmod: TODAY },
 ]
