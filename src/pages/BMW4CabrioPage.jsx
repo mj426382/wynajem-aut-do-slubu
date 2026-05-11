@@ -182,7 +182,7 @@ export default function BMW4CabrioPage() {
               </p>
               <div className="hero__cta" style={{ marginTop: '2rem' }}>
                 <a href="tel:+48881358838" className="btn btn-primary">📞 +48 881 358 838</a>
-                <Link to="/kontakt" className="btn btn-outline">✉️ Formularz kontaktowy</Link>
+                <Link to="/kontakt" className="btn btn-gold-outline">✉️ Formularz kontaktowy</Link>
               </div>
             </div>
             <div className="car-specs__features">

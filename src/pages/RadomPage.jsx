@@ -38,7 +38,7 @@ const faqSchema = {
       name: 'Ile kosztuje wynajem auta do ślubu w Radomiu?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ceny wynajmu auta do ślubu w Radomiu zaczynają się od 800 zł za pakiet podstawowy (3 godziny z szoferem). W cenie zawsze zawarta jest dekoracja florystyczna i postój na sesję zdjęciową.',
+        text: 'Ceny wynajmu auta do ślubu w Radomiu zaczynają się od 1200 zł za pakiet podstawowy (3 godziny z szoferem). W cenie zawsze zawarta jest dekoracja florystyczna i postój na sesję zdjęciową.',
       },
     },
     {
@@ -54,7 +54,7 @@ const faqSchema = {
       name: 'Jaki obszar obejmuje wynajem auta do ślubu z Radomia?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Obsługujemy wynajem auta do ślubu z Radomia w promieniu 50 km bez dopłat — Kozienice, Białobrzegi, Zwoleń, Pionki, Grójec, Nowe Miasto nad Pilicą i okolice.',
+        text: 'Obsługujemy wynajem auta do ślubu z Radomia w promieniu 20 km bez dopłat — Kozienice, Białobrzegi, Zwoleń, Pionki, Grójec, Nowe Miasto nad Pilicą i okolice.',
       },
     },
   ],
@@ -70,7 +70,7 @@ export default function RadomPage() {
     <>
       <SEO
         title="Auto do Ślubu Radom — BMW z Szoferem | AutoDoŚlubu Warszawa & Radom"
-        description="Wynajem luksusowego auta do ślubu w Radomiu. BMW 650i Gran Coupé i BMW 4 Cabrio z eleganckim szoferem. Bezpłatna dekoracja kwiatowa. Obsługujemy Radom i okolice 50 km. ☎ +48 881 358 838"
+        description="Wynajem luksusowego auta do ślubu w Radomiu. BMW 650i Gran Coupé i BMW 4 Cabrio z eleganckim szoferem. Bezpłatna dekoracja kwiatowa. Obsługujemy Radom i okolice 20 km. ☎ +48 881 358 838"
         canonical="https://autodoslubuwarszawa.pl/auto-do-slubu-radom"
       />
       <Helmet>
@@ -129,7 +129,7 @@ export default function RadomPage() {
                 <li>✅ Bezpłatna dekoracja florystyczna w cenie wynajmu</li>
                 <li>✅ Postój na sesję zdjęciową — bez pośpiechu</li>
                 <li>✅ Dwa luksusowe BMW do wyboru</li>
-                <li>✅ Bezpłatny dojazd w promieniu 50 km od Radomia</li>
+                <li>✅ Bezpłatny dojazd w promieniu 20 km od Radomia</li>
                 <li>✅ Rezerwacja z potwierdzeniem zadatkiem</li>
               </ul>
 
@@ -158,7 +158,7 @@ export default function RadomPage() {
 
               <h3>Obszar obsługi — Radom i okolice</h3>
               <p>
-                Wynajem auta do ślubu z Radomia obejmuje całą okolicę bez dopłat w promieniu 50 km.
+                Wynajem auta do ślubu z Radomia obejmuje całą okolicę bez dopłat w promieniu 20 km.
                 Obsługujemy między innymi:
               </p>
               <div className="location-cities">
@@ -176,7 +176,7 @@ export default function RadomPage() {
                 <a href="tel:+48881358838" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
                   📞 +48 881 358 838
                 </a>
-                <Link to="/kontakt" className="btn btn-outline" style={{ display: 'block', textAlign: 'center' }}>
+                <Link to="/kontakt" className="btn btn-gold-outline" style={{ display: 'block', textAlign: 'center' }}>
                   ✉️ Formularz kontaktowy
                 </Link>
                 <hr style={{ margin: '1.5rem 0', borderColor: 'var(--gold)', opacity: 0.3 }} />
@@ -185,7 +185,7 @@ export default function RadomPage() {
                   <li>💐 Bezpłatna dekoracja kwiatowa</li>
                   <li>📸 Postój na sesję zdjęciową</li>
                   <li>👨‍✈️ Elegancki szofer w cenie</li>
-                  <li>📍 50 km od Radomia bez dopłat</li>
+                  <li>📍 20 km od Radomia bez dopłat</li>
                 </ul>
               </div>
               <div className="location-sidebar__rating">
