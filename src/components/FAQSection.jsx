@@ -5,7 +5,7 @@ const faqs = [
   {
     question: 'Ile kosztuje wynajem auta do ślubu w Radomiu lub Warszawie?',
     answer:
-      'Ceny wynajmu auta do ślubu w Radomiu i Warszawie zaczynają się od 800 zł za pakiet podstawowy (3 godziny z szoferem). Koszt wynajmu BMW 650i xDrive Gran Coupé lub BMW 4 Cabrio zależy od czasu trwania i trasy. W cenie zawsze zawarta jest dekoracja kwiatowa auta, elegancko ubrany szofer oraz postój na sesję zdjęciową. Skontaktuj się z nami po indywidualną wycenę.',
+      'Ceny wynajmu auta do ślubu w Radomiu i Warszawie zaczynają się od 1200 zł za pakiet podstawowy (3 godziny z szoferem). Koszt wynajmu BMW 650i xDrive Gran Coupé lub BMW 4 Cabrio zależy od czasu trwania i trasy. W cenie zawsze zawarta jest dekoracja kwiatowa auta, elegancko ubrany szofer oraz postój na sesję zdjęciową. Skontaktuj się z nami po indywidualną wycenę.',
   },
   {
     question: 'Jak wcześnie trzeba rezerwować samochód do ślubu?',
@@ -20,7 +20,7 @@ const faqs = [
   {
     question: 'Jaki obszar obejmuje wynajem auta do ślubu?',
     answer:
-      'Obsługujemy wynajem auta do ślubu w Radomiu, Warszawie i całym województwie mazowieckim — m.in. Grójec, Kozienice, Białobrzegi, Zwoleń, Pionki, Nowe Miasto nad Pilicą. Bezpłatny dojazd do 50 km od Radomia lub Warszawy. Poza tym promieniem naliczana jest opłata 3 zł/km. Obsługujemy też wesela w województwach łódzkim, świętokrzyskim i lubelskim.',
+      'Obsługujemy wynajem auta do ślubu w Radomiu, Warszawie i całym województwie mazowieckim — m.in. Grójec, Kozienice, Białobrzegi, Zwoleń, Pionki, Nowe Miasto nad Pilicą. Bezpłatny dojazd do 20 km od Radomia lub Warszawy. Poza tym promieniem naliczana jest opłata 3 zł/km. Obsługujemy też wesela w województwach łódzkim, świętokrzyskim i lubelskim.',
   },
   {
     question: 'Czy mogę zamówić kilka aut do ślubu (kortez weselny)?',

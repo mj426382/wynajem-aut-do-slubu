@@ -42,15 +42,15 @@ const faqSchema = {
       name: 'Czy obsługujecie wynajem auta do ślubu poza Radomiem i Warszawą?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tak! Obsługujemy wynajem auta do ślubu w całym województwie mazowieckim — Grójec, Kozienice, Białobrzegi, Zwoleń, Pionki, Szydłowiec, Przysucha i wiele innych miast. Bezpłatny dojazd w promieniu 50 km od Radomia lub Warszawy.',
+        text: 'Tak! Obsługujemy wynajem auta do ślubu w całym województwie mazowieckim — Grójec, Kozienice, Białobrzegi, Zwoleń, Pionki, Szydłowiec, Przysucha i wiele innych miast. Bezpłatny dojazd w promieniu 20 km od Radomia lub Warszawy.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Jakie są koszty dojazdu poza 50 km od Radomia lub Warszawy?',
+      name: 'Jakie są koszty dojazdu poza 20 km od Radomia lub Warszawy?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Poza promieniem 50 km naliczamy opłatę 3 zł/km. Obsługujemy też województwa sąsiednie: łódzkie, świętokrzyskie i lubelskie. Skontaktuj się z nami po indywidualną wycenę.',
+        text: 'Poza promieniem 20 km naliczamy opłatę 3 zł/km. Obsługujemy też województwa sąsiednie: łódzkie, świętokrzyskie i lubelskie. Skontaktuj się z nami po indywidualną wycenę.',
       },
     },
     {
@@ -150,7 +150,7 @@ export default function MazowieckiePage() {
                 <li>✅ Wynajem BMW z szoferem na całe Mazowsze</li>
                 <li>✅ Bezpłatna dekoracja florystyczna w każdym pakiecie</li>
                 <li>✅ Postój na sesję zdjęciową w wybranym miejscu</li>
-                <li>✅ Bezpłatny dojazd w promieniu 50 km od Radomia lub Warszawy</li>
+                <li>✅ Bezpłatny dojazd w promieniu 20 km od Radomia lub Warszawy</li>
                 <li>✅ Korteze weselne — kilka aut naraz</li>
                 <li>✅ Obsługa wesel w województwach sąsiednich</li>
               </ul>
@@ -204,7 +204,7 @@ export default function MazowieckiePage() {
                 <a href="tel:+48881358838" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
                   📞 +48 881 358 838
                 </a>
-                <Link to="/kontakt" className="btn btn-outline" style={{ display: 'block', textAlign: 'center' }}>
+                <Link to="/kontakt" className="btn btn-gold-outline" style={{ display: 'block', textAlign: 'center' }}>
                   ✉️ Formularz kontaktowy
                 </Link>
                 <hr style={{ margin: '1.5rem 0', borderColor: 'var(--gold)', opacity: 0.3 }} />
@@ -213,7 +213,7 @@ export default function MazowieckiePage() {
                   <li>💐 Bezpłatna dekoracja kwiatowa</li>
                   <li>📸 Postój na sesję zdjęciową</li>
                   <li>👨‍✈️ Elegancki szofer w cenie</li>
-                  <li>🗺️ Całe Mazowsze bez dopłat w 50 km</li>
+                  <li>🗺️ Całe Mazowsze bez dopłat w 20 km</li>
                 </ul>
               </div>
               <div className="location-sidebar__rating">

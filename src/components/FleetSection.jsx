@@ -72,7 +72,7 @@ export default function FleetSection() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <Link to={`/flota/${car.slug}`} className="btn btn-outline" style={{ display: 'block', textAlign: 'center' }}>
+                  <Link to={`/flota/${car.slug}`} className="btn btn-gold-outline" style={{ display: 'block', textAlign: 'center' }}>
                     📸 Zobacz galerię
                   </Link>
                   <Link to="/kontakt" className="btn btn-primary" style={{ display: 'block', textAlign: 'center' }}>

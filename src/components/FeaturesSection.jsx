@@ -12,7 +12,7 @@ const features = [
   {
     icon: '📍',
     title: 'Auto do ślubu Radom i Warszawa',
-    desc: 'Wynajmujemy auto do ślubu w Radomiu, Warszawie i całym województwie mazowieckim. Obsługujemy również Grójec, Kozienice, Białobrzegi, Zwoleń i okolice bez dopłat w promieniu 50 km.',
+    desc: 'Wynajmujemy auto do ślubu w Radomiu, Warszawie i całym województwie mazowieckim. Obsługujemy również Grójec, Kozienice, Białobrzegi, Zwoleń i okolice bez dopłat w promieniu 20 km.',
   },
   {
     icon: '🕐',

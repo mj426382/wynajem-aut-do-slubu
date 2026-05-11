@@ -165,7 +165,7 @@ export default function WarszawaPage() {
 
               <h3>Obszar obsługi — Warszawa i okolice</h3>
               <p>
-                Obsługujemy wynajem auta do ślubu w całej Warszawie i aglomeracji bez dopłat w promieniu 50 km:
+                Obsługujemy wynajem auta do ślubu w całej Warszawie i aglomeracji bez dopłat w promieniu 20 km:
               </p>
               <div className="location-cities">
                 {warsawCities.map((city) => (
@@ -182,7 +182,7 @@ export default function WarszawaPage() {
                 <a href="tel:+48881358838" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
                   📞 +48 881 358 838
                 </a>
-                <Link to="/kontakt" className="btn btn-outline" style={{ display: 'block', textAlign: 'center' }}>
+                <Link to="/kontakt" className="btn btn-gold-outline" style={{ display: 'block', textAlign: 'center' }}>
                   ✉️ Formularz kontaktowy
                 </Link>
                 <hr style={{ margin: '1.5rem 0', borderColor: 'var(--gold)', opacity: 0.3 }} />
