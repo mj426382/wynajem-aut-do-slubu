@@ -1,9 +1,22 @@
-﻿User-agent: *
+﻿# robots.txt for autodoslubuwarszawa.pl
+User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://autodoslubuwarszawa.pl/sitemap.xml
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
 
-# Blokuj niepotrzebne zasoby
-Disallow: /src/
-Disallow: /.vite/
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+Disallow: /api/
+
+Sitemap: https://autodoslubuwarszawa.pl/sitemap.xml

@@ -5,6 +5,12 @@
       "has": [{ "type": "host", "value": "autodosluburadom.pl" }],
       "destination": "https://autodoslubuwarszawa.pl/$1",
       "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.autodoslubuwarszawa.pl" }],
+      "destination": "https://autodoslubuwarszawa.pl/$1",
+      "statusCode": 308
     }
   ],
   "rewrites": [
