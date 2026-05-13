@@ -11,6 +11,18 @@
       "has": [{ "type": "host", "value": "www.autodoslubuwarszawa.pl" }],
       "destination": "https://autodoslubuwarszawa.pl/$1",
       "statusCode": 308
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.autodosluburadom.pl" }],
+      "destination": "https://autodoslubuwarszawa.pl/$1",
+      "statusCode": 308
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "wynajem-aut-do-slubu.vercel.app" }],
+      "destination": "https://autodoslubuwarszawa.pl/$1",
+      "statusCode": 308
     }
   ],
   "rewrites": [
