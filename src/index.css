@@ -971,6 +971,18 @@ p:last-child { margin-bottom: 0; }
 
 .blog-post__content strong { color: var(--dark); }
 
+.blog-post__content a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.blog-post__content a:hover {
+  color: var(--dark);
+}
+
 .blog-post__cta {
   background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
   border-radius: var(--radius-lg);
