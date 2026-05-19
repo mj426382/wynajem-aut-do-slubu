@@ -38,4 +38,6 @@ export const content = `
 <p>Sezon ślubny w Piasecznie może być bardzo intensywny, dlatego warto jak najszybciej zarezerwować wymarzone auto. Nasze BMW cieszą się dużym zainteresowaniem, więc im wcześniej skontaktujecie się z nami, tym większa szansa, że Wasz termin będzie dostępny.</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

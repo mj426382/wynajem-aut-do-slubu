@@ -106,4 +106,6 @@ export const content = `
 <h2>Podsumowanie</h2>
 
 <p>Dobrze zorganizowany kortez weselny to jeden z najbardziej efektownych elementów ślubu. Wymaga profesjonalnej koordynacji, doświadczonych szoferów i starannego planowania tras. AutoDoŚlubu Warszawa & Radom oferuje kompleksową usługę organizacji korteza – od konsultacji, przez trasę, aż po sesję zdjęciową. Daj się zachwycić elegancji ruchu w najczystszej postaci.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

@@ -88,4 +88,6 @@ export const content = `
 <h2>Podsumowanie</h2>
 
 <p>Wynajem luksusowego auta do ślubu w Warszawie to inwestycja, która przyniesie niezapomniane wspomnienia. Profesjonalny szofer, elegancki pojazd i bezstresowy przejazd to fundament udanego dnia ślubu. AutoDoŚlubu Warszawa & Radom zapewni Wam wszystko, czego potrzeba, aby ten dzień był naprawdę wyjątkowy.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

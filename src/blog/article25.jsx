@@ -44,4 +44,6 @@ export const content = `
 <p>Aby mieć pewność, że wymarzone <strong>BMW</strong> będzie dostępne w dniu Waszego ślubu, rekomendujemy dokonanie rezerwacji z wyprzedzeniem. Sezon ślubny to czas, gdy luksusowe auta cieszą się dużą popularnością, dlatego warto działać szybko. W Złotej Karecie umożliwiamy Wam łatwą i wygodną rezerwację online lub telefonicznie.</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

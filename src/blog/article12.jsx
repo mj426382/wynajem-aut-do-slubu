@@ -30,4 +30,6 @@ export const content = `
 <p>Sezon ślubny w pełni, dlatego kluczem do sukcesu jest wcześniejsza rezerwacja. Rekomendujemy, aby wynajem auta do ślubu w Pionkach zarezerwować minimum 6 miesięcy przed planowaną datą. Dzięki temu macie pewność, że wymarzone BMW będzie dostępne właśnie dla Was.</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

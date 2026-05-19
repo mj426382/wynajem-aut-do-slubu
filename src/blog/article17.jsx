@@ -32,4 +32,6 @@ export const content = `
 <p>Sezon ślubny w Wilanowie jest bardzo intensywny, dlatego warto zarezerwować wymarzone BMW z odpowiednim wyprzedzeniem. Dzięki temu zyskacie pewność, że Wasz ślub będzie dopięty na ostatni guzik. Dodatkowo Złota Kareta oferuje bezpłatny dojazd w promieniu 50 km od Warszawy, co czyni ofertę jeszcze bardziej atrakcyjną.</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `
