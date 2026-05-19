@@ -36,4 +36,6 @@ export const content = `
 <p>Kluczowym krokiem w planowaniu ślubu jest wcześniejsza rezerwacja auta. Warto zrobić to jak najwcześniej, aby mieć pewność, że wymarzony model będzie dostępny w Waszym terminie. Zwłaszcza w sezonie ślubnym, kiedy popyt na luksusowe samochody znacząco rośnie.</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

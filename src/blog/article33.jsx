@@ -44,4 +44,6 @@ export const content = `
 <p>Wasz ślub w Nowym Mieście nad Pilicą zasługuje na oprawę pełną klasy i luksusu. Wybierając BMW od Złotej Karety, możecie być pewni, że Wasz dzień będzie jeszcze bardziej wyjątkowy. Sprawdźcie naszą ofertę i przekonajcie się, dlaczego zaufało nam już tyle Par Młodych.</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

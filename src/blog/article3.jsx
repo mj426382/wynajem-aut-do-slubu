@@ -112,4 +112,6 @@ export const content = `
 <p>Wybór auta do ślubu powinien być przemyślaną decyzją, uwzględniającą styl wesela, liczbę osób, porę roku i Wasze indywidualne preferencje. Nie kierujcie się wyłącznie ceną – na ślubie liczy się każdy detal, a eleganckie auto to inwestycja w niezapomniane wspomnienia.</p>
 
 <p>Zapraszamy do kontaktu ze Złotą Karetą. Chętnie pomożemy Wam wybrać idealne auto i zorganizujemy Wasz ślubny przejazd w najdrobniejszych szczegółach. Zadzwoń: +48 881 358 838.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

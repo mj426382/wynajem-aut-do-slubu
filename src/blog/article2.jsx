@@ -91,4 +91,6 @@ export const content = `
 <p>Zapraszamy do kontaktu telefonicznego pod numer +48 881 358 838 lub przez formularz kontaktowy na stronie. Chętnie omówimy szczegóły Waszego ślubu i zaproponujemy najlepsze rozwiązanie.</p>
 
 <p>Rezerwujcie z wyprzedzeniem – terminy na sezon 2025 już teraz są wypełniane. Nie ryzykujcie, że Wasze wymarzone auto będzie niedostępne na Wasz dzień!</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

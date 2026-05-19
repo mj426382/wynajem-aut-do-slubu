@@ -37,4 +37,6 @@ export const content = `
 <p>BMW to synonim luksusu, klasy i niezawodności. Nasze modele łączą w sobie nowoczesny design, wyjątkowy komfort oraz doskonałe osiągi. Niezależnie od tego, czy wybierzecie eleganckie Gran Coupé, czy stylowe Cabrio, możecie być pewni, że Wasz przyjazd na ceremonię ślubną zrobi niezapomniane wrażenie na wszystkich gościach.</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

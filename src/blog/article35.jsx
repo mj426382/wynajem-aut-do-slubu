@@ -35,4 +35,6 @@ export const content = `
 <p>Sezon ślubny w Ostrowcu Świętokrzyskim, podobnie jak w innych miejscowościach, przypada na miesiące wiosenne i letnie. Aby mieć pewność, że wymarzone BMW będzie dostępne na Wasz termin, zalecamy dokonanie rezerwacji z wyprzedzeniem. Już teraz możecie skontaktować się z nami, by zarezerwować auto i skupić się na pozostałych przygotowaniach.</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

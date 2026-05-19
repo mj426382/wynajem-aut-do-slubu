@@ -32,4 +32,6 @@ export const content = `
 <p>Wynajem luksusowego auta ślubnego w Radzyminie jest prostszy, niż myślicie. Wystarczy, że skontaktujecie się z Złotą Karetą, aby sprawdzić dostępność terminów i ustalić szczegóły. Pamiętajcie, że oferujemy bezpłatny dojazd w promieniu 50 km od Radomia lub Warszawy, co obejmuje również Radzymin.</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

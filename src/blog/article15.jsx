@@ -27,4 +27,6 @@ export const content = `
 <p>Dla par szukających spokojnego, mniej zatłoczonego miejsca, Park Skaryszewski to świetna alternatywa. Tętniąca zielenią przestrzeń to doskonałe tło dla zdjęć z BMW 4 Cabrio, szczególnie w okresie wiosny i lata.</p>
 <p>Oczywiście, to tylko kilka z wielu fantastycznych miejsc w Warszawie. Każda para ma swoje wyjątkowe marzenia i potrzeby, dlatego zawsze warto zastanowić się, jakie miejsce najlepiej odda charakter Waszego ślubu.</p>
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `

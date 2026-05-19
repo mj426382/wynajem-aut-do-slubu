@@ -101,9 +101,11 @@ jobs:
               "5. Długość: 500-700 słów w formacie HTML (pole 'content').\n"
               "6. Format pola 'content': czysty HTML — używaj <h2>, <h3>, <p>, <ul><li>, <strong>.\n"
               "   NIE używaj Markdown (##, **, -).\n"
-              "7. Zakończ artykuł wezwaniem do działania z linkiem do strony kontaktowej:\n"
+              "7. Zakończ artykuł wezwaniem do działania z linkiem do strony kontaktowej, "
+              "a BEZPOŚREDNIO po nim (jako ostatni element treści) dodaj link do strony głównej:\n"
               "   <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? "
               "<a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>\n"
+              "   <p>Sprawdź naszą pełną ofertę na <a href='/'>stronie głównej Złotej Karety</a>.</p>\n"
               "8. slug: tylko małe litery ASCII, myślniki zamiast spacji, bez polskich znaków, max 60 znaków.\n"
               "9. tags: 3-5 tagów — konkretne, po polsku.\n"
               "10. readTime: format '7 min' (szacuj 200 słów/minutę).\n"
@@ -133,7 +135,8 @@ jobs:
               '  "title": "Tytuł SEO 55-70 znaków z główną frazą kluczową",\n'
               '  "excerpt": "Opis 140-160 znaków z główną frazą SEO. Zachęca do przeczytania.",\n'
               '  "content": "Treść 500-700 słów w czystym HTML. Używaj <h2> <h3> <p> <ul> <li> <strong>. '
-              'Zakończ CTA z linkiem do /kontakt.",\n'
+              'Zakończ CTA z linkiem do /kontakt, a na samym końcu (ostatni element) dodaj: '
+              '<p>Sprawdź naszą pełną ofertę na <a href=\\"/\\">stronie głównej Złotej Karety</a>.</p>",\n'
               '  "emoji": "🌹",\n'
               f'  "date": "{date_str}",\n'
               '  "readTime": "6 min",\n'

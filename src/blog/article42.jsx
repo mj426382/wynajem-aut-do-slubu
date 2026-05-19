@@ -45,4 +45,6 @@ export const content = `
 <p>Nasze doświadczenie w organizacji transportu ślubnego gwarantuje, że Wasz dzień będzie wyjątkowy pod każdym względem!</p>
 
 <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej Złotej Karety</a>.</p>
 `
