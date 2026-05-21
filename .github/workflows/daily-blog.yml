@@ -23,8 +23,9 @@ jobs:
         run: |
           pip install requests -q
           python3 << 'PYEOF'
-          import os, json, requests, re, sys, subprocess
+          import os, json, requests, re, sys, subprocess, unicodedata
           from datetime import datetime
+          from difflib import SequenceMatcher
           from pathlib import Path
 
           def run(cmd):
@@ -65,14 +66,18 @@ jobs:
           # ── Gather existing posts ────────────────────────────────────────────
           existing_titles = []
           existing_slugs = []
+          existing_excerpts = []
           for jsx_file in sorted(posts_dir.glob("article*.jsx")):
               text = jsx_file.read_text(encoding="utf-8")
               m = re.search(r"export\s+const\s+title\s*=\s*['\"]([^'\"]+)['\"]", text)
               s = re.search(r"export\s+const\s+slug\s*=\s*['\"]([^'\"]+)['\"]", text)
+              e = re.search(r"export\s+const\s+excerpt\s*=\s*['\"]([^'\"]+)['\"]", text)
               if m:
                   existing_titles.append(m.group(1))
               if s:
                   existing_slugs.append(s.group(1))
+              if e:
+                  existing_excerpts.append(e.group(1))
 
           # Determine next article number
           nums = [
@@ -224,6 +229,50 @@ jobs:
               print(f"JSON parse error: {e}\nRaw: {raw[:500]}"); sys.exit(1)
 
           slug = article["slug"]
+
+          # ── Content deduplication check ──────────────────────────────────────
+          def normalize(text):
+              """Lowercase, strip accents, collapse whitespace for fair comparison."""
+              text = text.lower()
+              text = unicodedata.normalize("NFKD", text)
+              text = "".join(c for c in text if not unicodedata.combining(c))
+              return re.sub(r"\s+", " ", text).strip()
+
+          def max_similarity(candidate, corpus):
+              """Return the highest SequenceMatcher ratio between candidate and any corpus item."""
+              c = normalize(candidate)
+              best = 0.0
+              for item in corpus:
+                  ratio = SequenceMatcher(None, c, normalize(item)).ratio()
+                  if ratio > best:
+                      best = ratio
+              return best
+
+          TITLE_THRESHOLD = 0.80   # 80% similarity → reject
+          EXCERPT_THRESHOLD = 0.75 # 75% similarity → reject
+
+          new_title = article.get("title", "")
+          new_excerpt = article.get("excerpt", "")
+
+          title_sim = max_similarity(new_title, existing_titles)
+          excerpt_sim = max_similarity(new_excerpt, existing_excerpts)
+
+          print(f"🔍 Podobieństwo tytułu:    {title_sim:.2%}")
+          print(f"🔍 Podobieństwo excerpta:  {excerpt_sim:.2%}")
+
+          if title_sim >= TITLE_THRESHOLD:
+              print(
+                  f"⛔ DUPLIKAT TYTUŁU (podobieństwo {title_sim:.2%} ≥ {TITLE_THRESHOLD:.0%}) — "
+                  f"pominięto artykuł '{new_title}'. Temat pozostaje w kolejce."
+              )
+              sys.exit(1)
+
+          if excerpt_sim >= EXCERPT_THRESHOLD:
+              print(
+                  f"⛔ DUPLIKAT TREŚCI (podobieństwo excerpta {excerpt_sim:.2%} ≥ {EXCERPT_THRESHOLD:.0%}) — "
+                  f"pominięto artykuł '{new_title}'. Temat pozostaje w kolejce."
+              )
+              sys.exit(1)
 
           # ── Validation ───────────────────────────────────────────────────────
           if slug in existing_slugs:
