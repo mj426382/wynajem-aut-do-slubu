@@ -3,7 +3,7 @@ export const title = 'Wynajem Auta do Ślubu w Kozienicach – Luksus na Wasz Dz
 export const date = '2026-04-07'
 export const readTime = '6 min'
 export const category = 'Mazowsze'
-export const excerpt = 'Szukacie idealnego auta do ślubu w Kozienicach? Odkryjcie luksusowe BMW, które doda elegancji Waszemu wyjątkowemu dniu.'
+export const excerpt = 'BMW 650i dojedzie do Kozienic w ramach bezpłatnego zasięgu z Radomia. Sprawdź, jak zaplanować transport ślubny i ile kosztuje wynajem na Mazowszu.'
 export const emoji = '🚗'
 export const tags = ['Kozienice', 'auto do ślubu Kozienice', 'BMW Kozienice', 'ślub Mazowsze']
 

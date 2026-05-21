@@ -3,7 +3,7 @@ export const title = 'Wynajem Auta do Ślubu w Pruszkowie – Luksus i Styl'
 export const date = '2026-04-06'
 export const readTime = '6 min'
 export const category = 'Mazowsze'
-export const excerpt = 'Planujecie ślub w Pruszkowie? Sprawdź, jak wynająć luksusowe BMW na ten wyjątkowy dzień i dlaczego warto postawić na Złotą Karetę.'
+export const excerpt = 'Pruszków, 20 minut od centrum Warszawy — BMW 650i lub BMW 4 Cabrio Złotej Karety dojedzie bezpłatnie. Szofer, dekoracja i sesja zdjęciowa w cenie.'
 export const emoji = '🌹'
 export const tags = ['wynajem auta do ślubu', 'ślub w Pruszkowie', 'BMW do ślubu', 'auto na wesele']
 

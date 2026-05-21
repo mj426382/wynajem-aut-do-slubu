@@ -1,0 +1,686 @@
+{
+  "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
+  "pending": [
+    {
+      "id": "poradnik-budzet-auto",
+      "slug_hint": "ile-kosztuje-auto-do-slubu-budzet-2026",
+      "title_hint": "Ile Kosztuje Auto do Ślubu? Kompletny Cennik i Budżet na 2026",
+      "category": "Porady",
+      "intent_group": "advice_budget",
+      "priority": 1,
+      "focus_keyword": "ile kosztuje wynajem auta do ślubu"
+    },
+    {
+      "id": "warszawa-mokotow",
+      "slug_hint": "wynajem-auta-do-slubu-mokotow-warszawa",
+      "title_hint": "Wynajem Auta do Ślubu na Mokotowie – Luksusowe BMW w Eleganciej Dzielnicy",
+      "category": "Warszawa",
+      "intent_group": "district_mokotow",
+      "priority": 1,
+      "focus_keyword": "wynajem auta do ślubu Mokotów"
+    },
+    {
+      "id": "mazowsze-bialobrzegi",
+      "slug_hint": "wynajem-auta-do-slubu-bialobrzegi",
+      "title_hint": "Wynajem Auta do Ślubu w Białobrzegach – BMW z Radomia na Twój Dzień",
+      "category": "Radom",
+      "intent_group": "city_bialobrzegi",
+      "priority": 2,
+      "focus_keyword": "wynajem auta do ślubu Białobrzegi"
+    },
+    {
+      "id": "poradnik-slub-zimowy",
+      "slug_hint": "auto-do-slubu-zima-bmw-porady",
+      "title_hint": "Auto do Ślubu Zimą – Jak Zaplanować Luksusowy Transport w Sezonie Zimowym?",
+      "category": "Porady",
+      "intent_group": "advice_winter_wedding",
+      "priority": 2,
+      "focus_keyword": "auto do ślubu zimą"
+    },
+    {
+      "id": "warszawa-bielany",
+      "slug_hint": "wynajem-auta-do-slubu-bielany-warszawa",
+      "title_hint": "Wynajem Auta do Ślubu na Bielanach – BMW dla Par z Północy Warszawy",
+      "category": "Warszawa",
+      "intent_group": "district_bielany",
+      "priority": 2,
+      "focus_keyword": "wynajem auta do ślubu Bielany"
+    },
+    {
+      "id": "mazowsze-zwolen",
+      "slug_hint": "wynajem-auta-do-slubu-zwolen",
+      "title_hint": "Wynajem Auta do Ślubu w Zwoleniu – Eleganckie BMW z Radomia",
+      "category": "Radom",
+      "intent_group": "city_zwolen",
+      "priority": 2,
+      "focus_keyword": "wynajem auta do ślubu Zwoleń"
+    },
+    {
+      "id": "porownanie-bmw-vs-mercedes",
+      "slug_hint": "bmw-vs-mercedes-auto-do-slubu-porownanie",
+      "title_hint": "BMW vs Mercedes do Ślubu – Porównanie, Ceny i Opinie w 2026 Roku",
+      "category": "BMW",
+      "intent_group": "comparison_bmw_vs_mercedes",
+      "priority": 2,
+      "focus_keyword": "BMW vs Mercedes do ślubu"
+    },
+    {
+      "id": "mazowsze-sochaczew",
+      "slug_hint": "wynajem-auta-do-slubu-sochaczew",
+      "title_hint": "Wynajem Auta do Ślubu w Sochaczewie – BMW na Wasz Ślub w Mazowszu",
+      "category": "Mazowsze",
+      "intent_group": "city_sochaczew",
+      "priority": 3,
+      "focus_keyword": "wynajem auta do ślubu Sochaczew"
+    },
+    {
+      "id": "warszawa-bemowo",
+      "slug_hint": "wynajem-auta-do-slubu-bemowo-warszawa",
+      "title_hint": "Wynajem Auta do Ślubu na Bemowie – Luksus w Zachodniej Warszawie",
+      "category": "Warszawa",
+      "intent_group": "district_bemowo",
+      "priority": 3,
+      "focus_keyword": "wynajem auta do ślubu Bemowo"
+    },
+    {
+      "id": "poradnik-sesja-zdjeciowa-radom",
+      "slug_hint": "najlepsze-lokalizacje-sesji-z-auto-radom",
+      "title_hint": "Najlepsze Miejsca na Sesję Ślubną z BMW w Radomiu i Okolicach – Poradnik 2026",
+      "category": "Radom",
+      "intent_group": "photo_locations_radom",
+      "priority": 3,
+      "focus_keyword": "sesja zdjęciowa z autem ślubnym Radom"
+    },
+    {
+      "id": "mazowsze-blonie",
+      "slug_hint": "wynajem-auta-do-slubu-blonie",
+      "title_hint": "Wynajem Auta do Ślubu w Błoniu – BMW dla Par Blisko Warszawy",
+      "category": "Mazowsze",
+      "intent_group": "city_blonie",
+      "priority": 3,
+      "focus_keyword": "wynajem auta do ślubu Błonie"
+    },
+    {
+      "id": "poradnik-suknia-a-auto",
+      "slug_hint": "suknia-slubna-a-wybor-auta-praktyczne-porady",
+      "title_hint": "Suknia Ślubna a Wybór Auta – Jak Dopasować Pojazd do Stylu Panny Młodej?",
+      "category": "Porady",
+      "intent_group": "advice_dress_car_match",
+      "priority": 3,
+      "focus_keyword": "suknia ślubna a auto do ślubu"
+    },
+    {
+      "id": "bmw-interior-features",
+      "slug_hint": "wnetrze-bmw-650i-cabrio-na-slub-co-czeka",
+      "title_hint": "Wnętrze BMW 650i i BMW 4 Cabrio na Ślub – Co Cię Czeka Wewnątrz?",
+      "category": "BMW",
+      "intent_group": "bmw_interior",
+      "priority": 3,
+      "focus_keyword": "wnętrze BMW do ślubu"
+    },
+    {
+      "id": "mazowsze-szydlowiec",
+      "slug_hint": "wynajem-auta-do-slubu-szydlowiec",
+      "title_hint": "Wynajem Auta do Ślubu w Szydłowcu – Luksusowe BMW na Twój Wyjątkowy Dzień",
+      "category": "Radom",
+      "intent_group": "city_szydlowiec",
+      "priority": 4,
+      "focus_keyword": "wynajem auta do ślubu Szydłowiec"
+    },
+    {
+      "id": "warszawa-srodmiescie",
+      "slug_hint": "wynajem-auta-do-slubu-srodmiescie-warszawa",
+      "title_hint": "Wynajem Auta do Ślubu w Śródmieściu Warszawy – BMW w Sercu Stolicy",
+      "category": "Warszawa",
+      "intent_group": "district_srodmiescie",
+      "priority": 4,
+      "focus_keyword": "wynajem auta do ślubu Śródmieście Warszawa"
+    },
+    {
+      "id": "poradnik-kortez-cennik",
+      "slug_hint": "kortez-weselny-cennik-organizacja-2026",
+      "title_hint": "Kortez Weselny 2026 – Ile Kosztuje i Jak Zaplanować Orszak Ślubny?",
+      "category": "Planowanie",
+      "intent_group": "cortege_pricing",
+      "priority": 4,
+      "focus_keyword": "kortez weselny cennik 2026"
+    },
+    {
+      "id": "mazowsze-plock",
+      "slug_hint": "wynajem-auta-do-slubu-plock",
+      "title_hint": "Wynajem Auta do Ślubu w Płocku – BMW na Ślub w Sercu Mazowsza",
+      "category": "Mazowsze",
+      "intent_group": "city_plock",
+      "priority": 4,
+      "focus_keyword": "wynajem auta do ślubu Płock"
+    },
+    {
+      "id": "kosciol-matki-bozej-radom",
+      "slug_hint": "slub-kosciol-matki-bozej-fatimskiej-radom",
+      "title_hint": "Ślub w Kościele Matki Bożej Fatimskiej w Radomiu – Transport i Logistyka",
+      "category": "Radom",
+      "intent_group": "venue_church_radom_fatima",
+      "priority": 4,
+      "focus_keyword": "ślub kościół Radom transport"
+    },
+    {
+      "id": "trendy-weselne-2026",
+      "slug_hint": "trendy-weselne-2026-auta-dekoracje-styl",
+      "title_hint": "Trendy Weselne 2026 – Kolory, Dekoracje i Auta Ślubne, Które Będą Na Topie",
+      "category": "Trendy",
+      "intent_group": "trends_2026",
+      "priority": 4,
+      "focus_keyword": "trendy weselne 2026"
+    },
+    {
+      "id": "warszawa-wawer",
+      "slug_hint": "wynajem-auta-do-slubu-wawer-warszawa",
+      "title_hint": "Wynajem Auta do Ślubu na Wawrze – BMW dla Pary z Wschodniej Warszawy",
+      "category": "Warszawa",
+      "intent_group": "district_wawer",
+      "priority": 5,
+      "focus_keyword": "wynajem auta do ślubu Wawer"
+    },
+    {
+      "id": "mazowsze-jozefow",
+      "slug_hint": "wynajem-auta-do-slubu-jozefow",
+      "title_hint": "Wynajem Auta do Ślubu w Józefowie – Elegancja w Zielonym Mieście Koło Otwocka",
+      "category": "Mazowsze",
+      "intent_group": "city_jozefow",
+      "priority": 5,
+      "focus_keyword": "wynajem auta do ślubu Józefów"
+    },
+    {
+      "id": "poradnik-mikro-wesele",
+      "slug_hint": "micro-wedding-luksusowe-auto-bmw-porady",
+      "title_hint": "Micro-Wedding z Luksusowym BMW – Jak Zaplanować Kameralne Wesele w 2026?",
+      "category": "Trendy",
+      "intent_group": "advice_micro_wedding",
+      "priority": 5,
+      "focus_keyword": "micro wedding auto do ślubu"
+    },
+    {
+      "id": "mazowsze-pultusk",
+      "slug_hint": "wynajem-auta-do-slubu-pultusk",
+      "title_hint": "Wynajem Auta do Ślubu w Pułtusku – BMW w Mazowieckim Gnieździe Orlim",
+      "category": "Mazowsze",
+      "intent_group": "city_pultusk",
+      "priority": 5,
+      "focus_keyword": "wynajem auta do ślubu Pułtusk"
+    },
+    {
+      "id": "warszawa-bialoleka",
+      "slug_hint": "wynajem-auta-do-slubu-bialoleka-warszawa",
+      "title_hint": "Wynajem Auta do Ślubu na Białołęce – Luksusowe BMW dla Par z Północnej Warszawy",
+      "category": "Warszawa",
+      "intent_group": "district_bialoleka",
+      "priority": 5,
+      "focus_keyword": "wynajem auta do ślubu Białołęka"
+    },
+    {
+      "id": "poradnik-fotograf-i-auto",
+      "slug_hint": "jak-planowac-sesje-z-autem-slubnym-fotograf",
+      "title_hint": "Jak Zaplanować Sesję z Autem Ślubnym z Fotografem? Poradnik Krok po Kroku",
+      "category": "Planowanie",
+      "intent_group": "advice_photographer_car",
+      "priority": 6,
+      "focus_keyword": "sesja zdjęciowa z autem ślubnym"
+    },
+    {
+      "id": "mazowsze-sierpc",
+      "slug_hint": "wynajem-auta-do-slubu-sierpc",
+      "title_hint": "Wynajem Auta do Ślubu w Sierpcu – BMW na Ślub w Północnym Mazowszu",
+      "category": "Mazowsze",
+      "intent_group": "city_sierpc",
+      "priority": 6,
+      "focus_keyword": "wynajem auta do ślubu Sierpc"
+    },
+    {
+      "id": "kosciol-swietego-jana-radom",
+      "slug_hint": "slub-kosciol-sw-jana-radom-transport-auto",
+      "title_hint": "Ślub w Kościele Świętego Jana Chrzciciela w Radomiu – Jak Zorganizować Transport?",
+      "category": "Radom",
+      "intent_group": "venue_church_radom_jan",
+      "priority": 6,
+      "focus_keyword": "ślub kościół Radom BMW"
+    },
+    {
+      "id": "poradnik-sezon-slubny-kiedy-rezerwowac",
+      "slug_hint": "sezon-slubny-2026-kiedy-rezerwowac-auto",
+      "title_hint": "Sezon Ślubny 2026 – Kiedy Rezerwować Auto do Ślubu, Żeby Mieć Pewność Miejsca?",
+      "category": "Planowanie",
+      "intent_group": "advice_season_booking",
+      "priority": 6,
+      "focus_keyword": "sezon ślubny rezerwacja auta 2026"
+    },
+    {
+      "id": "warszawa-praga-polnoc",
+      "slug_hint": "wynajem-auta-do-slubu-praga-polnoc-warszawa",
+      "title_hint": "Wynajem Auta do Ślubu na Pradze Północ – BMW dla Pary z Prawobrzeżnej Warszawy",
+      "category": "Warszawa",
+      "intent_group": "district_praga_polnoc",
+      "priority": 7,
+      "focus_keyword": "wynajem auta do ślubu Praga Północ"
+    },
+    {
+      "id": "mazowsze-mszczonow",
+      "slug_hint": "wynajem-auta-do-slubu-mszczonow",
+      "title_hint": "Wynajem Auta do Ślubu w Mszczonowie – Eleganckie BMW na Mazowszu",
+      "category": "Mazowsze",
+      "intent_group": "city_mszczonow",
+      "priority": 7,
+      "focus_keyword": "wynajem auta do ślubu Mszczonów"
+    },
+    {
+      "id": "poradnik-transport-gosci",
+      "slug_hint": "transport-gosci-weselnych-organizacja-porady",
+      "title_hint": "Transport Gości Weselnych – Jak Zorganizować Logistykę dla Całej Rodziny?",
+      "category": "Planowanie",
+      "intent_group": "advice_guests_transport",
+      "priority": 7,
+      "focus_keyword": "transport gości weselnych"
+    },
+    {
+      "id": "bmw-historia-na-slubach",
+      "slug_hint": "dlaczego-bmw-jest-symbolem-luksusu-na-slubach",
+      "title_hint": "Dlaczego BMW Jest Symbolem Luksusu na Polskich Ślubach? Historia i Tradycja",
+      "category": "BMW",
+      "intent_group": "bmw_heritage",
+      "priority": 7,
+      "focus_keyword": "BMW symbol luksusu ślub"
+    }
+  ],
+  "published": [
+    {
+      "id": "warszawa-general",
+      "intent_group": "city_warszawa",
+      "slug": "wynajem-auta-do-slubu-warszawa",
+      "title": "Wynajem Auta do Ślubu w Warszawie – Poradnik 2025",
+      "article_file": "article1.jsx",
+      "date": "2025-03-15"
+    },
+    {
+      "id": "radom-general",
+      "intent_group": "city_radom",
+      "slug": "wynajem-auta-do-slubu-radom",
+      "title": "Wynajem Auta do Ślubu w Radomiu – Lokalny Poradnik 2025",
+      "article_file": "article2.jsx",
+      "date": "2025-03-20"
+    },
+    {
+      "id": "mazowsze-kozienice",
+      "intent_group": "city_kozienice",
+      "slug": "wynajem-auta-do-slubu-kozienice",
+      "title": "Wynajem Auta do Ślubu w Kozienicach – Luksus na Wasz Dzień",
+      "article_file": "article3.jsx",
+      "date": "2025-04-01"
+    },
+    {
+      "id": "poradnik-jak-wybrac-auto",
+      "intent_group": "advice_how_to_choose",
+      "slug": "jak-wybrac-auto-do-slubu",
+      "title": "Jak Wybrać Auto do Ślubu – Kompletny Poradnik dla Pary Młodej",
+      "article_file": "article4.jsx",
+      "date": "2025-04-05"
+    },
+    {
+      "id": "bmw-4-cabrio",
+      "intent_group": "bmw_cabrio_summer",
+      "slug": "bmw-4-cabrio-na-slub-latem",
+      "title": "BMW 4 Cabrio na Ślub Latem – Styl i Komfort w Jednym",
+      "article_file": "article5.jsx",
+      "date": "2025-04-10"
+    },
+    {
+      "id": "kortez-weselny",
+      "intent_group": "cortege_planning",
+      "slug": "kortez-weselny-planowanie",
+      "title": "Kortez Weselny – Jak Zaplanować Idealny Orszak Ślubny?",
+      "article_file": "article6.jsx",
+      "date": "2025-04-15"
+    },
+    {
+      "id": "warszawa-ursynow",
+      "intent_group": "district_ursynow",
+      "slug": "wynajem-auta-do-slubu-na-ursynowie",
+      "title": "Wynajem Auta do Ślubu na Ursynowie – Luksus i Styl",
+      "article_file": "article7.jsx",
+      "date": "2025-04-20"
+    },
+    {
+      "id": "mazowsze-piaseczno",
+      "intent_group": "city_piaseczno",
+      "slug": "wynajem-auta-do-slubu-piaseczno",
+      "title": "Wynajem Auta do Ślubu w Piasecznie – Elegancja i Styl",
+      "article_file": "article8.jsx",
+      "date": "2025-04-25"
+    },
+    {
+      "id": "mazowsze-pruszkow",
+      "intent_group": "city_pruszkow",
+      "slug": "wynajem-auta-do-slubu-pruszkow",
+      "title": "Wynajem Auta do Ślubu w Pruszkowie – Luksus i Styl",
+      "article_file": "article9.jsx",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "poradnik-planowanie-transportu",
+      "intent_group": "advice_transport_planning",
+      "slug": "planowanie-transportu-slubnego-krok-po-kroku",
+      "title": "Planowanie transportu ślubnego krok po kroku – poradnik dla par młodych",
+      "article_file": "article10.jsx",
+      "date": "2025-05-01"
+    },
+    {
+      "id": "sesja-zdjeciowa-warszawa",
+      "intent_group": "photo_locations_warsaw",
+      "slug": "najlepsze-lokalizacje-sesji-z-auto-warszawa",
+      "title": "Najlepsze Lokalizacje na Sesję Ślubną z BMW w Warszawie",
+      "article_file": "article11.jsx",
+      "date": "2025-05-05"
+    },
+    {
+      "id": "mazowsze-grojec",
+      "intent_group": "city_grojec",
+      "slug": "wynajem-auta-do-slubu-grojec",
+      "title": "Wynajem auta do ślubu w Grójcu – Twój dzień w luksusie",
+      "article_file": "article12.jsx",
+      "date": "2025-05-10"
+    },
+    {
+      "id": "dekoracja-auta",
+      "intent_group": "car_decoration",
+      "slug": "dekoracja-auta-slubnego-trendy-2026",
+      "title": "Dekoracja Auta Ślubnego – Najnowsze Trendy na 2026",
+      "article_file": "article13.jsx",
+      "date": "2025-05-15"
+    },
+    {
+      "id": "bmw-650i-f06",
+      "intent_group": "bmw_650i_model",
+      "slug": "bmw-650i-xdrive-f06-na-slub",
+      "title": "BMW 650i xDrive Gran Coupé (F06) na Ślub – Sportowa Elegancja",
+      "article_file": "article14.jsx",
+      "date": "2025-05-20"
+    },
+    {
+      "id": "poradnik-rezerwacja",
+      "intent_group": "advice_early_booking",
+      "slug": "jak-wczesnie-rezerwowac-auto-do-slubu",
+      "title": "Jak wcześnie rezerwować auto do ślubu? Poradnik dla Par Młodych",
+      "article_file": "article15.jsx",
+      "date": "2025-05-25"
+    },
+    {
+      "id": "mazowsze-legionowo",
+      "intent_group": "city_legionowo",
+      "slug": "wynajem-auta-do-slubu-legionowo",
+      "title": "Wynajem Auta do Ślubu w Legionowie – Luksus na Wasz Wielki Dzień",
+      "article_file": "article16.jsx",
+      "date": "2025-06-01"
+    },
+    {
+      "id": "kosciol-sw-anny-warszawa",
+      "intent_group": "venue_church_warsaw_anna",
+      "slug": "slub-w-kosciele-sw-anny-w-warszawie",
+      "title": "Ślub w Kościele Św. Anny w Warszawie – Planowanie i Transport",
+      "article_file": "article17.jsx",
+      "date": "2025-06-05"
+    },
+    {
+      "id": "mazowsze-wolomin",
+      "intent_group": "city_wolomin",
+      "slug": "wynajem-auta-do-slubu-w-wolominie",
+      "title": "Wynajem Auta do Ślubu w Wołominie – Luksus na Wasz Wielki Dzień",
+      "article_file": "article18.jsx",
+      "date": "2025-06-10"
+    },
+    {
+      "id": "mazowsze-nowy-dwor",
+      "intent_group": "city_nowy_dwor",
+      "slug": "wynajem-auta-do-slubu-w-nowym-dworze-mazowieckim",
+      "title": "Wynajem Auta do Ślubu w Nowym Dworze Mazowieckim – Luksus na Wasz Wielki Dzień",
+      "article_file": "article19.jsx",
+      "date": "2025-06-15"
+    },
+    {
+      "id": "bmw-cabrio-kabriolet",
+      "intent_group": "bmw_cabrio_summer_v2",
+      "slug": "kabriolet-bmw-na-slub-dlaczego-warto",
+      "title": "Kabriolet BMW na Ślub Latem – Dlaczego Warto Wybrać?",
+      "article_file": "article20.jsx",
+      "date": "2025-06-20",
+      "_note": "DUPLICATE intent_group z bmw-4-cabrio — artykuł o tym samym temacie"
+    },
+    {
+      "id": "mazowsze-grodzisk",
+      "intent_group": "city_grodzisk",
+      "slug": "wynajem-auta-do-slubu-w-grodzisku-mazowieckim",
+      "title": "Wynajem Auta do Ślubu w Grodzisku Mazowieckim – Elegancja i Styl",
+      "article_file": "article21.jsx",
+      "date": "2025-06-25"
+    },
+    {
+      "id": "mazowsze-minsk",
+      "intent_group": "city_minsk",
+      "slug": "wynajem-auta-do-slubu-w-minsku-mazowieckim",
+      "title": "Wynajem Auta do Ślubu w Mińsku Mazowieckim – Luksus i Styl",
+      "article_file": "article22.jsx",
+      "date": "2025-07-01"
+    },
+    {
+      "id": "warszawa-zoliborz",
+      "intent_group": "district_zoliborz",
+      "slug": "wynajem-auta-do-slubu-w-zoliborzu",
+      "title": "Wynajem Auta do Ślubu w Żoliborzu – Luksusowa Jazda w Wielkim Stylu",
+      "article_file": "article23.jsx",
+      "date": "2025-07-05"
+    },
+    {
+      "id": "radom-sala-weselna",
+      "intent_group": "venue_wedding_hall_radom",
+      "slug": "slub-w-radomiu-top-sala-weselna-i-auto",
+      "title": "Ślub w Radomiu — Najlepsza sala weselna i luksusowe auto",
+      "article_file": "article24.jsx",
+      "date": "2025-07-10"
+    },
+    {
+      "id": "mazowsze-pionki",
+      "intent_group": "city_pionki",
+      "slug": "wynajem-auta-do-slubu-w-pionkach",
+      "title": "Wynajem Auta do Ślubu w Pionkach – Elegancja na Wasz Wielki Dzień",
+      "article_file": "article25.jsx",
+      "date": "2025-07-15"
+    },
+    {
+      "id": "mazowsze-nowe-miasto",
+      "intent_group": "city_nowe_miasto_nad_pilica",
+      "slug": "wynajem-auta-do-slubu-w-nowym-miescie-nad-pilica",
+      "title": "Wynajem Auta do Ślubu w Nowym Mieście nad Pilicą – Luksus i Styl",
+      "article_file": "article26.jsx",
+      "date": "2025-07-20"
+    },
+    {
+      "id": "mazowsze-radzymin",
+      "intent_group": "city_radzymin",
+      "slug": "wynajem-auta-do-slubu-w-radzyminie",
+      "title": "Wynajem Auta do Ślubu w Radzyminie – Luksus i Styl na Twój Wielki Dzień",
+      "article_file": "article27.jsx",
+      "date": "2025-07-25"
+    },
+    {
+      "id": "mazowsze-marki",
+      "intent_group": "city_marki",
+      "slug": "wynajem-auta-do-slubu-w-markach",
+      "title": "Wynajem auta do ślubu w Markach – luksus na Wasz dzień",
+      "article_file": "article28.jsx",
+      "date": "2025-08-01"
+    },
+    {
+      "id": "mazowsze-sulejowek",
+      "intent_group": "city_sulejowek",
+      "slug": "wynajem-auta-do-slubu-w-sulejowku",
+      "title": "Wynajem auta do ślubu w Sulejówku – luksus na Wasz dzień",
+      "article_file": "article29.jsx",
+      "date": "2025-08-05"
+    },
+    {
+      "id": "mazowsze-milanowek",
+      "intent_group": "city_milanowek",
+      "slug": "wynajem-auta-do-slubu-w-milanowku",
+      "title": "Wynajem auta do ślubu w Milanówku – Luksus i styl na Wasz dzień",
+      "article_file": "article30.jsx",
+      "date": "2025-08-10"
+    },
+    {
+      "id": "mazowsze-konstancin",
+      "intent_group": "city_konstancin",
+      "slug": "wynajem-auta-do-slubu-w-konstancinie",
+      "title": "Wynajem Auta do Ślubu w Konstancinie – Luksus i Styl w Jednym",
+      "article_file": "article31.jsx",
+      "date": "2025-08-15"
+    },
+    {
+      "id": "mazowsze-raszyn",
+      "intent_group": "city_raszyn",
+      "slug": "wynajem-auta-do-slubu-w-raszynie",
+      "title": "Wynajem Auta do Ślubu w Raszynie – Luksus na Wasz Dzień",
+      "article_file": "article32.jsx",
+      "date": "2025-08-20"
+    },
+    {
+      "id": "mazowsze-piastow",
+      "intent_group": "city_piastow",
+      "slug": "wynajem-auta-do-slubu-w-piastowie",
+      "title": "Wynajem Auta do Ślubu w Piastowie – Luksus na Wasz Dzień",
+      "article_file": "article33.jsx",
+      "date": "2025-08-25"
+    },
+    {
+      "id": "warszawa-wilanow",
+      "intent_group": "district_wilanow",
+      "slug": "wynajem-auta-do-slubu-w-wilanowie",
+      "title": "Wynajem Auta do Ślubu w Wilanowie – Luksus na Wasz Wielki Dzień",
+      "article_file": "article34.jsx",
+      "date": "2025-09-01"
+    },
+    {
+      "id": "kosciol-sw-kazimierza-radom",
+      "intent_group": "venue_church_radom_kazimierz",
+      "slug": "slub-w-kosciele-sw-kazimierza-radom",
+      "title": "Ślub w Kościele Św. Kazimierza w Radomiu – Planowanie i Transport",
+      "article_file": "article35.jsx",
+      "date": "2025-09-05"
+    },
+    {
+      "id": "mazowsze-ciechanow",
+      "intent_group": "city_ciechanow",
+      "slug": "wynajem-auta-do-slubu-w-ciechanowie",
+      "title": "Wynajem Auta do Ślubu w Ciechanowie – Luksus na Wasz Wielki Dzień",
+      "article_file": "article36.jsx",
+      "date": "2025-09-10"
+    },
+    {
+      "id": "mazowsze-wyszkow",
+      "intent_group": "city_wyszkow",
+      "slug": "wynajem-auta-do-slubu-w-wyszkowie",
+      "title": "Wynajem Auta do Ślubu w Wyszkowie – Luksus na Wasz Dzień",
+      "article_file": "article37.jsx",
+      "date": "2025-09-15"
+    },
+    {
+      "id": "mazowsze-garwolin",
+      "intent_group": "city_garwolin",
+      "slug": "wynajem-auta-do-slubu-w-garwolinie",
+      "title": "Wynajem auta do ślubu w Garwolinie – Luksus i elegancja",
+      "article_file": "article38.jsx",
+      "date": "2025-09-20"
+    },
+    {
+      "id": "mazowsze-siedlce",
+      "intent_group": "city_siedlce",
+      "slug": "wynajem-auta-do-slubu-w-siedlcach",
+      "title": "Wynajem Auta do Ślubu w Siedlcach – Luksus na Wasz Dzień",
+      "article_file": "article39.jsx",
+      "date": "2025-09-25"
+    },
+    {
+      "id": "mazowsze-przasnysz",
+      "intent_group": "city_przasnysz",
+      "slug": "wynajem-auta-do-slubu-w-przasnyszu",
+      "title": "Wynajem Auta do Ślubu w Przasnyszu – Luksus na Wasz Wielki Dzień",
+      "article_file": "article40.jsx",
+      "date": "2025-10-01"
+    },
+    {
+      "id": "mazowsze-plonsk-dup",
+      "intent_group": "city_plonsk",
+      "slug": "wynajem-auta-do-slubu-w-plonsku",
+      "title": "Wynajem auta do ślubu w Płońsku – luksus na Wasz wyjątkowy dzień",
+      "article_file": "article41.jsx",
+      "date": "2025-10-05",
+      "_note": "DUPLICATE intent_group z mazowsze-plonsk w pending — artykuł już istnieje"
+    },
+    {
+      "id": "mazowsze-ostrowiec",
+      "intent_group": "city_ostrowiec",
+      "slug": "wynajem-auta-do-slubu-w-ostrowcu-swietokrzyskim",
+      "title": "Wynajem auta do ślubu w Ostrowcu Świętokrzyskim – styl i klasa na Twój dzień",
+      "article_file": "article42.jsx",
+      "date": "2025-10-10"
+    },
+    {
+      "id": "mazowsze-grojec-dup2",
+      "intent_group": "city_grojec_v2",
+      "slug": "wynajem-auta-do-slubu-w-grojcu",
+      "title": "Wynajem auta do ślubu w Grójcu – luksus i styl na Wasz dzień",
+      "article_file": "article43.jsx",
+      "date": "2025-10-15",
+      "_note": "DUPLICATE intent_group z mazowsze-grojec — artykuł już istnieje"
+    },
+    {
+      "id": "otwock-dup1",
+      "intent_group": "city_otwock",
+      "slug": "wynajem-auta-do-slubu-otwock",
+      "title": "Wynajem Auta do Ślubu w Otwocku – Luksus na Wasz Wielki Dzień",
+      "article_file": "article44.jsx",
+      "date": "2025-10-20"
+    },
+    {
+      "id": "otwock-dup2",
+      "intent_group": "city_otwock_v2",
+      "slug": "wynajem-auta-do-slubu-w-otwocku-2026",
+      "title": "Wynajem Auta do Ślubu w Otwocku – Porady i Inspiracje",
+      "article_file": "article45.jsx",
+      "date": "2025-10-25",
+      "_note": "DUPLICATE intent_group z otwock-dup1"
+    },
+    {
+      "id": "otwock-dup3",
+      "intent_group": "city_otwock_v3",
+      "slug": "wynajem-auta-do-slubu-w-otwocku-poradnik",
+      "title": "Wynajem auta do ślubu w Otwocku – Poradnik dla Pary Młodej",
+      "article_file": "article46.jsx",
+      "date": "2025-10-30",
+      "_note": "DUPLICATE intent_group z otwock-dup1 — kanibalizacja!"
+    },
+    {
+      "id": "otwock-dup4",
+      "intent_group": "city_otwock_v4",
+      "slug": "wynajem-auta-do-slubu-w-otwocku-porady",
+      "title": "Wynajem auta do ślubu w Otwocku – luksus na Wasz dzień",
+      "article_file": "article47.jsx",
+      "date": "2025-11-01",
+      "_note": "DUPLICATE intent_group z otwock-dup1 — kanibalizacja!"
+    },
+    {
+      "id": "mazowsze-plonsk-dup3",
+      "intent_group": "city_plonsk_v2",
+      "slug": "wynajem-auta-do-slubu-w-plonsku-2026",
+      "title": "Wynajem Auta do Ślubu w Płońsku – Luksus na Wasz Wielki Dzień",
+      "article_file": "article48.jsx",
+      "date": "2025-11-05",
+      "_note": "DUPLICATE intent_group z mazowsze-plonsk-dup"
+    }
+  ]
+}

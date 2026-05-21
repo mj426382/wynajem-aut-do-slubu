@@ -3,7 +3,7 @@ export const title = 'Wynajem Auta do Ślubu w Konstancinie – Luksus i Styl w 
 export const date = '2026-04-27'
 export const readTime = '6 min'
 export const category = 'Mazowsze'
-export const excerpt = 'Szukacie idealnego auta do ślubu w Konstancinie? Sprawdź naszą ofertę luksusowych BMW i dowiedz się, jak dodać elegancji Waszemu wyjątkowemu dniu.'
+export const excerpt = 'Konstancin-Jeziorna — elegancka uzdrowiskowa miejscowość pod Warszawą. BMW 650i Złotej Karety podkreśli prestiż wesela i doda szyku każdej fotografii.'
 export const emoji = '🌹'
 export const tags = ['wynajem auta do ślubu', 'Konstancin', 'BMW na ślub', 'auto do ślubu']
 

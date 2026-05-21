@@ -3,7 +3,7 @@ export const title = 'Wynajem auta do ślubu w Markach – luksus na Wasz dzień
 export const date = '2026-04-15'
 export const readTime = '6 min'
 export const category = 'Mazowsze'
-export const excerpt = 'Planujecie ślub w Markach? Odkryj, jak wynająć luksusowe BMW na ten wyjątkowy dzień i poczujcie się jak gwiazdy.'
+export const excerpt = 'Marki tuż przy Warszawie — Złota Kareta dojeżdża bezpłatnie. Wybierz BMW 650i lub BMW 4 Cabrio i przyjedź na ślub w stylu, który zachwyci gości.'
 export const emoji = '🌹'
 export const tags = ['Marki', 'auto do ślubu', 'BMW', 'ślub Mazowsze']
 

@@ -1,9 +1,9 @@
-name: 📝 Daily blog post (GPT)
+name: 📝 Weekly blog post (GPT)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 6 * * *"   # codziennie 06:00 UTC
+    - cron: "0 8 * * 1"   # co poniedziałek 08:00 UTC (1 artykuł/tydzień)
 
 jobs:
   generate-blog:
@@ -23,8 +23,9 @@ jobs:
         run: |
           pip install requests -q
           python3 << 'PYEOF'
-          import os, json, requests, re, sys, subprocess, time
+          import os, json, requests, re, sys, subprocess, unicodedata
           from datetime import datetime
+          from difflib import SequenceMatcher
           from pathlib import Path
 
           def run(cmd):
@@ -36,116 +37,165 @@ jobs:
                   print(result.stdout)
               return result.stdout.strip()
 
-          # ── Gather existing posts ───────────────────────────────────────────
           posts_dir = Path("src/blog")
+          queue_file = posts_dir / "topics_queue.json"
+
+          # ── Load topic queue ─────────────────────────────────────────────────
+          queue = json.loads(queue_file.read_text(encoding="utf-8"))
+          pending = queue.get("pending", [])
+          published = queue.get("published", [])
+
+          if not pending:
+              print("✅ Brak tematów w kolejce — nic do wygenerowania."); sys.exit(0)
+
+          # Pick highest-priority pending topic
+          pending_sorted = sorted(pending, key=lambda t: t.get("priority", 99))
+          topic = pending_sorted[0]
+          print(f"📌 Wybrany temat: [{topic['intent_group']}] {topic['title_hint']}")
+
+          # ── Anti-cannibalization: verify intent_group not already published ──
+          published_groups = {p["intent_group"] for p in published}
+          if topic["intent_group"] in published_groups:
+              print(f"⚠️  intent_group '{topic['intent_group']}' już opublikowany — pomijam i szukam kolejnego.")
+              # Remove the duplicate and try next
+              pending = [t for t in pending if t["id"] != topic["id"]]
+              queue["pending"] = pending
+              queue_file.write_text(json.dumps(queue, ensure_ascii=False, indent=2), encoding="utf-8")
+              sys.exit(0)
+
+          # ── Gather existing posts ────────────────────────────────────────────
           existing_titles = []
           existing_slugs = []
+          existing_excerpts = []
           for jsx_file in sorted(posts_dir.glob("article*.jsx")):
               text = jsx_file.read_text(encoding="utf-8")
               m = re.search(r"export\s+const\s+title\s*=\s*['\"]([^'\"]+)['\"]", text)
               s = re.search(r"export\s+const\s+slug\s*=\s*['\"]([^'\"]+)['\"]", text)
+              e = re.search(r"export\s+const\s+excerpt\s*=\s*['\"]([^'\"]+)['\"]", text)
               if m:
                   existing_titles.append(m.group(1))
               if s:
                   existing_slugs.append(s.group(1))
+              if e:
+                  existing_excerpts.append(e.group(1))
 
           # Determine next article number
-          nums = []
-          for jsx_file in posts_dir.glob("article*.jsx"):
-              n = re.search(r"article(\d+)\.jsx$", jsx_file.name)
-              if n:
-                  nums.append(int(n.group(1)))
+          nums = [
+              int(n.group(1))
+              for f in posts_dir.glob("article*.jsx")
+              if (n := re.search(r"article(\d+)\.jsx$", f.name))
+          ]
           next_num = max(nums, default=0) + 1
 
           now = datetime.now()
           date_str = now.strftime("%Y-%m-%d")
           titles_str = "\n".join(f"- {t}" for t in existing_titles)
 
-          # ── Prompts ─────────────────────────────────────────────────────────
+          # ── System Prompt (ulepszona jakość treści) ──────────────────────────
           SYSTEM_PROMPT = (
-              "Jesteś doświadczonym copywriterem SEO i strategiem contentu dla Złotej Karety "
-              "(autodoslubuwarszawa.pl) — polskiej firmy wynajmującej luksusowe BMW do ślubu "
+              "Jesteś Senior SEO Copywriterem i ekspertem od Google Helpful Content dla Złotej Karety "
+              "(jan-mat.pl) — polskiej firmy wynajmującej luksusowe BMW do ślubu "
               "w Warszawie, Radomiu i całym województwie mazowieckim.\n\n"
+
               "OFERTA FIRMY (naturalnie wplataj w artykuły):\n"
-              "- BMW 650i xDrive Gran Coupé (F06) — silnik V8 450 KM, napęd 4×4, skórzana tapicerka\n"
+              "- BMW 650i xDrive Gran Coupé (F06) — silnik V8 450 KM, napęd 4×4, skórzana tapicerka Merino\n"
               "- BMW 4 Cabrio (G23) — elektryczny miękki dach otwierający się w 18 sekund, idealne na lato\n"
               "- Profesjonalny szofer w cenie — elegancki, punktualny, dyskretny\n"
-              "- Bezpłatna dekoracja florystyczna — wstążki, bukiet na masce, wnętrze\n"
-              "- Postój na sesję zdjęciową bez pośpiechu\n"
+              "- Bezpłatna dekoracja florystyczna — wstążki, bukiet na masce, dekoracja wnętrza\n"
+              "- Postój na sesję zdjęciową bez limitu czasu\n"
               "- Bezpłatny dojazd w promieniu 50 km od Radomia lub Warszawy\n"
-              "- Korteze weselne — kilka aut naraz\n"
+              "- Korteże weselne — kilka aut naraz\n"
               "- Ceny od 800 zł (Radom) / 1000 zł (Warszawa) za pakiet 3h\n\n"
+
               "OBSZARY OBSŁUGI:\n"
-              "- Warszawa i wszystkie dzielnice (Mokotów, Wilanów, Żoliborz, Ursynów, Praga, Wola…)\n"
+              "- Warszawa i wszystkie dzielnice (Mokotów, Wilanów, Żoliborz, Ursynów, Praga, Wola, Bemowo…)\n"
               "- Radom i okolice 50 km (Kozienice, Białobrzegi, Zwoleń, Pionki, Grójec…)\n"
               "- Całe województwo mazowieckie\n\n"
-              "GŁÓWNE OBSZARY POZYCJONOWANIA (priorytetowe tematy artykułów):\n"
-              "- Wynajem auta do ślubu w konkretnych miastach Mazowsza\n"
-              "- Jak wybrać idealne auto ślubne — poradniki dla Pary Młodej\n"
-              "- Planowanie transportu ślubnego — trasy, logistyka, korteże\n"
-              "- Sesje zdjęciowe z autem ślubnym — lokalizacje w Warszawie i Radomiu\n"
-              "- Trendy ślubne — styl, dekoracje, samochody ślubne\n"
-              "- Kabriolet vs Gran Coupé — który wybrać na ślub?\n"
-              "- BMW do ślubu — dlaczego to najlepszy wybór\n"
-              "- Ślub w konkretnych kościołach / salach weselnych Warszawy lub Radomia\n"
-              "- Kortez weselny — organizacja i koszt\n"
-              "- Sezon ślubny — kiedy rezerwować auto?\n\n"
-              "ZASADY PISANIA ARTYKUŁÓW:\n"
-              "1. Język: ciepły, elegancki, romantyczny — ale konkretny. Zwracaj się 'Wy', 'Wasza Para', 'Twój ślub'.\n"
-              "2. Styl: wciągający — jak poradnik dla Pary Młodej, nie jak reklama.\n"
-              "3. Struktura: wciągający wstęp (emocja lub pytanie) → 3-5 sekcji H2 → podsumowanie z CTA.\n"
-              "4. SEO On-Page:\n"
-              "   - Główna fraza kluczowa w tytule i pierwszym paragrafie.\n"
-              "   - Frazy LSI naturalnie w treści (np. 'samochód ślubny', 'auto na wesele', 'wynajem limuzyny').\n"
-              "   - Naturalne wzmianki o BMW 650i lub BMW 4 Cabrio (max 2-3 razy).\n"
-              "5. Długość: 500-700 słów w formacie HTML (pole 'content').\n"
-              "6. Format pola 'content': czysty HTML — używaj <h2>, <h3>, <p>, <ul><li>, <strong>.\n"
-              "   NIE używaj Markdown (##, **, -).\n"
-              "7. Zakończ artykuł wezwaniem do działania z linkiem do strony kontaktowej, "
-              "a BEZPOŚREDNIO po nim (jako ostatni element treści) dodaj link do strony głównej:\n"
+
+              "LINKI WEWNĘTRZNE — wplataj naturalnie (max 2-3 per artykuł):\n"
+              "- <a href='/'>Strona główna Złotej Karety</a>\n"
+              "- <a href='/kontakt'>Formularz rezerwacji</a>\n"
+              "- <a href='/bmw-650i'>Oferta BMW 650i xDrive Gran Coupé</a>\n"
+              "- <a href='/bmw-4-cabrio'>Oferta BMW 4 Cabrio</a>\n"
+              "- <a href='/warszawa'>Wynajem aut do ślubu w Warszawie</a>\n"
+              "- <a href='/radom'>Wynajem aut do ślubu w Radomiu</a>\n\n"
+
+              "ZASADY JAKOŚCI TREŚCI (Google Helpful Content 2026):\n"
+              "1. Długość: MINIMUM 1000 słów, optymalnie 1200-1500 słów w polu 'content'.\n"
+              "2. Struktura: wciągający wstęp (emocja lub konkretne pytanie) → 4-6 sekcji H2 "
+              "→ min. 1 sekcja H3 wewnątrz H2 → podsumowanie z CTA.\n"
+              "3. Unikalność: NIE kopiuj schematów z innych artykułów. Każdy artykuł musi "
+              "dostarczać UNIKATOWEJ wartości — konkretnych danych, przykładów, case-study.\n"
+              "4. Elementy obowiązkowe w KAŻDYM artykule:\n"
+              "   a) Tabela HTML porównawcza lub informacyjna (np. cennik, porównanie modeli, "
+              "checklist planowania) — użyj tagów <table><thead><tbody><tr><th><td>.\n"
+              "   b) Praktyczne case-study lub historia prawdziwej pary (fikcyjna, ale realistyczna) "
+              "pokazująca realne korzyści z usługi — min. 150 słów.\n"
+              "   c) Lista kontrolna (checklist) lub FAQ z min. 3 pytaniami i odpowiedziami "
+              "w formacie <h3>Pytanie?</h3><p>Odpowiedź.</p>.\n"
+              "5. SEO On-Page:\n"
+              "   - Główna fraza kluczowa w tytule H1 (pole 'title') i w PIERWSZYM paragrafie.\n"
+              "   - Frazy LSI naturalnie w treści (np. 'samochód ślubny', 'auto na wesele', "
+              "'wynajem limuzyny', 'kortez weselny').\n"
+              "   - Naturalne wzmianki o BMW 650i lub BMW 4 Cabrio (max 3 razy).\n"
+              "6. Format pola 'content': WYŁĄCZNIE czysty HTML.\n"
+              "   Dozwolone tagi: <h2> <h3> <p> <ul> <li> <ol> <strong> <em> "
+              "<table> <thead> <tbody> <tr> <th> <td> <a href='...'> <br>.\n"
+              "   ZAKAZ używania Markdown (##, **, -, ```), ZAKAZ używania backtick.\n"
+              "7. Zakończenie artykułu — OBOWIĄZKOWE dwa ostatnie elementy w tej kolejności:\n"
               "   <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? "
-              "<a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>\n"
+              "<a href='/kontakt'>Sprawdź dostępność terminów</a> "
+              "i zarezerwuj Wasze wymarzone BMW już dziś.</p>\n"
               "   <p>Sprawdź naszą pełną ofertę na <a href='/'>stronie głównej Złotej Karety</a>.</p>\n"
-              "8. slug: tylko małe litery ASCII, myślniki zamiast spacji, bez polskich znaków, max 60 znaków.\n"
-              "9. tags: 3-5 tagów — konkretne, po polsku.\n"
-              "10. readTime: format '7 min' (szacuj 200 słów/minutę).\n"
-              "11. category: jedna z: Warszawa / Radom / Mazowsze / Porady / Trendy / Planowanie / BMW.\n"
-              "12. emoji: jeden emoji pasujący do tematu.\n"
-              "13. NIGDY nie powtarzaj tematów z listy istniejących artykułów."
+              "8. Pole 'metaTitle': unikalny tytuł SEO 55-65 znaków, zawiera rok 2026 lub miasto.\n"
+              "9. Pole 'metaDescription': unikalny opis 145-160 znaków z główną frazą, "
+              "zachęcający do kliknięcia, zawiera konkretną korzyść.\n"
+              "10. slug: tylko małe litery ASCII a-z i cyfry 0-9, myślniki zamiast spacji, "
+              "bez polskich znaków diakrytycznych, max 60 znaków.\n"
+              "11. tags: 4-5 tagów po polsku, konkretne, zróżnicowane.\n"
+              "12. readTime: format '8 min' (szacuj 200 słów/minutę).\n"
+              "13. category: JEDNA z: Warszawa / Radom / Mazowsze / Porady / Trendy / Planowanie / BMW.\n"
+              "14. emoji: jeden emoji pasujący do tematu.\n"
+              "15. NIGDY nie powtarzaj tematów z listy istniejących artykułów — sprawdź dokładnie.\n"
+              "16. Język: ciepły, elegancki, konkretny. Zwracaj się 'Wy', 'Wasza Para', 'Twój ślub'. "
+              "Nie brzmij jak reklama — brzmij jak ekspert i przyjaciel Pary Młodej."
           )
 
           USER_PROMPT = (
               f"Data publikacji: {date_str}\n\n"
-              f"Istniejące artykuły na blogu (NIE powtarzaj tych tematów):\n{titles_str}\n\n"
-              "Napisz nowy artykuł SEO dla Złotej Karety. Priorytetowo wybieraj tematy:\n"
-              "- wynajem auta do ślubu w konkretnym mieście Mazowsza (np. Grójec, Kozienice, Piaseczno, Pruszków)\n"
-              "- porady jak zaplanować transport ślubny krok po kroku\n"
-              "- kabriolet BMW na ślub latem — dlaczego warto?\n"
-              "- kortez weselny — jak zorganizować i ile kosztuje?\n"
-              "- najlepsze lokalizacje do sesji zdjęciowych z autem w Warszawie\n"
-              "- ślub w konkretnym kościele lub sali weselnej w Radomiu / Warszawie\n"
-              "- jak wcześnie rezerwować auto do ślubu i dlaczego to ważne?\n"
-              "- dekoracja auta ślubnego — trendy i pomysły\n"
-              "- luksusowe BMW vs inne auta na ślub — porównanie\n"
-              "- cokolwiek jeszcze NIE było omówione. Skup się na ślubach, transporcie ślubnym i BMW.\n\n"
-              "Zwróć WYŁĄCZNIE surowy obiekt JSON (zero markdown, zero ```, zero komentarzy przed/po), "
+              f"Istniejące artykuły na blogu (NIE powtarzaj tych tematów i intencji):\n{titles_str}\n\n"
+              f"ZLECONY TEMAT do napisania:\n"
+              f"- Tytuł orientacyjny: {topic['title_hint']}\n"
+              f"- Sugerowany slug URL: {topic['slug_hint']}\n"
+              f"- Główna fraza kluczowa: {topic['focus_keyword']}\n"
+              f"- Kategoria: {topic['category']}\n\n"
+              "WAŻNE WYMAGANIA JAKOŚCIOWE:\n"
+              "- Minimum 1000 słów treści właściwej (nie licząc HTML tagów).\n"
+              "- Obowiązkowa tabela HTML z konkretnymi danymi (cennik, porównanie, harmonogram).\n"
+              "- Obowiązkowe case-study: historia fikcyjnej pary (imiona, data ślubu, miejsce) "
+              "która skorzystała z Złotej Karety — pokaż konkretne korzyści (np. brak stresu, "
+              "piękne zdjęcia, punktualność szofera).\n"
+              "- Sekcja FAQ z min. 3 pytaniami i odpowiedziami dotyczącymi tematu artykułu.\n"
+              "- Naturalne wewnętrzne linkowanie do /kontakt i /bmw-650i lub /bmw-4-cabrio.\n\n"
+              "Zwróć WYŁĄCZNIE surowy obiekt JSON (zero markdown, zero ```, zero komentarzy), "
               "w tym DOKŁADNYM formacie:\n"
               "{\n"
-              '  "slug": "slug-bez-polskich-znakow-max-60-znakow",\n'
+              '  "slug": "unikalny-slug-ascii-max-60-znakow",\n'
               '  "title": "Tytuł SEO 55-70 znaków z główną frazą kluczową",\n'
+              '  "metaTitle": "Unikalny meta title 55-65 znaków z rokiem 2026 lub miastem",\n'
+              '  "metaDescription": "Unikalny meta description 145-160 znaków z frazą SEO i konkretną korzyścią",\n'
               '  "excerpt": "Opis 140-160 znaków z główną frazą SEO. Zachęca do przeczytania.",\n'
-              '  "content": "Treść 500-700 słów w czystym HTML. Używaj <h2> <h3> <p> <ul> <li> <strong>. '
-              'Zakończ CTA z linkiem do /kontakt, a na samym końcu (ostatni element) dodaj: '
-              '<p>Sprawdź naszą pełną ofertę na <a href=\\"/\\">stronie głównej Złotej Karety</a>.</p>",\n'
+              '  "content": "Min. 1000 słów czystego HTML. Zawiera: tabela, case-study, FAQ. '
+              'ZAKAZ Markdown. Dwa ostatnie elementy to CTA do /kontakt i link do /.",\n'
               '  "emoji": "🌹",\n'
               f'  "date": "{date_str}",\n'
-              '  "readTime": "6 min",\n'
+              '  "readTime": "8 min",\n'
               '  "category": "jedna z: Warszawa / Radom / Mazowsze / Porady / Trendy / Planowanie / BMW",\n'
-              '  "tags": ["tag1", "tag2", "tag3", "tag4"]\n'
+              '  "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"]\n'
               "}"
           )
 
-          # ── Call GitHub Models API ──────────────────────────────────────────
+          # ── Call GitHub Models API ───────────────────────────────────────────
           token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
           if not token:
               print("ERROR: GH_TOKEN not set"); sys.exit(1)
@@ -159,11 +209,11 @@ jobs:
                       {"role": "system", "content": SYSTEM_PROMPT},
                       {"role": "user", "content": USER_PROMPT},
                   ],
-                  "max_tokens": 3000,
-                  "temperature": 0.75,
+                  "max_tokens": 5000,
+                  "temperature": 0.7,
                   "response_format": {"type": "json_object"},
               },
-              timeout=180,
+              timeout=240,
           )
           print(f"API status: {resp.status_code}")
           if resp.status_code != 200:
@@ -180,11 +230,55 @@ jobs:
 
           slug = article["slug"]
 
-          # ── Validation ──────────────────────────────────────────────────────
+          # ── Content deduplication check ──────────────────────────────────────
+          def normalize(text):
+              """Lowercase, strip accents, collapse whitespace for fair comparison."""
+              text = text.lower()
+              text = unicodedata.normalize("NFKD", text)
+              text = "".join(c for c in text if not unicodedata.combining(c))
+              return re.sub(r"\s+", " ", text).strip()
+
+          def max_similarity(candidate, corpus):
+              """Return the highest SequenceMatcher ratio between candidate and any corpus item."""
+              c = normalize(candidate)
+              best = 0.0
+              for item in corpus:
+                  ratio = SequenceMatcher(None, c, normalize(item)).ratio()
+                  if ratio > best:
+                      best = ratio
+              return best
+
+          TITLE_THRESHOLD = 0.80   # 80% similarity → reject
+          EXCERPT_THRESHOLD = 0.75 # 75% similarity → reject
+
+          new_title = article.get("title", "")
+          new_excerpt = article.get("excerpt", "")
+
+          title_sim = max_similarity(new_title, existing_titles)
+          excerpt_sim = max_similarity(new_excerpt, existing_excerpts)
+
+          print(f"🔍 Podobieństwo tytułu:    {title_sim:.2%}")
+          print(f"🔍 Podobieństwo excerpta:  {excerpt_sim:.2%}")
+
+          if title_sim >= TITLE_THRESHOLD:
+              print(
+                  f"⛔ DUPLIKAT TYTUŁU (podobieństwo {title_sim:.2%} ≥ {TITLE_THRESHOLD:.0%}) — "
+                  f"pominięto artykuł '{new_title}'. Temat pozostaje w kolejce."
+              )
+              sys.exit(1)
+
+          if excerpt_sim >= EXCERPT_THRESHOLD:
+              print(
+                  f"⛔ DUPLIKAT TREŚCI (podobieństwo excerpta {excerpt_sim:.2%} ≥ {EXCERPT_THRESHOLD:.0%}) — "
+                  f"pominięto artykuł '{new_title}'. Temat pozostaje w kolejce."
+              )
+              sys.exit(1)
+
+          # ── Validation ───────────────────────────────────────────────────────
           if slug in existing_slugs:
               print(f"ERROR: Slug '{slug}' already exists!"); sys.exit(1)
 
-          # ── Escape helpers ──────────────────────────────────────────────────
+          # ── Escape helpers ───────────────────────────────────────────────────
           def esc(s):
               """Escape for JS template literal (backtick string)."""
               s = str(s)
@@ -200,6 +294,8 @@ jobs:
           jsx_content = (
               f"export const slug = '{esc_sq(slug)}'\n"
               f"export const title = '{esc_sq(article['title'])}'\n"
+              f"export const metaTitle = '{esc_sq(article.get('metaTitle', article['title']))}'\n"
+              f"export const metaDescription = '{esc_sq(article.get('metaDescription', article.get('excerpt', '')))}'\n"
               f"export const date = '{article['date']}'\n"
               f"export const readTime = '{esc_sq(article['readTime'])}'\n"
               f"export const category = '{esc_sq(article['category'])}'\n"
@@ -215,14 +311,38 @@ jobs:
           out_file.write_text(jsx_content, encoding="utf-8")
           print(f"Saved: {out_file}")
 
+          # ── Update topics_queue.json ─────────────────────────────────────────
+          published_entry = {
+              "id": topic["id"],
+              "intent_group": topic["intent_group"],
+              "slug": slug,
+              "title": article["title"],
+              "article_file": f"article{next_num}.jsx",
+              "date": date_str,
+          }
+          queue["published"].append(published_entry)
+          queue["pending"] = [t for t in pending if t["id"] != topic["id"]]
+          queue_file.write_text(json.dumps(queue, ensure_ascii=False, indent=2), encoding="utf-8")
+          print(f"Updated topics_queue.json — {len(queue['pending'])} tematów pozostało w kolejce.")
+
           # ── Git push directly to main ────────────────────────────────────────
           commit_msg = f"feat(blog): {article['title']} ({date_str})"
 
           run("git config user.name 'github-actions[bot]'")
           run("git config user.email 'github-actions[bot]@users.noreply.github.com'")
           run("git add src/blog/")
+
+          # Only commit if there are staged changes
+          status = subprocess.run(
+              ["git", "diff", "--cached", "--quiet"],
+              capture_output=True
+          )
+          if status.returncode == 0:
+              print("⚠️  Brak zmian do zacommitowania — nic nie zapisano.")
+              sys.exit(0)
+
           run(["git", "commit", "-m", commit_msg])
           run(["git", "push", "origin", "main"])
 
-          print(f"✅ Pushed article{next_num}.jsx to main — Vercel redeploy triggered automatically.")
+          print(f"✅ Pushed article{next_num}.jsx + topics_queue.json to main — Vercel redeploy triggered.")
           PYEOF
