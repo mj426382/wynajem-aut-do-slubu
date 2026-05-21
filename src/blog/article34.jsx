@@ -3,7 +3,7 @@ export const title = 'Wynajem Auta do Ślubu w Wyszkowie – Luksus na Wasz Dzie
 export const date = '2026-05-01'
 export const readTime = '6 min'
 export const category = 'Mazowsze'
-export const excerpt = 'Planujecie ślub w Wyszkowie? Sprawdź, jak wynająć luksusowe BMW, które uczyni Wasz dzień niezapomnianym!'
+export const excerpt = 'Wyszków nad Bugiem, 60 km od Warszawy — luksusowe BMW do ślubu dotrze na czas. Szofer, dekoracja i postój na sesję zdjęciową w pakiecie od 1000 zł.'
 export const emoji = '🚗'
 export const tags = ['wynajem auta do ślubu', 'Wyszków', 'BMW na ślub', 'transport ślubny']
 

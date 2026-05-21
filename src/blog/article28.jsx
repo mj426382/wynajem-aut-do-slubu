@@ -3,7 +3,7 @@ export const title = 'Wynajem auta do ślubu w Garwolinie – Luksus i elegancja
 export const date = '2026-04-25'
 export const readTime = '6 min'
 export const category = 'Mazowsze'
-export const excerpt = 'Planujecie ślub w Garwolinie? Odkryjcie, jak wynająć idealne BMW do ślubu i uczynić ten dzień jeszcze bardziej wyjątkowym.'
+export const excerpt = 'Garwolin, 60 km od Radomia — szofer Złotej Karety dojedzie bezpłatnie z BMW 650i lub 4 Cabrio. Sprawdź pakiet ślubny i zarezerwuj termin na 2026.'
 export const emoji = '🚗'
 export const tags = ['Garwolin', 'auto ślubne', 'BMW do ślubu', 'wynajem samochodu']
 

@@ -3,7 +3,7 @@ export const title = 'Wynajem auta do ślubu w Sulejówku – luksus na Wasz dzi
 export const date = '2026-05-19'
 export const readTime = '6 min'
 export const category = 'Mazowsze'
-export const excerpt = 'Planujecie ślub w Sulejówku? Odkryj, jak wynająć luksusowe BMW i uczynić ten dzień jeszcze bardziej wyjątkowym.'
+export const excerpt = 'Sulejówek graniczy z Warszawą — BMW 650i lub BMW 4 Cabrio Złotej Karety jest dostępne bez dopłaty za dojazd. Zarezerwuj termin ślubny w 2026 roku.'
 export const emoji = '🌹'
 export const tags = ['wynajem auta do ślubu', 'Sulejówek', 'BMW na ślub', 'auto ślubne']
 

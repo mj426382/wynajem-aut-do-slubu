@@ -3,7 +3,7 @@ export const title = 'Wynajem Auta do Ślubu w Otwocku – Luksus na Wasz Wielki
 export const date = '2026-04-10'
 export const readTime = '6 min'
 export const category = 'Mazowsze'
-export const excerpt = 'Szukacie idealnego auta do ślubu w Otwocku? Sprawdź, jak luksusowe BMW może uczynić Wasz dzień niezapomnianym.'
+export const excerpt = 'Otwock, 20 km od Warszawy — BMW 650i lub BMW 4 Cabrio przyjedzie pod drzwi. Bezpłatna dekoracja, dyskretny szofer i nielimitowany postój na sesję.'
 export const emoji = '🚗'
 export const tags = ['Otwock', 'auto do ślubu', 'BMW do ślubu', 'wynajem auta ślubnego']
 
