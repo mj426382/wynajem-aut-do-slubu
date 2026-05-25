@@ -2,15 +2,6 @@
   "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
   "pending": [
     {
-      "id": "poradnik-budzet-auto",
-      "slug_hint": "ile-kosztuje-auto-do-slubu-budzet-2026",
-      "title_hint": "Ile Kosztuje Auto do Ślubu? Kompletny Cennik i Budżet na 2026",
-      "category": "Porady",
-      "intent_group": "advice_budget",
-      "priority": 1,
-      "focus_keyword": "ile kosztuje wynajem auta do ślubu"
-    },
-    {
       "id": "warszawa-mokotow",
       "slug_hint": "wynajem-auta-do-slubu-mokotow-warszawa",
       "title_hint": "Wynajem Auta do Ślubu na Mokotowie – Luksusowe BMW w Eleganciej Dzielnicy",
@@ -681,6 +672,14 @@
       "article_file": "article48.jsx",
       "date": "2025-11-05",
       "_note": "DUPLICATE intent_group z mazowsze-plonsk-dup"
+    },
+    {
+      "id": "poradnik-budzet-auto",
+      "intent_group": "advice_budget",
+      "slug": "ile-kosztuje-auto-do-slubu-budzet-2026",
+      "title": "Ile Kosztuje Wynajem Auta do Ślubu? Kompletny Cennik 2026",
+      "article_file": "article49.jsx",
+      "date": "2026-05-25"
     }
   ]
 }
