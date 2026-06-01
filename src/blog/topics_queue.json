@@ -2,15 +2,6 @@
   "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
   "pending": [
     {
-      "id": "warszawa-mokotow",
-      "slug_hint": "wynajem-auta-do-slubu-mokotow-warszawa",
-      "title_hint": "Wynajem Auta do Ślubu na Mokotowie – Luksusowe BMW w Eleganciej Dzielnicy",
-      "category": "Warszawa",
-      "intent_group": "district_mokotow",
-      "priority": 1,
-      "focus_keyword": "wynajem auta do ślubu Mokotów"
-    },
-    {
       "id": "mazowsze-bialobrzegi",
       "slug_hint": "wynajem-auta-do-slubu-bialobrzegi",
       "title_hint": "Wynajem Auta do Ślubu w Białobrzegach – BMW z Radomia na Twój Dzień",
@@ -680,6 +671,14 @@
       "title": "Ile Kosztuje Wynajem Auta do Ślubu? Kompletny Cennik 2026",
       "article_file": "article49.jsx",
       "date": "2026-05-25"
+    },
+    {
+      "id": "warszawa-mokotow",
+      "intent_group": "district_mokotow",
+      "slug": "wynajem-auta-do-slubu-mokotow-warszawa",
+      "title": "Wynajem Auta do Ślubu na Mokotowie – Luksusowe BMW w Eleganckiej Dzielnicy",
+      "article_file": "article50.jsx",
+      "date": "2026-06-01"
     }
   ]
 }
