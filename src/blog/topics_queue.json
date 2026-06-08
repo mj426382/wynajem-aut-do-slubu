@@ -2,15 +2,6 @@
   "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
   "pending": [
     {
-      "id": "mazowsze-bialobrzegi",
-      "slug_hint": "wynajem-auta-do-slubu-bialobrzegi",
-      "title_hint": "Wynajem Auta do Ślubu w Białobrzegach – BMW z Radomia na Twój Dzień",
-      "category": "Radom",
-      "intent_group": "city_bialobrzegi",
-      "priority": 2,
-      "focus_keyword": "wynajem auta do ślubu Białobrzegi"
-    },
-    {
       "id": "poradnik-slub-zimowy",
       "slug_hint": "auto-do-slubu-zima-bmw-porady",
       "title_hint": "Auto do Ślubu Zimą – Jak Zaplanować Luksusowy Transport w Sezonie Zimowym?",
@@ -679,6 +670,14 @@
       "title": "Wynajem Auta do Ślubu na Mokotowie – Luksusowe BMW w Eleganckiej Dzielnicy",
       "article_file": "article50.jsx",
       "date": "2026-06-01"
+    },
+    {
+      "id": "mazowsze-bialobrzegi",
+      "intent_group": "city_bialobrzegi",
+      "slug": "wynajem-auta-do-slubu-bialobrzegi",
+      "title": "Wynajem Auta do Ślubu w Białobrzegach – BMW na Twój Wielki Dzień",
+      "article_file": "article51.jsx",
+      "date": "2026-06-08"
     }
   ]
 }
