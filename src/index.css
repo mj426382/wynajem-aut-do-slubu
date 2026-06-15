@@ -430,11 +430,17 @@ p:last-child { margin-bottom: 0; }
   transition: all var(--transition);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .fleet-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
+}
+
+.fleet-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
 }
 
 .fleet-card__image-wrap {

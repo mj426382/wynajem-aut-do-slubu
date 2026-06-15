@@ -236,7 +236,6 @@ export default function RadomPage() {
                 </p>
                 <ul className="fleet-card__features">
                   <li>Elektryczny dach — otwiera się w 18 sek.</li>
-                  <li>Jazda z odkrytym dachem do 50 km/h</li>
                   <li>Skórzana tapicerka w jasnym kolorze</li>
                   <li>Podgrzewane fotele i ogrzewanie szyi</li>
                 </ul>

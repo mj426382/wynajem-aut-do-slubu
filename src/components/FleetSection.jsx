@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const cars = [
   {
     id: 1,
     slug: 'bmw-650i-gran-coupe',
-    image: 'https://github.com/user-attachments/assets/6c36b836-e7fb-4ee4-8de3-a218fe13ee09',
+    image: '/images/bmw6/bmw6-front.jpg',
     imageAlt: 'BMW 650i xDrive Gran Coupé – luksusowe auto do ślubu udekorowane białymi kwiatami przed kościołem',
     name: 'BMW 650i xDrive Gran Coupé (F06)',
     subtitle: 'Auto do ślubu Radom i Warszawa',
@@ -22,7 +22,7 @@ const cars = [
   {
     id: 2,
     slug: 'bmw-4-cabrio',
-    image: 'https://github.com/user-attachments/assets/eaa61a2e-36d7-4787-8f85-37ab038848ff',
+    image: '/images/bmw4/bmw4-front-villa.jpg',
     imageAlt: 'BMW 4 Cabrio G23 – białe auto ślubne z odkrytym dachem przed kościołem',
     name: 'BMW 4 Cabrio (G23)',
     subtitle: 'Romantyczne auto ślubne – kabriolet',
@@ -32,7 +32,6 @@ const cars = [
       'Elektryczny dach miękki – otwiera się w 18 sek.',
       'Luksusowa tapicerka skórzana w kolorze koniaku',
       'Pakiet aerodynamiczny Maxton Design',
-      'Jazda z odkrytym dachem do 50 km/h',
       'Podgrzewane fotele i ogrzewanie szyi',
       'System audio Hi-Fi BMW',
     ],
@@ -40,6 +39,25 @@ const cars = [
 ]
 
 export default function FleetSection() {
+  const navigate = useNavigate()
+
+  const goToGallery = (slug) => {
+    navigate(`/flota/${slug}`)
+  }
+
+  const handleCardClick = (event, slug) => {
+    if (event.target.closest('a, button')) return
+    goToGallery(slug)
+  }
+
+  const handleCardKeyDown = (event, slug) => {
+    if (event.target.closest('a, button')) return
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      goToGallery(slug)
+    }
+  }
+
   return (
     <section className="fleet" id="flota" aria-labelledby="fleet-title">
       <div className="container">
@@ -51,7 +69,15 @@ export default function FleetSection() {
         </p>
         <div className="fleet__grid">
           {cars.map((car) => (
-            <article className="fleet-card" key={car.id}>
+            <article
+              className="fleet-card"
+              key={car.id}
+              role="link"
+              tabIndex="0"
+              aria-label={`Zobacz galerię: ${car.name}`}
+              onClick={(event) => handleCardClick(event, car.slug)}
+              onKeyDown={(event) => handleCardKeyDown(event, car.slug)}
+            >
               <div className="fleet-card__image-wrap">
                 <img
                   src={car.image}

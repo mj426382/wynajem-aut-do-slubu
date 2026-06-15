@@ -5,19 +5,9 @@ import SEO from '../components/SEO'
 
 const gallery = [
   {
-    src: '/images/bmw4/bmw4-side-roof.jpg',
-    alt: 'BMW 4 Cabrio G23 — białe auto ślubne z odkrytym dachem, widok z boku w Villa Renard',
-    caption: 'BMW 4 Cabrio — elegancki kabriolet z odkrytym dachem otwieranym w 18 sekund',
-  },
-  {
     src: '/images/bmw4/bmw4-front-villa.jpg',
     alt: 'BMW 4 Cabrio G23 — widok frontowy, białe luksusowe auto ślubne przy Villa Renard',
     caption: 'BMW 4 Cabrio — koniakowa tapicerka i sportowy pakiet Maxton Design',
-  },
-  {
-    src: '/images/bmw4/bmw4-top-view.jpg',
-    alt: 'BMW 4 Cabrio G23 — widok z góry, odkryte wnętrze z koniakową tapicerką przy Villa Renard',
-    caption: 'BMW 4 Cabrio — elektryczny dach otwarty w 18 sekund dla pełnej elegancji',
   },
   {
     src: '/images/bmw4/bmw4-front-angle.jpg',
@@ -33,7 +23,6 @@ const gallery = [
 
 const features = [
   { icon: '🌬️', label: 'Elektryczny dach — otwiera się w 18 sek.' },
-  { icon: '🚗', label: 'Jazda z odkrytym dachem do 50 km/h' },
   { icon: '🪑', label: 'Luksusowa tapicerka skórzana (koniakowa)' },
   { icon: '🔥', label: 'Podgrzewane fotele i ogrzewanie szyi' },
   { icon: '🎵', label: 'System audio Hi-Fi BMW' },
