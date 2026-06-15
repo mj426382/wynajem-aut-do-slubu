@@ -24,6 +24,11 @@ const gallery = [
     alt: 'BMW 4 Cabrio G23 — widok 3/4 frontowy przy Villa Renard, białe auto ślubne',
     caption: 'BMW 4 Cabrio — idealne do zdjęć ślubnych i efektownego wjazdu pary młodej',
   },
+  {
+    src: '/images/bmw4/bmw4-original.jpg',
+    alt: 'BMW 4 Cabrio G23 — białe auto ślubne z odkrytym dachem udekorowane kwiatami',
+    caption: 'BMW 4 Cabrio — romantyczny kabriolet na Twój wymarzony ślub',
+  },
 ]
 
 const features = [
