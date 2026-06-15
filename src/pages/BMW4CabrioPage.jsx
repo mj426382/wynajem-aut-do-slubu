@@ -5,9 +5,24 @@ import SEO from '../components/SEO'
 
 const gallery = [
   {
-    src: 'https://github.com/user-attachments/assets/eaa61a2e-36d7-4787-8f85-37ab038848ff',
-    alt: 'BMW 4 Cabrio G23 — białe auto ślubne z odkrytym dachem udekorowane kwiatami',
-    caption: 'BMW 4 Cabrio — romantyczny kabriolet na Twój wymarzony ślub',
+    src: '/images/bmw4/bmw4-side-roof.jpg',
+    alt: 'BMW 4 Cabrio G23 — białe auto ślubne z odkrytym dachem, widok z boku w Villa Renard',
+    caption: 'BMW 4 Cabrio — elegancki kabriolet z odkrytym dachem otwieranym w 18 sekund',
+  },
+  {
+    src: '/images/bmw4/bmw4-front-villa.jpg',
+    alt: 'BMW 4 Cabrio G23 — widok frontowy, białe luksusowe auto ślubne przy Villa Renard',
+    caption: 'BMW 4 Cabrio — koniakowa tapicerka i sportowy pakiet Maxton Design',
+  },
+  {
+    src: '/images/bmw4/bmw4-top-view.jpg',
+    alt: 'BMW 4 Cabrio G23 — widok z góry, odkryte wnętrze z koniakową tapicerką przy Villa Renard',
+    caption: 'BMW 4 Cabrio — elektryczny dach otwarty w 18 sekund dla pełnej elegancji',
+  },
+  {
+    src: '/images/bmw4/bmw4-front-angle.jpg',
+    alt: 'BMW 4 Cabrio G23 — widok 3/4 frontowy przy Villa Renard, białe auto ślubne',
+    caption: 'BMW 4 Cabrio — idealne do zdjęć ślubnych i efektownego wjazdu pary młodej',
   },
 ]
 
