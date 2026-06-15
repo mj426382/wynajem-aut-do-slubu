@@ -2,15 +2,6 @@
   "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
   "pending": [
     {
-      "id": "poradnik-slub-zimowy",
-      "slug_hint": "auto-do-slubu-zima-bmw-porady",
-      "title_hint": "Auto do Ślubu Zimą – Jak Zaplanować Luksusowy Transport w Sezonie Zimowym?",
-      "category": "Porady",
-      "intent_group": "advice_winter_wedding",
-      "priority": 2,
-      "focus_keyword": "auto do ślubu zimą"
-    },
-    {
       "id": "warszawa-bielany",
       "slug_hint": "wynajem-auta-do-slubu-bielany-warszawa",
       "title_hint": "Wynajem Auta do Ślubu na Bielanach – BMW dla Par z Północy Warszawy",
@@ -678,6 +669,14 @@
       "title": "Wynajem Auta do Ślubu w Białobrzegach – BMW na Twój Wielki Dzień",
       "article_file": "article51.jsx",
       "date": "2026-06-08"
+    },
+    {
+      "id": "poradnik-slub-zimowy",
+      "intent_group": "advice_winter_wedding",
+      "slug": "auto-do-slubu-zima-bmw-porady",
+      "title": "Auto do Ślubu Zimą – Jak Zaplanować Luksusowy Transport?",
+      "article_file": "article52.jsx",
+      "date": "2026-06-15"
     }
   ]
 }
