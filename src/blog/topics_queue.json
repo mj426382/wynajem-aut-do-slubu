@@ -2,15 +2,6 @@
   "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
   "pending": [
     {
-      "id": "warszawa-bielany",
-      "slug_hint": "wynajem-auta-do-slubu-bielany-warszawa",
-      "title_hint": "Wynajem Auta do Ślubu na Bielanach – BMW dla Par z Północy Warszawy",
-      "category": "Warszawa",
-      "intent_group": "district_bielany",
-      "priority": 2,
-      "focus_keyword": "wynajem auta do ślubu Bielany"
-    },
-    {
       "id": "mazowsze-zwolen",
       "slug_hint": "wynajem-auta-do-slubu-zwolen",
       "title_hint": "Wynajem Auta do Ślubu w Zwoleniu – Eleganckie BMW z Radomia",
@@ -677,6 +668,14 @@
       "title": "Auto do Ślubu Zimą – Jak Zaplanować Luksusowy Transport?",
       "article_file": "article52.jsx",
       "date": "2026-06-15"
+    },
+    {
+      "id": "warszawa-bielany",
+      "intent_group": "district_bielany",
+      "slug": "wynajem-auta-do-slubu-bielany-warszawa",
+      "title": "Wynajem Auta do Ślubu na Bielanach – BMW dla Par w 2026",
+      "article_file": "article53.jsx",
+      "date": "2026-06-22"
     }
   ]
 }
