@@ -2,15 +2,6 @@
   "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
   "pending": [
     {
-      "id": "mazowsze-zwolen",
-      "slug_hint": "wynajem-auta-do-slubu-zwolen",
-      "title_hint": "Wynajem Auta do Ślubu w Zwoleniu – Eleganckie BMW z Radomia",
-      "category": "Radom",
-      "intent_group": "city_zwolen",
-      "priority": 2,
-      "focus_keyword": "wynajem auta do ślubu Zwoleń"
-    },
-    {
       "id": "porownanie-bmw-vs-mercedes",
       "slug_hint": "bmw-vs-mercedes-auto-do-slubu-porownanie",
       "title_hint": "BMW vs Mercedes do Ślubu – Porównanie, Ceny i Opinie w 2026 Roku",
@@ -676,6 +667,14 @@
       "title": "Wynajem Auta do Ślubu na Bielanach – BMW dla Par w 2026",
       "article_file": "article53.jsx",
       "date": "2026-06-22"
+    },
+    {
+      "id": "mazowsze-zwolen",
+      "intent_group": "city_zwolen",
+      "slug": "wynajem-auta-do-slubu-zwolen",
+      "title": "Wynajem Auta do Ślubu w Zwoleniu – Eleganckie BMW z Radomia",
+      "article_file": "article54.jsx",
+      "date": "2026-06-29"
     }
   ]
 }
