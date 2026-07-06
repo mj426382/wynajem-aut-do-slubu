@@ -2,15 +2,6 @@
   "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
   "pending": [
     {
-      "id": "porownanie-bmw-vs-mercedes",
-      "slug_hint": "bmw-vs-mercedes-auto-do-slubu-porownanie",
-      "title_hint": "BMW vs Mercedes do Ślubu – Porównanie, Ceny i Opinie w 2026 Roku",
-      "category": "BMW",
-      "intent_group": "comparison_bmw_vs_mercedes",
-      "priority": 2,
-      "focus_keyword": "BMW vs Mercedes do ślubu"
-    },
-    {
       "id": "mazowsze-sochaczew",
       "slug_hint": "wynajem-auta-do-slubu-sochaczew",
       "title_hint": "Wynajem Auta do Ślubu w Sochaczewie – BMW na Wasz Ślub w Mazowszu",
@@ -675,6 +666,14 @@
       "title": "Wynajem Auta do Ślubu w Zwoleniu – Eleganckie BMW z Radomia",
       "article_file": "article54.jsx",
       "date": "2026-06-29"
+    },
+    {
+      "id": "porownanie-bmw-vs-mercedes",
+      "intent_group": "comparison_bmw_vs_mercedes",
+      "slug": "bmw-vs-mercedes-auto-do-slubu-porownanie",
+      "title": "BMW vs Mercedes do Ślubu – Porównanie, Ceny i Opinie 2026",
+      "article_file": "article55.jsx",
+      "date": "2026-07-06"
     }
   ]
 }
