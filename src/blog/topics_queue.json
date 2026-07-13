@@ -2,15 +2,6 @@
   "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
   "pending": [
     {
-      "id": "mazowsze-sochaczew",
-      "slug_hint": "wynajem-auta-do-slubu-sochaczew",
-      "title_hint": "Wynajem Auta do Ślubu w Sochaczewie – BMW na Wasz Ślub w Mazowszu",
-      "category": "Mazowsze",
-      "intent_group": "city_sochaczew",
-      "priority": 3,
-      "focus_keyword": "wynajem auta do ślubu Sochaczew"
-    },
-    {
       "id": "warszawa-bemowo",
       "slug_hint": "wynajem-auta-do-slubu-bemowo-warszawa",
       "title_hint": "Wynajem Auta do Ślubu na Bemowie – Luksus w Zachodniej Warszawie",
@@ -674,6 +665,14 @@
       "title": "BMW vs Mercedes do Ślubu – Porównanie, Ceny i Opinie 2026",
       "article_file": "article55.jsx",
       "date": "2026-07-06"
+    },
+    {
+      "id": "mazowsze-sochaczew",
+      "intent_group": "city_sochaczew",
+      "slug": "wynajem-auta-do-slubu-sochaczew",
+      "title": "Wynajem Auta do Ślubu w Sochaczewie – BMW na Wasz Ślub w Mazowszu",
+      "article_file": "article56.jsx",
+      "date": "2026-07-13"
     }
   ]
 }
