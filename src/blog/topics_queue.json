@@ -2,15 +2,6 @@
   "_comment": "Kolejka tematów do generowania artykułów. Każdy intent_group może mieć tylko JEDEN artykuł – zasada anty-kanibalizacji. Skrypt wybiera tematy z pending w kolejności priority (1=najwyższy). Po wygenerowaniu temat wędruje do published.",
   "pending": [
     {
-      "id": "warszawa-bemowo",
-      "slug_hint": "wynajem-auta-do-slubu-bemowo-warszawa",
-      "title_hint": "Wynajem Auta do Ślubu na Bemowie – Luksus w Zachodniej Warszawie",
-      "category": "Warszawa",
-      "intent_group": "district_bemowo",
-      "priority": 3,
-      "focus_keyword": "wynajem auta do ślubu Bemowo"
-    },
-    {
       "id": "poradnik-sesja-zdjeciowa-radom",
       "slug_hint": "najlepsze-lokalizacje-sesji-z-auto-radom",
       "title_hint": "Najlepsze Miejsca na Sesję Ślubną z BMW w Radomiu i Okolicach – Poradnik 2026",
@@ -673,6 +664,14 @@
       "title": "Wynajem Auta do Ślubu w Sochaczewie – BMW na Wasz Ślub w Mazowszu",
       "article_file": "article56.jsx",
       "date": "2026-07-13"
+    },
+    {
+      "id": "warszawa-bemowo",
+      "intent_group": "district_bemowo",
+      "slug": "wynajem-auta-do-slubu-bemowo-warszawa",
+      "title": "Wynajem Auta do Ślubu na Bemowie – Luksus w Zachodniej Warszawie",
+      "article_file": "article57.jsx",
+      "date": "2026-07-27"
     }
   ]
 }
