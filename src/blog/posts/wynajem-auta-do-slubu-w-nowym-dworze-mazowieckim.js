@@ -1,7 +1,7 @@
 export const slug = 'wynajem-auta-do-slubu-w-nowym-dworze-mazowieckim'
 export const title = 'Wynajem Auta do Ślubu w Nowym Dworze Mazowieckim – Luksus na Wasz Wielki Dzień'
-export const metaTitle = 'Wynajem Auta do Ślubu w Nowym Dworze Mazowieckim – Luksus na Wasz Wielki Dzień'
-export const metaDescription = 'Szukacie idealnego auta do ślubu w Nowym Dworze Mazowieckim? Sprawdź, dlaczego luksusowe BMW AutoDoŚlubu Warszawa & Radom to wybór idealny na Wasz wyjątkowy dzień.'
+export const metaTitle = 'Wynajem Auta do Ślubu w Nowym Dworze Mazowieckim'
+export const metaDescription = 'Szukacie idealnego auta do ślubu w Nowym Dworze Mazowieckim? Sprawdź, dlaczego luksusowe BMW AutoDoŚlubu Warszawa & Radom to wybór idealny na Wasz wyjątkowy.'
 export const date = '2026-04-20'
 export const modifiedAt = '2026-04-20'
 export const readTime = 2

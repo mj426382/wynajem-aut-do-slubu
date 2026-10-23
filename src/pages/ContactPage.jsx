@@ -23,13 +23,38 @@ const jsonLd = [
   },
 ]
 
+const PHONE_RE = /^\+?[\d\s()-]{9,}$/
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+
+/** Field errors in Polish; empty object = the form can be sent. Couples may leave a phone OR an e-mail. */
+export function validateContact(values, today = new Date().toISOString().slice(0, 10)) {
+  const errors = {}
+  if (values.name.trim().length < 2) errors.name = 'Podajcie imię, żebyśmy wiedzieli, jak się do Was zwracać.'
+  const phone = values.phone.trim()
+  const email = values.email.trim()
+  if (!phone && !email) errors.phone = 'Zostawcie telefon albo e-mail – jedno wystarczy.'
+  if (phone && !PHONE_RE.test(phone)) errors.phone = 'Sprawdźcie numer telefonu (min. 9 cyfr).'
+  if (email && !EMAIL_RE.test(email)) errors.email = 'Sprawdźcie adres e-mail.'
+  if (values.wedding_date && values.wedding_date < today) errors.wedding_date = 'Data ślubu nie może być w przeszłości.'
+  if (values.message.trim().length < 10) errors.message = 'Napiszcie choć krótko, gdzie i o której jest ślub.'
+  return errors
+}
+
 export default function ContactPage() {
   const [status, setStatus] = useState('idle')
+  const [errors, setErrors] = useState({})
 
   async function handleSubmit(e) {
     e.preventDefault()
     const form = e.target
     if (form.elements.website?.value) return // honeypot – a bot filled the hidden field
+    const values = Object.fromEntries(['name', 'email', 'phone', 'wedding_date', 'message'].map((k) => [k, form.elements[k]?.value ?? '']))
+    const found = validateContact(values)
+    setErrors(found)
+    if (Object.keys(found).length) {
+      form.elements[Object.keys(found)[0]]?.focus()
+      return
+    }
     setStatus('sending')
     try {
       const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
@@ -74,20 +99,24 @@ export default function ContactPage() {
                 <input type="text" name="website" tabIndex="-1" autoComplete="off" style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true" />
 
                 <div className="form-group">
-                  <label htmlFor="name">Imię i nazwisko *</label>
-                  <input type="text" id="name" name="name" placeholder="np. Anna Kowalska" required autoComplete="name" />
+                  <label htmlFor="name">Imię *</label>
+                  <input type="text" id="name" name="name" placeholder="np. Anna" autoComplete="name" aria-invalid={!!errors.name} aria-describedby={errors.name ? 'name-error' : undefined} />
+                  {errors.name && <p className="form-error" id="name-error">{errors.name}</p>}
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">Adres e-mail *</label>
-                  <input type="email" id="email" name="email" placeholder="twoj@email.pl" required autoComplete="email" />
+                  <label htmlFor="phone">Telefon *</label>
+                  <input type="tel" id="phone" name="phone" placeholder="np. 600 000 000" autoComplete="tel" inputMode="tel" aria-invalid={!!errors.phone} aria-describedby="phone-hint" />
+                  {errors.phone ? <p className="form-error" id="phone-hint">{errors.phone}</p> : <p className="form-hint" id="phone-hint">Najszybciej odpowiadamy telefonicznie lub SMS-em.</p>}
                 </div>
                 <div className="form-group">
-                  <label htmlFor="phone">Numer telefonu</label>
-                  <input type="tel" id="phone" name="phone" placeholder="np. 600 000 000" autoComplete="tel" />
+                  <label htmlFor="email">E-mail (jeśli wolicie odpowiedź mailem)</label>
+                  <input type="email" id="email" name="email" placeholder="twoj@email.pl" autoComplete="email" aria-invalid={!!errors.email} aria-describedby={errors.email ? 'email-error' : undefined} />
+                  {errors.email && <p className="form-error" id="email-error">{errors.email}</p>}
                 </div>
                 <div className="form-group">
                   <label htmlFor="wedding_date">Data ślubu</label>
-                  <input type="date" id="wedding_date" name="wedding_date" />
+                  <input type="date" id="wedding_date" name="wedding_date" aria-invalid={!!errors.wedding_date} />
+                  {errors.wedding_date && <p className="form-error">{errors.wedding_date}</p>}
                 </div>
                 <div className="form-group">
                   <label htmlFor="car">Auto</label>
@@ -100,7 +129,8 @@ export default function ContactPage() {
                 </div>
                 <div className="form-group">
                   <label htmlFor="message">Miejsce ślubu i wesela, godziny, trasa *</label>
-                  <textarea id="message" name="message" placeholder="np. ślub o 15:00 w kościele św. Anny w Warszawie, wesele w Konstancinie, sesja na Starym Mieście" required></textarea>
+                  <textarea id="message" name="message" placeholder="np. ślub o 15:00 w kościele św. Anny w Warszawie, wesele w Konstancinie, sesja na Starym Mieście" aria-invalid={!!errors.message}></textarea>
+                  {errors.message && <p className="form-error">{errors.message}</p>}
                 </div>
                 <p className="form-consent">
                   Wysyłając formularz, zgadzasz się na kontakt w sprawie zapytania. Dane przetwarzamy zgodnie z{' '}

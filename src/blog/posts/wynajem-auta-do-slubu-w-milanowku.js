@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-milanowku'
 export const title = 'Wynajem auta do ślubu w Milanówku – Luksus i styl na Wasz dzień'
-export const metaTitle = 'Wynajem auta do ślubu w Milanówku – Luksus i styl na Wasz dzień'
+export const metaTitle = 'Wynajem auta do ślubu w Milanówku – Luksus i styl na Wasz'
 export const metaDescription = 'Planowanie ślubu w Milanówku? Wynajem luksusowego BMW to idealny wybór na elegancki i wyjątkowy dzień.'
 export const date = '2026-05-16'
 export const modifiedAt = '2026-05-16'

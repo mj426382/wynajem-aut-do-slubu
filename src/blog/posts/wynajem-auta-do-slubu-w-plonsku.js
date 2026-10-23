@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-plonsku'
 export const title = 'Wynajem auta do ślubu w Płońsku – luksus na Wasz wyjątkowy dzień'
-export const metaTitle = 'Wynajem auta do ślubu w Płońsku – luksus na Wasz wyjątkowy dzień'
+export const metaTitle = 'Wynajem auta do ślubu w Płońsku – luksus na Wasz wyjątkowy'
 export const metaDescription = 'Zaplanujcie swój idealny ślub w Płońsku z luksusowym autem BMW. Komfort, styl i niezapomniane chwile na wyciągnięcie ręki.'
 export const date = '2026-04-19'
 export const modifiedAt = '2026-04-19'

@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-zyrardowie'
 export const title = 'Wynajem Auta do Ślubu w Żyrardowie – Luksus i Styl na Wasz Wielki Dzień'
-export const metaTitle = 'Wynajem Auta do Ślubu w Żyrardowie – Luksus i Styl na Wasz Wielki Dzień'
+export const metaTitle = 'Wynajem Auta do Ślubu w Żyrardowie – Luksus i Styl na Wasz'
 export const metaDescription = 'Szukacie idealnego auta do ślubu w Żyrardowie? Sprawdź naszą ofertę luksusowych BMW i zarezerwuj wymarzone auto już dziś!'
 export const date = '2026-04-21'
 export const modifiedAt = '2026-04-21'

@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-wilanowie'
 export const title = 'Wynajem Auta do Ślubu w Wilanowie – Luksus na Wasz Wielki Dzień'
-export const metaTitle = 'Wynajem Auta do Ślubu w Wilanowie – Luksus na Wasz Wielki Dzień'
+export const metaTitle = 'Wynajem Auta do Ślubu w Wilanowie – Luksus na Wasz Wielki'
 export const metaDescription = 'Planujecie ślub w Wilanowie? Sprawdźcie, jak wynająć luksusowe BMW i dodać szyku Waszemu wyjątkowemu dniu.'
 export const date = '2026-04-14'
 export const modifiedAt = '2026-04-14'

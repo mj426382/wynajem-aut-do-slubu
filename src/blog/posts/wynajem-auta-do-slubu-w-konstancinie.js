@@ -1,7 +1,7 @@
 export const slug = 'wynajem-auta-do-slubu-w-konstancinie'
 export const title = 'Wynajem Auta do Ślubu w Konstancinie – Luksus i Styl w Jednym'
-export const metaTitle = 'Wynajem Auta do Ślubu w Konstancinie – Luksus i Styl w Jednym'
-export const metaDescription = 'Konstancin-Jeziorna — elegancka uzdrowiskowa miejscowość pod Warszawą. BMW 650i AutoDoŚlubu Warszawa & Radom podkreśli prestiż wesela i doda szyku każdej fotografii.'
+export const metaTitle = 'Wynajem Auta do Ślubu w Konstancinie'
+export const metaDescription = 'Konstancin-Jeziorna — elegancka uzdrowiskowa miejscowość pod Warszawą. BMW 650i AutoDoŚlubu Warszawa & Radom podkreśli prestiż wesela i doda szyku każdej.'
 export const date = '2026-04-27'
 export const modifiedAt = '2026-04-27'
 export const readTime = 2

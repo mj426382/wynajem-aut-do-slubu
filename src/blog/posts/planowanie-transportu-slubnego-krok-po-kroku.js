@@ -1,6 +1,6 @@
 export const slug = 'planowanie-transportu-slubnego-krok-po-kroku'
 export const title = 'Planowanie transportu ślubnego krok po kroku – poradnik dla par młodych'
-export const metaTitle = 'Planowanie transportu ślubnego krok po kroku – poradnik dla par młodych'
+export const metaTitle = 'Planowanie transportu ślubnego krok po kroku'
 export const metaDescription = 'Dowiedz się, jak zaplanować transport ślubny krok po kroku. Poradnik dla par młodych – od wyboru auta po perfekcyjną organizację trasy.'
 export const date = '2026-05-14'
 export const modifiedAt = '2026-05-14'

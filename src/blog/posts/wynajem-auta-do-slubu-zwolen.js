@@ -11,7 +11,7 @@ export const emoji = '🌹'
 export const tags = ['wynajem aut ślubnych', 'Zwoleń', 'ślub 2026', 'BMW 650i', 'BMW 4 Cabrio']
 
 export const content = `
-<h1>Wynajem Auta do Ślubu w Zwoleniu – Eleganckie BMW z Radomia</h1>  
+<h2>Wynajem Auta do Ślubu w Zwoleniu – Eleganckie BMW z Radomia</h2>  
 <p>Planując ślub w Zwoleniu, z pewnością chcecie, aby każdy detal był idealny, w tym także wybór samochodu, którym dotrzecie na ceremonię. W końcu auto ślubne to nie tylko środek transportu, ale i ważny element oprawy wizualnej Waszego wielkiego dnia. Jeśli zależy Wam na luksusie, elegancji i niezawodności, warto rozważyć wynajem samochodów BMW od AutoDoŚlubu Warszawa &amp; Radom. Nasza oferta obejmuje takie perełki jak <a href='/flota/bmw-650i-gran-coupe'>BMW 650i xDrive Gran Coupé</a> i <a href='/flota/bmw-4-cabrio'>BMW 4 Cabrio</a>, które zapewniają nie tylko komfort, ale i spektakularny efekt wizualny.</p>  
 
 <h2>Dlaczego warto wybrać AutoDoŚlubu Warszawa &amp; Radom na Wasz ślub w Zwoleniu?</h2>  

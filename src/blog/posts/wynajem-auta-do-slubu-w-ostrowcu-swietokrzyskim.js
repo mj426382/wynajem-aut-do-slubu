@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-ostrowcu-swietokrzyskim'
 export const title = 'Wynajem auta do ślubu w Ostrowcu Świętokrzyskim – styl i klasa na Twój dzień'
-export const metaTitle = 'Wynajem auta do ślubu w Ostrowcu Świętokrzyskim – styl i klasa na Twój dzień'
+export const metaTitle = 'Wynajem auta do ślubu w Ostrowcu Świętokrzyskim'
 export const metaDescription = 'Planujesz ślub w Ostrowcu Świętokrzyskim? Dowiedz się, jak wynająć luksusowe BMW na ten wyjątkowy dzień i uczynić go niezapomnianym.'
 export const date = '2026-05-02'
 export const modifiedAt = '2026-05-02'

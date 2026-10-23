@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-wolominie'
 export const title = 'Wynajem Auta do Ślubu w Wołominie – Luksus na Wasz Wielki Dzień'
-export const metaTitle = 'Wynajem Auta do Ślubu w Wołominie – Luksus na Wasz Wielki Dzień'
+export const metaTitle = 'Wynajem Auta do Ślubu w Wołominie – Luksus na Wasz Wielki'
 export const metaDescription = 'Zaplanuj wyjątkowy ślub w Wołominie z luksusowym BMW 650i lub BMW 4 Cabrio! Sprawdź naszą ofertę wynajmu aut z szoferem.'
 export const date = '2026-05-08'
 export const modifiedAt = '2026-05-08'

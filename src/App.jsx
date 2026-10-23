@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import MobileCtaBar from './components/MobileCtaBar'
 import CookieBanner from './consent/CookieBanner'
 import PageViewTracker from './consent/PageViewTracker'
 import HomePage from './pages/HomePage'
@@ -39,6 +40,7 @@ export function AppRoutes() {
         </Routes>
       </main>
       <Footer />
+      <MobileCtaBar />
       <CookieBanner />
     </>
   )

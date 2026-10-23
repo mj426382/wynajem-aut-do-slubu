@@ -11,7 +11,7 @@ export const emoji = '🌹'
 export const tags = ['wynajem auta do ślubu', 'Mokotów', 'BMW 650i', 'BMW 4 Cabrio', 'Warszawa']
 
 export const content = `
-<h1>Wynajem Auta do Ślubu na Mokotowie – Luksusowe BMW w Eleganckiej Dzielnicy</h1>
+<h2>Wynajem Auta do Ślubu na Mokotowie – Luksusowe BMW w Eleganckiej Dzielnicy</h2>
 <p>Mokotów to jedna z najbardziej prestiżowych dzielnic Warszawy – miejsce, gdzie nowoczesność spotyka się z elegancją. Jeśli planujecie swój ślub w tej wyjątkowej okolicy, odpowiedni dobór samochodu ślubnego jest kluczowy, by podkreślić charakter Waszego wielkiego dnia. W Złotej Karecie oferujemy <strong>wynajem auta do ślubu na Mokotowie</strong>, które zachwyci Was i Waszych gości. Nasze luksusowe BMW 650i xDrive Gran Coupé oraz BMW 4 Cabrio to idealne propozycje dla Par Młodych, które cenią sobie styl, komfort i klasę.</p>
 
 <h2>Dlaczego BMW to idealne auto do ślubu na Mokotowie?</h2>

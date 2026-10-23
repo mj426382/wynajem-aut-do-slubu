@@ -1,7 +1,7 @@
 export const slug = 'wynajem-auta-do-slubu-pruszkow'
 export const title = 'Wynajem Auta do Ślubu w Pruszkowie – Luksus i Styl'
 export const metaTitle = 'Wynajem Auta do Ślubu w Pruszkowie – Luksus i Styl'
-export const metaDescription = 'Pruszków, 20 minut od centrum Warszawy — BMW 650i lub BMW 4 Cabrio AutoDoŚlubu Warszawa & Radom dojedzie bezpłatnie. Szofer, dekoracja i sesja zdjęciowa w cenie.'
+export const metaDescription = 'Pruszków, 20 minut od centrum Warszawy — BMW 650i lub BMW 4 Cabrio AutoDoŚlubu Warszawa & Radom dojedzie bezpłatnie. Szofer, dekoracja i sesja zdjęciowa.'
 export const date = '2026-04-06'
 export const modifiedAt = '2026-04-06'
 export const readTime = 2

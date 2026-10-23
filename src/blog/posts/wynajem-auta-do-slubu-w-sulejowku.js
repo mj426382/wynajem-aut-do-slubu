@@ -1,7 +1,7 @@
 export const slug = 'wynajem-auta-do-slubu-w-sulejowku'
 export const title = 'Wynajem auta do ślubu w Sulejówku – luksus na Wasz dzień'
 export const metaTitle = 'Wynajem auta do ślubu w Sulejówku – luksus na Wasz dzień'
-export const metaDescription = 'Sulejówek graniczy z Warszawą — BMW 650i lub BMW 4 Cabrio AutoDoŚlubu Warszawa & Radom jest dostępne bez dopłaty za dojazd. Zarezerwuj termin ślubny w 2026 roku.'
+export const metaDescription = 'Sulejówek graniczy z Warszawą — BMW 650i lub BMW 4 Cabrio AutoDoŚlubu Warszawa & Radom jest dostępne bez dopłaty za dojazd. Zarezerwuj termin ślubny w 2026.'
 export const date = '2026-05-19'
 export const modifiedAt = '2026-05-19'
 export const readTime = 2

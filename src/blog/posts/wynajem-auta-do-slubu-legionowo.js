@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-legionowo'
 export const title = 'Wynajem Auta do Ślubu w Legionowie – Luksus na Wasz Wielki Dzień'
-export const metaTitle = 'Wynajem Auta do Ślubu w Legionowie – Luksus na Wasz Wielki Dzień'
+export const metaTitle = 'Wynajem Auta do Ślubu w Legionowie – Luksus na Wasz Wielki'
 export const metaDescription = 'Zorganizujcie ślub w wielkim stylu! Wynajem luksusowego BMW w Legionowie to gwarancja klasy i komfortu w tym wyjątkowym dniu.'
 export const date = '2026-04-16'
 export const modifiedAt = '2026-04-16'

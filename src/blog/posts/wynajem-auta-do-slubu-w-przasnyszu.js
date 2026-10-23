@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-przasnyszu'
 export const title = 'Wynajem Auta do Ślubu w Przasnyszu – Luksus na Wasz Wielki Dzień'
-export const metaTitle = 'Wynajem Auta do Ślubu w Przasnyszu – Luksus na Wasz Wielki Dzień'
+export const metaTitle = 'Wynajem Auta do Ślubu w Przasnyszu – Luksus na Wasz Wielki'
 export const metaDescription = 'Zaplanuj perfekcyjny ślub w Przasnyszu z luksusowym BMW od AutoDoŚlubu Warszawa & Radom. Elegancja, komfort i niezapomniane wrażenia gwarantowane!'
 export const date = '2026-05-03'
 export const modifiedAt = '2026-05-03'

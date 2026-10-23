@@ -11,7 +11,7 @@ export const emoji = '🌹'
 export const tags = ['Sochaczew', 'auto do ślubu', 'wynajem BMW', 'ślub Mazowsze', 'BMW 650i']
 
 export const content = `
-<h1>Wynajem Auta do Ślubu w Sochaczewie – BMW na Wasz Ślub w Mazowszu</h1>
+<h2>Wynajem Auta do Ślubu w Sochaczewie – BMW na Wasz Ślub w Mazowszu</h2>
 <p>Organizacja ślubu w Sochaczewie to wyjątkowe wyzwanie, które wymaga uwzględnienia każdego szczegółu. Jednym z najważniejszych elementów tego dnia jest <strong>wybór odpowiedniego auta do ślubu</strong>. Nic nie podkreśli elegancji Waszego wydarzenia tak, jak luksusowe BMW dostępne w ofercie <a href='/'>AutoDoŚlubu Warszawa &amp; Radom</a>. Czy marzycie o sportowej sylwetce BMW 650i xDrive Gran Coupé, czy może o romantycznym kabriolecie BMW 4 Cabrio? Oba modele doskonale sprawdzą się w roli auta ślubnego, gwarantując niezapomniane wrażenia.</p>
 
 <h2>Dlaczego warto wybrać BMW na ślub w Sochaczewie?</h2>

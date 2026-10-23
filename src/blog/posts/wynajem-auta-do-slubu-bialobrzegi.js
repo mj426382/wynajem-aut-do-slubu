@@ -11,7 +11,7 @@ export const emoji = '🌹'
 export const tags = ['wynajem auta do ślubu', 'Białobrzegi ślub', 'BMW 650i', 'BMW 4 Cabrio', 'ślub w Radomiu']
 
 export const content = `
-<h1>Wynajem Auta do Ślubu w Białobrzegach – BMW z Radomia na Twój Dzień</h1>
+<h2>Wynajem Auta do Ślubu w Białobrzegach – BMW z Radomia na Twój Dzień</h2>
 <p>Planowanie ślubu w Białobrzegach to wyjątkowa przygoda, pełna emocji i decyzji, które ukształtują ten najważniejszy dzień w Waszym życiu. Jednym z kluczowych elementów, o który warto zadbać, jest transport ślubny. Wybór idealnego auta do ślubu to nie tylko kwestia wygody, ale także stylu i wyjątkowego charakteru ceremonii. W Złotej Karecie oferujemy <strong>wynajem samochodów ślubnych premium</strong>, takich jak <a href='/flota/bmw-650i-gran-coupe'>BMW 650i xDrive Gran Coupé</a> czy <a href='/flota/bmw-4-cabrio'>BMW 4 Cabrio</a>, które idealnie wpasują się w klimat Białobrzegów i okolic.</p>
 
 <h2>Dlaczego warto wybrać BMW na ślub w Białobrzegach?</h2>

@@ -11,7 +11,7 @@ export const emoji = '🌹'
 export const tags = ['Bielany', 'Warszawa', 'auto do ślubu', 'BMW', 'ślub 2026']
 
 export const content = `
-<h1>Wynajem Auta do Ślubu na Bielanach – BMW dla Par z Północy Warszawy</h1>
+<h2>Wynajem Auta do Ślubu na Bielanach – BMW dla Par z Północy Warszawy</h2>
 <p>Planowanie ślubu to ekscytujący, ale także wymagający czas. Jednym z kluczowych elementów tego wyjątkowego dnia jest wybór odpowiedniego samochodu, który podkreśli elegancję i styl Waszego święta. Jeśli poszukujecie luksusowego auta do ślubu na Bielanach, AutoDoŚlubu Warszawa &amp; Radom ma dla Was idealne rozwiązanie – wynajem BMW, które spełni Wasze marzenia o niezapomnianym przejeździe.</p>
 
 <h2>Dlaczego warto wybrać BMW na ślub na Bielanach?</h2>

@@ -11,7 +11,7 @@ export const emoji = '🌹'
 export const tags = ['BMW', 'Mercedes', 'auto do ślubu', 'porównanie', 'luksus']
 
 export const content = `
-<h1>BMW vs Mercedes do Ślubu – Porównanie, Ceny i Opinie w 2026 Roku</h1>
+<h2>BMW vs Mercedes do Ślubu – Porównanie, Ceny i Opinie w 2026 Roku</h2>
 
 <p>Wybór samochodu na ślub to jedna z najważniejszych decyzji, które musicie podjąć, planując ten wyjątkowy dzień. Jeśli rozważacie wynajem luksusowego auta, prawdopodobnie zastanawiacie się, co wybrać: <strong>BMW</strong> czy <strong>Mercedes</strong>. W tym artykule przeanalizujemy różnice między tymi dwoma markami, przedstawimy ceny oraz opinie, aby pomóc Wam podjąć świadomą decyzję.</p>
 

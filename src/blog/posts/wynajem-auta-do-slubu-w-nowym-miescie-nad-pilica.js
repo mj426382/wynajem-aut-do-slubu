@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-nowym-miescie-nad-pilica'
 export const title = 'Wynajem Auta do Ślubu w Nowym Mieście nad Pilicą – Luksus i Styl'
-export const metaTitle = 'Wynajem Auta do Ślubu w Nowym Mieście nad Pilicą – Luksus i Styl'
+export const metaTitle = 'Wynajem Auta do Ślubu w Nowym Mieście nad Pilicą'
 export const metaDescription = 'Szukacie samochodu ślubnego w Nowym Mieście nad Pilicą? Sprawdź, jak nasze BMW zapewni elegancję i wygodę w Waszym wyjątkowym dniu.'
 export const date = '2026-04-30'
 export const modifiedAt = '2026-04-30'

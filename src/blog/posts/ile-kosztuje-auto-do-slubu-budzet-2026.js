@@ -1,7 +1,7 @@
 export const slug = 'ile-kosztuje-auto-do-slubu-budzet-2026'
 export const title = 'Ile Kosztuje Wynajem Auta do Ślubu? Kompletny Cennik 2026'
 export const metaTitle = 'Ile Kosztuje Wynajem Auta do Ślubu w 2026? Sprawdź Cennik'
-export const metaDescription = 'Dowiedz się, ile kosztuje wynajem auta do ślubu w 2026 roku. Kompletny cennik, porady i przykłady. Zarezerwuj luksusowe BMW z AutoDoŚlubu Warszawa & Radom już dziś!'
+export const metaDescription = 'Dowiedz się, ile kosztuje wynajem auta do ślubu w 2026 roku. Kompletny cennik, porady i przykłady. Zarezerwuj luksusowe BMW z AutoDoŚlubu Warszawa & Radom.'
 export const date = '2026-05-25'
 export const modifiedAt = '2026-05-25'
 export const readTime = 3
@@ -11,7 +11,7 @@ export const emoji = '🌹'
 export const tags = ['cennik auta ślubne', 'wynajem samochodów do ślubu', 'BMW 650i xDrive', 'BMW 4 Cabrio', 'koszty ślubu']
 
 export const content = `
-<h1>Ile Kosztuje Wynajem Auta do Ślubu? Kompletny Cennik i Budżet na 2026</h1>
+<h2>Ile Kosztuje Wynajem Auta do Ślubu? Kompletny Cennik i Budżet na 2026</h2>
 
 <p>Planowanie ślubu to nie lada wyzwanie, a jednym z kluczowych elementów każdego wesela jest wybór odpowiedniego samochodu do ślubu. Jak się za to zabrać? Ile kosztuje wynajem auta do ślubu w 2026 roku? Czy luksusowe BMW mieści się w Waszym budżecie? W tym artykule szczegółowo omówimy te kwestie i pomożemy Wam podjąć najlepszą decyzję.</p>
 

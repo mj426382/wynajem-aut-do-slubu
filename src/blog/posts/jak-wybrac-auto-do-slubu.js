@@ -1,6 +1,6 @@
 export const slug = 'jak-wybrac-auto-do-slubu'
 export const title = 'Jak Wybrać Auto do Ślubu – Kompletny Poradnik dla Pary Młodej'
-export const metaTitle = 'Jak Wybrać Auto do Ślubu – Kompletny Poradnik dla Pary Młodej'
+export const metaTitle = 'Jak Wybrać Auto do Ślubu – Kompletny Poradnik dla Pary'
 export const metaDescription = 'Jak wybrać idealne auto do ślubu? Kompletny przewodnik: styl wesela, liczba osób, sezon, dekoracje i pytania, które warto zadać firmie wynajmu.'
 export const date = '2025-01-10'
 export const modifiedAt = '2025-01-10'

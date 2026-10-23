@@ -1,7 +1,7 @@
 export const slug = 'wynajem-auta-do-slubu-w-garwolinie'
 export const title = 'Wynajem auta do ślubu w Garwolinie – Luksus i elegancja'
 export const metaTitle = 'Wynajem auta do ślubu w Garwolinie – Luksus i elegancja'
-export const metaDescription = 'Garwolin, 60 km od Radomia — szofer AutoDoŚlubu Warszawa & Radom dojedzie bezpłatnie z BMW 650i lub 4 Cabrio. Sprawdź pakiet ślubny i zarezerwuj termin na 2026.'
+export const metaDescription = 'Garwolin, 60 km od Radomia — szofer AutoDoŚlubu Warszawa & Radom dojedzie bezpłatnie z BMW 650i lub 4 Cabrio. Sprawdź pakiet ślubny i zarezerwuj termin.'
 export const date = '2026-04-25'
 export const modifiedAt = '2026-04-25'
 export const readTime = 2

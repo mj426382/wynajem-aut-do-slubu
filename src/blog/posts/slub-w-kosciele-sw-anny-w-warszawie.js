@@ -1,6 +1,6 @@
 export const slug = 'slub-w-kosciele-sw-anny-w-warszawie'
 export const title = 'Ślub w Kościele Św. Anny w Warszawie – Planowanie i Transport'
-export const metaTitle = 'Ślub w Kościele Św. Anny w Warszawie – Planowanie i Transport'
+export const metaTitle = 'Ślub w Kościele Św. Anny w Warszawie'
 export const metaDescription = 'Odkryj, jak zorganizować idealny ślub w Kościele Św. Anny w Warszawie i jak wybrać luksusowy transport na ten wyjątkowy dzień.'
 export const date = '2026-04-23'
 export const modifiedAt = '2026-04-23'

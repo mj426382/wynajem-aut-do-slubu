@@ -1,7 +1,7 @@
 export const slug = 'wynajem-auta-do-slubu-w-markach'
 export const title = 'Wynajem auta do ślubu w Markach – luksus na Wasz dzień'
 export const metaTitle = 'Wynajem auta do ślubu w Markach – luksus na Wasz dzień'
-export const metaDescription = 'Marki tuż przy Warszawie — AutoDoŚlubu Warszawa & Radom dojeżdża bezpłatnie. Wybierz BMW 650i lub BMW 4 Cabrio i przyjedź na ślub w stylu, który zachwyci gości.'
+export const metaDescription = 'Marki tuż przy Warszawie — AutoDoŚlubu Warszawa & Radom dojeżdża bezpłatnie. Wybierz BMW 650i lub BMW 4 Cabrio i przyjedź na ślub w stylu, który zachwyci.'
 export const date = '2026-04-15'
 export const modifiedAt = '2026-04-15'
 export const readTime = 2

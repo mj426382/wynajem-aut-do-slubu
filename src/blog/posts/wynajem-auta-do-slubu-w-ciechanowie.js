@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-ciechanowie'
 export const title = 'Wynajem Auta do Ślubu w Ciechanowie – Luksus na Wasz Wielki Dzień'
-export const metaTitle = 'Wynajem Auta do Ślubu w Ciechanowie – Luksus na Wasz Wielki Dzień'
+export const metaTitle = 'Wynajem Auta do Ślubu w Ciechanowie – Luksus na Wasz Wielki'
 export const metaDescription = 'Sprawdź ofertę wynajmu luksusowych BMW na ślub w Ciechanowie. Elegancja, styl i profesjonalna obsługa w wyjątkowym dniu.'
 export const date = '2026-04-28'
 export const modifiedAt = '2026-04-28'

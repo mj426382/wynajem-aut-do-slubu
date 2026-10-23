@@ -6,7 +6,7 @@ const car = {
   name: 'BMW 650i xDrive Gran Coupé (F06)',
   shortName: 'BMW 650i Gran Coupé',
   metaTitle: 'BMW 650i Gran Coupé do Ślubu – Auto z Szoferem',
-  metaDescription: `BMW 650i xDrive Gran Coupé na ślub: V8 450 KM, napęd 4×4, jasna skóra. Z szoferem, dekoracją i postojem na sesję w Warszawie, Radomiu i na Mazowszu. Pakiety ${PRICE_MIN}–${PRICE_MAX} zł.`,
+  metaDescription: `BMW 650i Gran Coupé do ślubu: V8, napęd 4×4, z szoferem, dekoracją i postojem na sesję. Warszawa, Radom, Mazowsze. Pakiety ${PRICE_MIN}–${PRICE_MAX} zł.`,
   eyebrow: 'Luksusowe auto ślubne — Warszawa i Radom',
   h1: 'BMW 650i xDrive',
   h1Accent: 'Gran Coupé',

@@ -1,6 +1,6 @@
 export const slug = 'slub-w-kosciele-sw-kazimierza-radom'
 export const title = 'Ślub w Kościele Św. Kazimierza w Radomiu – Planowanie i Transport'
-export const metaTitle = 'Ślub w Kościele Św. Kazimierza w Radomiu – Planowanie i Transport'
+export const metaTitle = 'Ślub w Kościele Św. Kazimierza w Radomiu'
 export const metaDescription = 'Dowiedz się, jak zaplanować ślub w Kościele Św. Kazimierza w Radomiu i zapewnić sobie luksusowy transport w tym wyjątkowym dniu.'
 export const date = '2026-05-19'
 export const modifiedAt = '2026-05-19'

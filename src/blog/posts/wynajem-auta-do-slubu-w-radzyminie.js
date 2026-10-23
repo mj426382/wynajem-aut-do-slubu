@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-radzyminie'
 export const title = 'Wynajem Auta do Ślubu w Radzyminie – Luksus i Styl na Twój Wielki Dzień'
-export const metaTitle = 'Wynajem Auta do Ślubu w Radzyminie – Luksus i Styl na Twój Wielki Dzień'
+export const metaTitle = 'Wynajem Auta do Ślubu w Radzyminie – Luksus i Styl na Twój'
 export const metaDescription = 'Planujesz ślub w Radzyminie? Odkryj luksusowy wynajem BMW 650i i BMW 4 Cabrio. Twoje wymarzone auto czeka na Ciebie!'
 export const date = '2026-04-24'
 export const modifiedAt = '2026-04-24'

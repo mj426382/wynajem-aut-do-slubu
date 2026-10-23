@@ -35,7 +35,7 @@ const page = {
   path: '/auto-do-slubu-mazowieckie',
   breadcrumb: 'Auto do ślubu Mazowieckie',
   metaTitle: 'Auto do Ślubu Mazowieckie – BMW z Szoferem w Całym Regionie',
-  metaDescription: `Wynajem auta do ślubu w województwie mazowieckim: BMW z szoferem, dekoracją i postojem na sesję. Pakiety ${PRICE_MIN}–${PRICE_MAX} zł, dojazd gratis do ${FREE_RADIUS_KM} km od Warszawy lub Radomia.`,
+  metaDescription: `Auto do ślubu na całym Mazowszu: BMW z szoferem, dekoracją i postojem na sesję. Pakiety ${PRICE_MIN}–${PRICE_MAX} zł, ${FREE_RADIUS_KM} km gratis od Warszawy lub Radomia.`,
   eyebrow: 'Wynajem auta ślubnego — całe Mazowsze',
   h1: 'Auto do Ślubu',
   h1Accent: 'Mazowieckie',

@@ -11,7 +11,7 @@ export const emoji = '🌹'
 export const tags = ['wynajem auta ślubnego', 'Bemowo', 'Warszawa', 'BMW 650i', 'BMW 4 Cabrio']
 
 export const content = `
-<h1>Wynajem Auta do Ślubu na Bemowie – Luksus w Zachodniej Warszawie</h1>
+<h2>Wynajem Auta do Ślubu na Bemowie – Luksus w Zachodniej Warszawie</h2>
 <p>Planujecie ślub na Bemowie i marzycie o luksusowym samochodzie, który podkreśli wyjątkowy charakter Waszego dnia? Wynajem auta do ślubu na Bemowie to doskonały sposób, aby dodać elegancji i stylu tej niezapomnianej chwili. Firma AutoDoŚlubu Warszawa &amp; Radom oferuje najwyższej klasy pojazdy, takie jak <a href='/flota/bmw-650i-gran-coupe'>BMW 650i xDrive Gran Coupé</a> czy <a href='/flota/bmw-4-cabrio'>BMW 4 Cabrio</a>, które sprostają oczekiwaniom nawet najbardziej wymagających Par Młodych.</p>
 
 <h2>Dlaczego warto wybrać Bemowo na ślub?</h2>

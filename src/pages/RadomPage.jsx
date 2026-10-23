@@ -8,7 +8,7 @@ const page = {
   path: '/auto-do-slubu-radom',
   breadcrumb: 'Auto do ślubu Radom',
   metaTitle: 'Auto do Ślubu Radom – BMW z Szoferem od 800 zł',
-  metaDescription: `Wynajem auta do ślubu w Radomiu i okolicach: BMW 650i Gran Coupé lub BMW 4 Cabrio z szoferem, dekoracją i postojem na sesję. Pakiety od ${PRICE_MIN} zł, dojazd gratis do ${FREE_RADIUS_KM} km.`,
+  metaDescription: `Auto do ślubu w Radomiu: BMW Gran Coupé lub Cabrio z szoferem, dekoracją i postojem na sesję. Od ${PRICE_MIN} zł, dojazd gratis do ${FREE_RADIUS_KM} km od Radomia.`,
   eyebrow: 'Wynajem auta ślubnego — Radom i okolice',
   h1: 'Auto do Ślubu',
   h1Accent: 'Radom',

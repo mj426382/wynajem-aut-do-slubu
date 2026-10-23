@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-pionkach'
 export const title = 'Wynajem Auta do Ślubu w Pionkach – Elegancja na Wasz Wielki Dzień'
-export const metaTitle = 'Wynajem Auta do Ślubu w Pionkach – Elegancja na Wasz Wielki Dzień'
+export const metaTitle = 'Wynajem Auta do Ślubu w Pionkach – Elegancja na Wasz Wielki'
 export const metaDescription = 'Marzycie o luksusowym aucie do ślubu w Pionkach? Sprawdźcie nasze BMW i przeżyjcie niezapomniane chwile w dniu Waszego ślubu.'
 export const date = '2026-04-09'
 export const modifiedAt = '2026-04-09'

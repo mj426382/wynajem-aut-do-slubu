@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-grodzisku-mazowieckim'
 export const title = 'Wynajem Auta do Ślubu w Grodzisku Mazowieckim – Elegancja i Styl'
-export const metaTitle = 'Wynajem Auta do Ślubu w Grodzisku Mazowieckim – Elegancja i Styl'
+export const metaTitle = 'Wynajem Auta do Ślubu w Grodzisku Mazowieckim'
 export const metaDescription = 'Szukacie idealnego auta do ślubu w Grodzisku Mazowieckim? Odkryjcie luksusowe BMW i spełnijcie marzenie o niezapomnianym wjeździe w wielkim stylu.'
 export const date = '2026-04-26'
 export const modifiedAt = '2026-04-26'

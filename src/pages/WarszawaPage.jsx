@@ -8,10 +8,10 @@ const suburbs = ['Pruszków', 'Piaseczno', 'Legionowo', 'Łomianki', 'Marki', 'Z
 const page = {
   path: '/auto-do-slubu-warszawa',
   breadcrumb: 'Auto do ślubu Warszawa',
-  metaTitle: 'Auto do Ślubu Warszawa – BMW z Szoferem, Dekoracja Gratis',
-  metaDescription: `Wynajem auta do ślubu w Warszawie: BMW 650i Gran Coupé lub BMW 4 Cabrio z szoferem, dekoracją i postojem na sesję. Pakiety ${PRICE_MIN}–${PRICE_MAX} zł, wszystkie dzielnice.`,
+  metaTitle: 'Samochód do Ślubu Warszawa – Wynajem BMW z Kierowcą',
+  metaDescription: `Samochód do ślubu w Warszawie: BMW Gran Coupé lub Cabrio z kierowcą, dekoracją i postojem na sesję. Wszystkie dzielnice, pakiety ${PRICE_MIN}–${PRICE_MAX} zł.`,
   eyebrow: 'Wynajem auta ślubnego — Warszawa i aglomeracja',
-  h1: 'Auto do Ślubu',
+  h1: 'Samochód do Ślubu',
   h1Accent: 'Warszawa',
   lead: `Luksusowe BMW z szoferem na ślub w Warszawie: wjazd pod kościół lub Pałac Ślubów, postój na sesję na Starym Mieście albo w Łazienkach i przyjazd na salę bez stresu o korki. Pakiet ${PACKAGE_HOURS} h kosztuje ${PRICE_MIN}–${PRICE_MAX} zł z dekoracją florystyczną w cenie.`,
   serviceName: 'Wynajem auta do ślubu w Warszawie',

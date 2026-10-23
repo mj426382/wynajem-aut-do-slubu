@@ -1,6 +1,6 @@
 export const slug = 'wynajem-auta-do-slubu-w-zoliborzu'
 export const title = 'Wynajem Auta do Ślubu w Żoliborzu – Luksusowa Jazda w Wielkim Stylu'
-export const metaTitle = 'Wynajem Auta do Ślubu w Żoliborzu – Luksusowa Jazda w Wielkim Stylu'
+export const metaTitle = 'Wynajem Auta do Ślubu w Żoliborzu – Luksusowa Jazda'
 export const metaDescription = 'Planujecie ślub na Żoliborzu? Odkryj luksusowe BMW na ten wyjątkowy dzień i zorganizuj transport ślubny w perfekcyjnym stylu.'
 export const date = '2026-04-11'
 export const modifiedAt = '2026-04-11'

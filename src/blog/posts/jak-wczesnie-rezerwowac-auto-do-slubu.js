@@ -1,6 +1,6 @@
 export const slug = 'jak-wczesnie-rezerwowac-auto-do-slubu'
 export const title = 'Jak wcześnie rezerwować auto do ślubu? Poradnik dla Par Młodych'
-export const metaTitle = 'Jak wcześnie rezerwować auto do ślubu? Poradnik dla Par Młodych'
+export const metaTitle = 'Jak wcześnie rezerwować auto do ślubu?'
 export const metaDescription = 'Dowiedz się, dlaczego wczesna rezerwacja auta do ślubu jest kluczowa i jak uniknąć stresu w tym wyjątkowym dniu. Przeczytaj nasz poradnik!'
 export const date = '2026-04-17'
 export const modifiedAt = '2026-04-17'
