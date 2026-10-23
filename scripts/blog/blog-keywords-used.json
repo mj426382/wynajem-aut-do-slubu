@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "keyword": "ślub w andrzejki",
+    "slug": "slub-w-andrzejki",
+    "date": "2026-10-23",
+    "cluster": "sezonowosc",
+    "type": "seasonal",
+    "kind": "new"
+  },
+  {
+    "slug": "wynajem-auta-do-slubu-w-sulejowku",
+    "date": "2026-10-23",
+    "kind": "refresh",
+    "words_before": 322
+  }
+]
