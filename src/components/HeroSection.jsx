@@ -1,25 +1,34 @@
 import { Link } from 'react-router-dom'
+import { FREE_RADIUS_KM, PHONE_E164, PRICE_RANGE_TEXT } from '../data/site'
+import { trackLead } from '../consent/googleTag'
 
 export default function HeroSection() {
   return (
     <section className="hero" aria-label="Sekcja główna">
       <div className="hero__content">
-        <span className="hero__diamond">💍</span>
-        <span className="hero__eyebrow">Auto do ślubu — Radom &amp; Warszawa</span>
+        <span className="hero__diamond" aria-hidden="true">💍</span>
+        <span className="hero__eyebrow">Auto do ślubu z szoferem — Warszawa, Radom, Mazowsze</span>
         <h1 className="hero__title">
-          Luksusowe Auto do Ślubu<br />
-          <span className="gold-text">w Radomiu i Warszawie</span>
+          Auto do Ślubu Warszawa i Radom
+          <br />
+          <span className="gold-text">BMW z szoferem, dekoracją i postojem na sesję</span>
         </h1>
         <p className="hero__subtitle">
-          Wynajem auta do ślubu w Radomiu, Warszawie i całym Mazowszu.
-          BMW 650i xDrive Gran Coupé lub BMW 4 Cabrio z szoferem — spraw, by Twój ślub był niezapomniany.
+          BMW 650i xDrive Gran Coupé lub BMW 4 Cabrio na Wasz ślub. Pakiety {PRICE_RANGE_TEXT} za 3 godziny z eleganckim
+          szoferem, bezpłatną dekoracją florystyczną i dojazdem gratis do {FREE_RADIUS_KM} km od Warszawy lub Radomia.
         </p>
         <div className="hero__cta">
-          <a href="#flota" className="btn btn-primary">✨ Zobacz nasze samochody</a>
-          <a href="tel:+48881358838" className="btn btn-outline">📞 Zadzwoń teraz</a>
+          <Link to="/kontakt" className="btn btn-primary">✉️ Sprawdź wolny termin</Link>
+          <a href={`tel:${PHONE_E164}`} className="btn btn-outline" onClick={() => trackLead('phone', 'hero')}>📞 Zadzwoń teraz</a>
         </div>
+        <ul className="hero__badges" aria-label="Najważniejsze fakty">
+          <li>🚗 2 luksusowe BMW</li>
+          <li>👨‍✈️ Szofer w cenie</li>
+          <li>💐 Dekoracja gratis</li>
+          <li>📸 Postój na sesję</li>
+        </ul>
       </div>
-      <div className="hero__scroll" aria-hidden="true">Przewiń</div>
+      <a href="#flota" className="hero__scroll" aria-label="Przewiń do floty">Przewiń</a>
     </section>
   )
 }

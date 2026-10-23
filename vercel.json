@@ -1,4 +1,5 @@
 {
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/(.*)",
@@ -10,22 +11,50 @@
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.autodoslubuwarszawa.pl" }],
       "destination": "https://autodoslubuwarszawa.pl/$1",
-      "statusCode": 308
+      "permanent": true
     },
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.autodosluburadom.pl" }],
       "destination": "https://autodoslubuwarszawa.pl/$1",
-      "statusCode": 308
+      "permanent": true
     },
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "wynajem-aut-do-slubu.vercel.app" }],
       "destination": "https://autodoslubuwarszawa.pl/$1",
-      "statusCode": 308
-    }
+      "permanent": true
+    },
+    { "source": "/blog/wynajem-auta-do-slubu-warszawa", "destination": "/auto-do-slubu-warszawa", "statusCode": 301 },
+    { "source": "/blog/wynajem-auta-do-slubu-radom", "destination": "/auto-do-slubu-radom", "statusCode": 301 },
+    { "source": "/blog/bmw-650i-xdrive-f06-na-slub", "destination": "/flota/bmw-650i-gran-coupe", "statusCode": 301 },
+    { "source": "/blog/wynajem-auta-do-slubu-w-otwocku-2026", "destination": "/blog/wynajem-auta-do-slubu-otwock", "statusCode": 301 },
+    { "source": "/blog/wynajem-auta-do-slubu-w-otwocku-poradnik", "destination": "/blog/wynajem-auta-do-slubu-otwock", "statusCode": 301 },
+    { "source": "/blog/wynajem-auta-do-slubu-w-otwocku-porady", "destination": "/blog/wynajem-auta-do-slubu-otwock", "statusCode": 301 },
+    { "source": "/blog/wynajem-auta-do-slubu-w-grojcu", "destination": "/blog/wynajem-auta-do-slubu-grojec", "statusCode": 301 },
+    { "source": "/blog/kabriolet-bmw-na-slub-dlaczego-warto", "destination": "/blog/bmw-4-cabrio-na-slub-latem", "statusCode": 301 },
+    { "source": "/bmw-650i", "destination": "/flota/bmw-650i-gran-coupe", "statusCode": 301 },
+    { "source": "/bmw-4-cabrio", "destination": "/flota/bmw-4-cabrio", "statusCode": 301 },
+    { "source": "/warszawa", "destination": "/auto-do-slubu-warszawa", "statusCode": 301 },
+    { "source": "/radom", "destination": "/auto-do-slubu-radom", "statusCode": 301 }
   ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
   ]
 }

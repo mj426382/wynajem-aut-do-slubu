@@ -1,0 +1,17 @@
+export const slug = 'wynajem-auta-do-slubu-w-sulejowku'
+export const title = 'Wynajem auta do ślubu w Sulejówku – luksus na Wasz dzień'
+export const metaTitle = 'Wynajem auta do ślubu w Sulejówku – luksus na Wasz dzień'
+export const metaDescription = 'Sulejówek graniczy z Warszawą — BMW 650i lub BMW 4 Cabrio AutoDoŚlubu Warszawa & Radom jest dostępne bez dopłaty za dojazd. Zarezerwuj termin ślubny w 2026 roku.'
+export const date = '2026-05-19'
+export const modifiedAt = '2026-05-19'
+export const readTime = 2
+export const category = 'Mazowsze'
+export const excerpt = 'Sulejówek graniczy z Warszawą — BMW 650i lub BMW 4 Cabrio AutoDoŚlubu Warszawa & Radom jest dostępne bez dopłaty za dojazd. Zarezerwuj termin ślubny w 2026 roku.'
+export const emoji = '🌹'
+export const tags = ['wynajem auta do ślubu', 'Sulejówek', 'BMW na ślub', 'auto ślubne']
+
+export const content = `
+<h2>Dlaczego wynajem auta do ślubu w Sulejówku to świetny pomysł?</h2> <p>Sulejówek, z jego malowniczymi okolicami i pięknymi miejscami na ślub, to idealne miejsce na organizację tego wyjątkowego dnia. Wybór odpowiedniego samochodu ślubnego to nie tylko kwestia wygody, ale także stylu, który podkreśli rangę wydarzenia. Wynajmując luksusowe BMW od AutoDoŚlubu Warszawa &amp; Radom, możecie być pewni, że Wasz ślub pozostanie w pamięci nie tylko Waszej, ale i wszystkich gości.</p>  <h2>Jakie samochody ślubne oferuje AutoDoŚlubu Warszawa &amp; Radom?</h2> <p>W ofercie AutoDoŚlubu Warszawa &amp; Radom znajdziecie dwa luksusowe modele BMW, które idealnie wpasują się w klimat Waszego ślubu: </p> <ul> <li><strong>BMW 650i xDrive Gran Coupé</strong> – elegancki, sportowy model z silnikiem V8 o mocy 450 KM, skórzaną tapicerką i napędem na cztery koła. Doskonały wybór na uroczystości o każdej porze roku.</li> <li><strong>BMW 4 Cabrio</strong> – kabriolet z elektrycznym miękkim dachem, który otwiera się w 18 sekund. To idealna opcja na letnie śluby pod gołym niebem.</li> </ul> <h2>Organizacja transportu ślubnego w Sulejówku – co warto wiedzieć?</h2> <p>Planowanie transportu ślubnego wymaga uwzględnienia kilku kluczowych elementów: </p> <ul> <li><strong>Logistyka:</strong> AutoDoŚlubu Warszawa &amp; Radom zapewnia bezpłatny dojazd w promieniu 30 km od Sulejówka, co pozwala zaoszczędzić czas i pieniądze.</li> <li><strong>Profesjonalny szofer:</strong> Elegancki, punktualny i dyskretny kierowca zadba o komfort Waszej podróży.</li> <li><strong>Szczegóły trasy:</strong> AutoDoŚlubu Warszawa &amp; Radom umożliwia postój na sesję zdjęciową, dzięki czemu zyskacie piękne wspomnienia z tego dnia.</li> </ul> <h2>Sesja zdjęciowa z autem ślubnym w Sulejówku</h2> <p>Sulejówek oferuje wiele urokliwych miejsc na sesję zdjęciową z udziałem luksusowego BMW. Park Glinianki czy okolice Pałacu w Miłosnej to doskonałe lokalizacje, które dodadzą Waszym zdjęciom elegancji i wyjątkowego klimatu.</p> <h2>Dlaczego warto wybrać AutoDoŚlubu Warszawa &amp; Radom?</h2> <p>AutoDoŚlubu Warszawa &amp; Radom to gwarancja luksusu, profesjonalizmu i niezapomnianych wspomnień. Oferujemy nie tylko samochód, ale także pełną obsługę, w tym dekorację florystyczną i możliwość wynajmu kilku samochodów na kortez weselny.</p> <p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
+
+<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej AutoDoŚlubu Warszawa &amp; Radom</a>.</p>
+`

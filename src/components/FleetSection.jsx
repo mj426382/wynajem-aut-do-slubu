@@ -1,113 +1,64 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { CARS } from '../data/site'
 
-const cars = [
-  {
-    id: 1,
-    slug: 'bmw-650i-gran-coupe',
-    image: '/images/bmw6/bmw6-front.jpg',
-    imageAlt: 'BMW 650i xDrive Gran Coupé – luksusowe auto do ślubu udekorowane białymi kwiatami przed kościołem',
-    name: 'BMW 650i xDrive Gran Coupé (F06)',
-    subtitle: 'Auto do ślubu Radom i Warszawa',
+const DETAILS = {
+  'bmw-650i-gran-coupe': {
+    subtitle: 'Prestiż i moc — na każdą porę roku',
     description:
-      'Majestatyczny BMW 650i xDrive Gran Coupé to kwintesencja luksusu i sportowej elegancji. Czterodrzwiowe coupé napędzane potężnym silnikiem V8 o mocy 450 KM z układem xDrive gwarantuje niezapomniane wejście w każdych warunkach pogodowych. Brązowa skórzana tapicerka, podgrzewane fotele i hipnotyzujący dźwięk sportowego wydechu sprawią, że Wasza droga do ołtarza stanie się wyjątkowym przeżyciem.',
-    features: [
-      'Silnik V8 450 KM – napęd xDrive 4×4',
-      'Ekskluzywna skórzana tapicerka w kolorze brązowym',
-      'Podgrzewane fotele przednie i tylne',
-      'Sportowy wydech – niepowtarzalny, głęboki dźwięk V8',
-      'System audio Harman Kardon',
-      'Bezpłatna dekoracja florystyczna w cenie',
-    ],
+      'Czterodrzwiowe coupé z silnikiem V8 450 KM i napędem xDrive. Brązowa skórzana tapicerka, podgrzewane fotele i głęboki dźwięk sportowego wydechu. Wygląda imponująco pod każdym kościołem i w każdym kadrze, a 4×4 daje pewność jazdy także w deszczu i zimą.',
+    features: ['Silnik V8 450 KM, napęd xDrive 4×4', 'Skórzana tapicerka, podgrzewane fotele', 'System audio Harman Kardon', 'Panoramiczny szklany dach'],
   },
-  {
-    id: 2,
-    slug: 'bmw-4-cabrio',
-    image: '/images/bmw4/bmw4-front-villa.jpg',
-    imageAlt: 'BMW 4 Cabrio G23 – białe auto ślubne z odkrytym dachem przed kościołem',
-    name: 'BMW 4 Cabrio (G23)',
-    subtitle: 'Romantyczne auto ślubne – kabriolet',
+  'bmw-4-cabrio': {
+    subtitle: 'Romantyczny kabriolet — na ciepłe miesiące',
     description:
-      'BMW 4 Cabrio G23 to ucieleśnienie romantyzmu i prestiżu – idealne dla Par, które pragną wyróżnić się w wielkim dniu. Elektryczny miękki dach otwiera się w zaledwie 18 sekund, a ekskluzywna koniakowa tapicerka skórzana tworzy wyjątkową, ciepłą atmosferę w kabinie. Stylowy pakiet zewnętrzny Maxton Design nadaje kabrioletowi agresywnego, sportowego charakteru, który zachwyci każdego gościa i zagwarantuje zjawiskowe zdjęcia ślubne.',
-    features: [
-      'Elektryczny dach miękki – otwiera się w 18 sek.',
-      'Luksusowa tapicerka skórzana w kolorze koniaku',
-      'Pakiet aerodynamiczny Maxton Design',
-      'Podgrzewane fotele i ogrzewanie szyi',
-      'System audio Hi-Fi BMW',
-    ],
+      'Elektryczny miękki dach otwiera się w 18 sekund, koniakowa skóra i pakiet Maxton Design robią wrażenie na gościach i na zdjęciach. Wjazd pod kościół z otwartym dachem to kadr, który Para Młoda zapamiętuje na zawsze.',
+    features: ['Elektryczny dach — 18 sekund', 'Koniakowa tapicerka skórzana', 'Podgrzewane fotele i ogrzewanie szyi', 'Pakiet aerodynamiczny Maxton Design'],
   },
-]
+}
 
-export default function FleetSection() {
-  const navigate = useNavigate()
-
-  const goToGallery = (slug) => {
-    navigate(`/flota/${slug}`)
-  }
-
-  const handleCardClick = (event, slug) => {
-    if (event.target.closest('a, button')) return
-    goToGallery(slug)
-  }
-
-  const handleCardKeyDown = (event, slug) => {
-    if (event.target.closest('a, button')) return
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault()
-      goToGallery(slug)
-    }
-  }
-
+export default function FleetSection({ title = 'Samochody do ślubu — BMW z szoferem', subtitle }) {
   return (
     <section className="fleet" id="flota" aria-labelledby="fleet-title">
       <div className="container">
-        <h2 className="section-title" id="fleet-title">Samochody do Ślubu — Radom i Warszawa</h2>
+        <h2 className="section-title" id="fleet-title">{title}</h2>
         <div className="section-divider" aria-hidden="true"></div>
         <p className="section-subtitle">
-          Dwa ekskluzywne BMW do wynajęcia na ślub — eleganckie Gran Coupé lub romantyczne Cabrio.
-          Obsługujemy Radom, Warszawę i całe Mazowsze. Każde auto starannie przygotowane i udekorowane na Twój wielki dzień.
+          {subtitle ?? 'Dwa BMW do wyboru: eleganckie Gran Coupé albo romantyczne Cabrio. Każde auto przyjeżdża umyte, udekorowane i z szoferem, który zna trasę.'}
         </p>
         <div className="fleet__grid">
-          {cars.map((car) => (
-            <article
-              className="fleet-card"
-              key={car.id}
-              role="link"
-              tabIndex="0"
-              aria-label={`Zobacz galerię: ${car.name}`}
-              onClick={(event) => handleCardClick(event, car.slug)}
-              onKeyDown={(event) => handleCardKeyDown(event, car.slug)}
-            >
-              <div className="fleet-card__image-wrap">
-                <img
-                  src={car.image}
-                  alt={car.imageAlt}
-                  className="fleet-card__image"
-                  loading="lazy"
-                  width="800"
-                  height="534"
-                />
-              </div>
-              <div className="fleet-card__body">
-                <p className="fleet-card__subtitle">{car.subtitle}</p>
-                <h3 className="fleet-card__title">{car.name}</h3>
-                <p className="fleet-card__desc">{car.description}</p>
-                <ul className="fleet-card__features" aria-label={`Cechy: ${car.name}`}>
-                  {car.features.map((f, i) => (
-                    <li className="fleet-card__feature" key={i}>{f}</li>
-                  ))}
-                </ul>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <Link to={`/flota/${car.slug}`} className="btn btn-gold-outline" style={{ display: 'block', textAlign: 'center' }}>
-                    📸 Zobacz galerię
-                  </Link>
-                  <Link to="/kontakt" className="btn btn-primary" style={{ display: 'block', textAlign: 'center' }}>
-                    Zapytaj o dostępność
-                  </Link>
+          {CARS.map((car) => {
+            const d = DETAILS[car.slug]
+            return (
+              <article className="fleet-card" key={car.slug}>
+                <Link to={car.path} className="fleet-card__image-wrap" aria-label={`Zobacz ${car.name}`}>
+                  <picture>
+                    <source srcSet={car.imageWebp} type="image/webp" />
+                    <img src={car.image} alt={car.imageAlt} className="fleet-card__image" loading="lazy" width="1600" height="1067" />
+                  </picture>
+                </Link>
+                <div className="fleet-card__body">
+                  <p className="fleet-card__subtitle">{d.subtitle}</p>
+                  <h3 className="fleet-card__title">
+                    <Link to={car.path}>{car.name}</Link>
+                  </h3>
+                  <p className="fleet-card__desc">{d.description}</p>
+                  <ul className="fleet-card__features" aria-label={`Cechy: ${car.name}`}>
+                    {d.features.map((f) => (
+                      <li className="fleet-card__feature" key={f}>{f}</li>
+                    ))}
+                  </ul>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    <Link to={car.path} className="btn btn-gold-outline" style={{ display: 'block', textAlign: 'center' }}>
+                      📸 Zdjęcia i szczegóły
+                    </Link>
+                    <Link to="/kontakt" className="btn btn-primary" style={{ display: 'block', textAlign: 'center' }}>
+                      Zapytaj o dostępność
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>

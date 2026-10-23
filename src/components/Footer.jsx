@@ -1,4 +1,6 @@
-﻿import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { EMAIL, FREE_RADIUS_KM, PHONE_DISPLAY, PHONE_E164, SERVING_SINCE } from '../data/site'
+import { GA4_CONFIGURED, openCookieSettings, trackLead } from '../consent/googleTag'
 
 export default function Footer() {
   return (
@@ -7,58 +9,36 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <div className="footer__logo">
-              <span className="footer__logo-icon">♛</span>
+              <span className="footer__logo-icon" aria-hidden="true">♛</span>
               <div>
                 <span className="footer__logo-main">AutoDoŚlubu</span>
                 <span className="footer__logo-sub">Warszawa &amp; Radom</span>
               </div>
             </div>
             <p className="footer__tagline">
-              Wynajem aut do ślubu w Radomiu, Warszawie i na całym Mazowszu.
-              Twój wyjątkowy dzień zasługuje na wyjątkowe BMW. Służymy Państwu od 2010 roku.
+              Wynajem BMW z szoferem do ślubu w Warszawie, Radomiu i na całym Mazowszu. Dekoracja florystyczna i postój
+              na sesję w cenie, dojazd gratis do {FREE_RADIUS_KM} km. Wozimy Pary Młode od {SERVING_SINCE} roku.
             </p>
-            <div className="footer__social">
-              <a
-                href="https://facebook.com"
-                className="footer__social-link"
-                aria-label="Facebook — AutoDoŚlubu Warszawa & Radom"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                f
-              </a>
-              <a
-                href="https://instagram.com"
-                className="footer__social-link"
-                aria-label="Instagram — AutoDoŚlubu Warszawa & Radom"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ✦
-              </a>
-            </div>
           </div>
 
           <div className="footer__col">
-            <h3 className="footer__col-title">Nawigacja</h3>
-            <nav className="footer__nav" aria-label="Nawigacja stopka">
-              <Link to="/" className="footer__nav-link">Strona główna</Link>
-              <a href="/#flota" className="footer__nav-link">Nasza flota</a>
-              <a href="/#cechy" className="footer__nav-link">Dlaczego my?</a>
-              <a href="/#opinie" className="footer__nav-link">Opinie</a>
-              <Link to="/blog" className="footer__nav-link">Blog</Link>
-              <Link to="/kontakt" className="footer__nav-link">Kontakt</Link>
+            <h3 className="footer__col-title">Oferta</h3>
+            <nav className="footer__nav" aria-label="Oferta">
+              <Link to="/flota/bmw-650i-gran-coupe" className="footer__nav-link">BMW 650i xDrive Gran Coupé</Link>
+              <Link to="/flota/bmw-4-cabrio" className="footer__nav-link">BMW 4 Cabrio</Link>
+              <Link to="/#cennik" className="footer__nav-link">Cennik i pakiety</Link>
+              <Link to="/#faq" className="footer__nav-link">Najczęstsze pytania</Link>
+              <Link to="/kontakt" className="footer__nav-link">Zapytaj o termin</Link>
             </nav>
           </div>
 
           <div className="footer__col">
             <h3 className="footer__col-title">Obsługiwane miasta</h3>
             <nav className="footer__nav" aria-label="Obsługiwane lokalizacje">
-              <Link to="/auto-do-slubu-radom" className="footer__nav-link">Auto do ślubu Radom</Link>
               <Link to="/auto-do-slubu-warszawa" className="footer__nav-link">Auto do ślubu Warszawa</Link>
+              <Link to="/auto-do-slubu-radom" className="footer__nav-link">Auto do ślubu Radom</Link>
               <Link to="/auto-do-slubu-mazowieckie" className="footer__nav-link">Auto do ślubu Mazowieckie</Link>
-              <a href="/#flota" className="footer__nav-link">BMW 650i xDrive Gran Coupé (F06)</a>
-              <a href="/#flota" className="footer__nav-link">BMW 4 Cabrio (G23)</a>
+              <Link to="/blog" className="footer__nav-link">Blog ślubny</Link>
             </nav>
           </div>
 
@@ -66,35 +46,30 @@ export default function Footer() {
             <h3 className="footer__col-title">Kontakt</h3>
             <address style={{ fontStyle: 'normal' }}>
               <div className="footer__contact-item">
-                <span>�</span>
-                <a href="tel:+48881358838">+48 881 358 838</a>
+                <span aria-hidden="true">📞</span>
+                <a href={`tel:${PHONE_E164}`} onClick={() => trackLead('phone', 'footer')}>{PHONE_DISPLAY}</a>
               </div>
               <div className="footer__contact-item">
-                <span>✉️</span>
-                <a href="mailto:janmat.jdg@gmail.com">janmat.jdg@gmail.com</a>
+                <span aria-hidden="true">✉️</span>
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </div>
             </address>
           </div>
         </div>
 
         <div className="footer__bottom">
-          <p className="footer__copyright">
-            © 2026 AutoDoŚlubu Warszawa & Radom. Wszelkie prawa zastrzeżone.
+          <p className="footer__copyright">© {new Date().getFullYear()} AutoDoŚlubu Warszawa &amp; Radom. Wszelkie prawa zastrzeżone.</p>
+          <p className="footer__legal">
+            <Link to="/polityka-prywatnosci">Polityka prywatności</Link>
+            {GA4_CONFIGURED && (
+              <>
+                {' · '}
+                <button type="button" className="footer__link-button" onClick={openCookieSettings}>
+                  Ustawienia cookies
+                </button>
+              </>
+            )}
           </p>
-          <p className="footer__love">
-            Made with ❤️ for your special day
-          </p>
-        </div>
-        <div className="footer__powered">
-          Powered by{' '}
-          <a
-            href="https://jan-mat.pl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer__powered-link"
-          >
-            jan-mat
-          </a>
         </div>
       </div>
     </footer>

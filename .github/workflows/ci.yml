@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    name: Lint, build, prerender and SEO checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: npm ci
+      - run: npm run lint
+      - name: Blog topic plan is valid
+        run: python3 scripts/blog/blog_plan.py --validate
+      - name: No duplicate blog posts
+        run: python3 scripts/blog/check_blog_duplicates.py
+      - name: Blog bot dry run (sample article through the quality gates)
+        run: python3 scripts/blog/generate_blog_post.py
+        env:
+          BLOG_DRY_RUN: "1"
+      - name: Build and prerender
+        run: npm run build
+      - name: Every sitemap URL is prerendered with canonical, title, description and JSON-LD; no dead internal links
+        run: node scripts/check-build.js
+      - name: Sitemap in the repository is up to date
+        run: git diff --exit-code public/sitemap.xml

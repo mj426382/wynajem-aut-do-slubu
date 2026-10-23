@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# generated at build time
+src/blog/index.generated.js
+dist-ssr
+__pycache__/
+.vite
+.gbp-profile/

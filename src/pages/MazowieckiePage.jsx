@@ -1,277 +1,130 @@
-﻿import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
-import SEO from '../components/SEO'
+import { Link } from 'react-router-dom'
+import LocationPage from '../components/LocationPage'
+import { EXTRA_KM_PRICE, FREE_RADIUS_KM, PACKAGE_HOURS, PRICE_MAX, PRICE_MIN } from '../data/site'
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://autodoslubuwarszawa.pl' },
-    { '@type': 'ListItem', position: 2, name: 'Auto do ślubu Mazowieckie', item: 'https://autodoslubuwarszawa.pl/auto-do-slubu-mazowieckie' },
-  ],
-}
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://autodoslubuwarszawa.pl/auto-do-slubu-mazowieckie#business',
-  name: 'AutoDoŚlubu Warszawa & Radom — Auto do Ślubu Mazowieckie',
-  description: 'Wynajem auta do ślubu w całym województwie mazowieckim — BMW z szoferem. Radom, Warszawa, Grójec, Kozienice, Białobrzegi i cały region.',
-  url: 'https://autodoslubuwarszawa.pl/auto-do-slubu-mazowieckie',
-  telephone: '+48881358838',
-  email: 'janmat.jdg@gmail.com',
-  areaServed: [
-    'Mazowsze', 'Radom', 'Warszawa', 'Grójec', 'Kozienice', 'Białobrzegi',
-    'Zwoleń', 'Pionki', 'Szydłowiec', 'Przysucha', 'Nowe Miasto nad Pilicą',
-    'Lipsko', 'Iłża', 'Pruszków', 'Piaseczno', 'Ostrołęka', 'Siedlce', 'Płock',
-  ],
-  priceRange: '$$',
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '18:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '10:00', closes: '14:00' },
-  ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '85', bestRating: '5', worstRating: '1' },
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Czy obsługujecie wynajem auta do ślubu poza Radomiem i Warszawą?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Tak! Obsługujemy wynajem auta do ślubu w całym województwie mazowieckim — Grójec, Kozienice, Białobrzegi, Zwoleń, Pionki, Szydłowiec, Przysucha i wiele innych miast. Bezpłatny dojazd w promieniu 20 km od Radomia lub Warszawy.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Jakie są koszty dojazdu poza 20 km od Radomia lub Warszawy?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Poza promieniem 20 km naliczamy opłatę 3 zł/km. Obsługujemy też województwa sąsiednie: łódzkie, świętokrzyskie i lubelskie. Skontaktuj się z nami po indywidualną wycenę.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Czy można zamówić kortez weselny na Mazowszu?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Tak, organizujemy korteze weselne na całym Mazowszu. Dysponujemy dwoma BMW i możemy uzupełnić flotę o zaprzyjaźnione pojazdy. Zapewniamy koordynację szoferów i synchronizację tras.',
-      },
-    },
-  ],
-}
-
-const mazowieckieCities = [
-  { city: 'Radom', href: '/auto-do-slubu-radom' },
+const cities = [
   { city: 'Warszawa', href: '/auto-do-slubu-warszawa' },
-  { city: 'Grójec', href: null },
-  { city: 'Kozienice', href: null },
-  { city: 'Białobrzegi', href: null },
-  { city: 'Zwoleń', href: null },
-  { city: 'Pionki', href: null },
+  { city: 'Radom', href: '/auto-do-slubu-radom' },
+  { city: 'Grójec', href: '/blog/wynajem-auta-do-slubu-grojec' },
+  { city: 'Kozienice', href: '/blog/wynajem-auta-do-slubu-kozienice' },
+  { city: 'Białobrzegi', href: '/blog/wynajem-auta-do-slubu-bialobrzegi' },
+  { city: 'Zwoleń', href: '/blog/wynajem-auta-do-slubu-zwolen' },
+  { city: 'Pionki', href: '/blog/wynajem-auta-do-slubu-w-pionkach' },
+  { city: 'Piaseczno', href: '/blog/wynajem-auta-do-slubu-piaseczno' },
+  { city: 'Pruszków', href: '/blog/wynajem-auta-do-slubu-pruszkow' },
+  { city: 'Otwock', href: '/blog/wynajem-auta-do-slubu-otwock' },
+  { city: 'Legionowo', href: '/blog/wynajem-auta-do-slubu-legionowo' },
+  { city: 'Siedlce', href: '/blog/wynajem-auta-do-slubu-w-siedlcach' },
+  { city: 'Płońsk', href: '/blog/wynajem-auta-do-slubu-w-plonsku' },
+  { city: 'Ciechanów', href: '/blog/wynajem-auta-do-slubu-w-ciechanowie' },
+  { city: 'Garwolin', href: '/blog/wynajem-auta-do-slubu-w-garwolinie' },
+  { city: 'Mińsk Mazowiecki', href: '/blog/wynajem-auta-do-slubu-w-minsku-mazowieckim' },
+  { city: 'Żyrardów', href: '/blog/wynajem-auta-do-slubu-w-zyrardowie' },
+  { city: 'Sochaczew', href: '/blog/wynajem-auta-do-slubu-sochaczew' },
+  { city: 'Wyszków', href: '/blog/wynajem-auta-do-slubu-w-wyszkowie' },
+  { city: 'Nowy Dwór Mazowiecki', href: '/blog/wynajem-auta-do-slubu-w-nowym-dworze-mazowieckim' },
+  { city: 'Grodzisk Mazowiecki', href: '/blog/wynajem-auta-do-slubu-w-grodzisku-mazowieckim' },
   { city: 'Szydłowiec', href: null },
   { city: 'Przysucha', href: null },
-  { city: 'Nowe Miasto nad Pilicą', href: null },
   { city: 'Lipsko', href: null },
-  { city: 'Iłża', href: null },
-  { city: 'Pruszków', href: null },
-  { city: 'Piaseczno', href: null },
-  { city: 'Płońsk', href: null },
-  { city: 'Ciechanów', href: null },
-  { city: 'Siedlce', href: null },
-  { city: 'Garwolin', href: null },
+  { city: 'Ostrołęka', href: null },
+  { city: 'Płock', href: null },
 ]
 
-export default function MazowieckiePage() {
-  return (
+const page = {
+  path: '/auto-do-slubu-mazowieckie',
+  breadcrumb: 'Auto do ślubu Mazowieckie',
+  metaTitle: 'Auto do Ślubu Mazowieckie – BMW z Szoferem w Całym Regionie',
+  metaDescription: `Wynajem auta do ślubu w województwie mazowieckim: BMW z szoferem, dekoracją i postojem na sesję. Pakiety ${PRICE_MIN}–${PRICE_MAX} zł, dojazd gratis do ${FREE_RADIUS_KM} km od Warszawy lub Radomia.`,
+  eyebrow: 'Wynajem auta ślubnego — całe Mazowsze',
+  h1: 'Auto do Ślubu',
+  h1Accent: 'Mazowieckie',
+  lead: `Od Radomia i Warszawy po Siedlce, Płock i Ostrołękę: luksusowe BMW z szoferem dojedzie na ślub w każdej gminie Mazowsza. Pakiet ${PACKAGE_HOURS} h to ${PRICE_MIN}–${PRICE_MAX} zł, do ${FREE_RADIUS_KM} km od obu miast bez dopłat, dalej ${EXTRA_KM_PRICE} zł za kilometr.`,
+  serviceName: 'Wynajem auta do ślubu w województwie mazowieckim',
+  areaServed: cities.map((c) => c.city),
+  sidebarTitle: 'Zapytaj o termin na Mazowszu',
+  related: [
+    { to: '/auto-do-slubu-warszawa', label: 'Auto do ślubu Warszawa' },
+    { to: '/auto-do-slubu-radom', label: 'Auto do ślubu Radom' },
+    { to: '/blog/kortez-weselny-planowanie', label: 'Jak zaplanować kortez weselny' },
+  ],
+  fleetTitle: 'Samochody do ślubu na całe Mazowsze',
+  fleetSubtitle: 'BMW 650i Gran Coupé na każdą pogodę albo BMW 4 Cabrio na lato. Oba auta dojeżdżają w każdy zakątek województwa.',
+  faqTitle: 'Pytania o auto do ślubu na Mazowszu',
+  blogCategory: 'Mazowsze',
+  blogTitle: 'Ślub na Mazowszu — porady z bloga',
+  ctaEyebrow: 'Obsługujemy całe Mazowsze — 2026 / 2027',
+  ctaTitle: 'Zarezerwuj auto do ślubu na Mazowszu',
+  ctaText: 'Napiszcie miejscowość ślubu i wesela, a policzymy dokładną cenę z dojazdem. Odpowiadamy tego samego dnia.',
+  faqs: [
+    {
+      question: 'Czy obsługujecie wynajem auta do ślubu poza Radomiem i Warszawą?',
+      answer: `Tak, jeździmy na śluby w całym województwie mazowieckim: Grójec, Kozienice, Białobrzegi, Siedlce, Płońsk, Ciechanów, Żyrardów, Sochaczew i mniejsze gminy. Dojazd do ${FREE_RADIUS_KM} km od Radomia lub Warszawy jest w cenie pakietu.`,
+    },
+    {
+      question: `Ile kosztuje dojazd poza ${FREE_RADIUS_KM} km od Radomia lub Warszawy?`,
+      answer: `Poza promieniem ${FREE_RADIUS_KM} km doliczamy ${EXTRA_KM_PRICE} zł za każdy kilometr trasy dojazdowej. Przy ślubach w sąsiednich województwach (łódzkie, świętokrzyskie, lubelskie) podajemy jedną cenę za całość po zapytaniu.`,
+    },
+    {
+      question: 'Czy można zamówić kortez weselny na Mazowszu?',
+      answer: 'Tak. Dysponujemy dwoma BMW, które możemy uzupełnić autami zaprzyjaźnionych firm. Koordynujemy szoferów, kolejność aut i trasę, tak aby orszak dojechał razem pod kościół i na salę.',
+    },
+    {
+      question: 'Jak wcześnie rezerwować auto na ślub pod Warszawą lub Radomiem?',
+      answer: 'Na soboty od maja do września najlepiej pół roku do roku wcześniej. Śluby w piątki, niedziele i poza sezonem można rezerwować bliżej terminu. Sprawdzenie dostępności jest bezpłatne i niezobowiązujące.',
+    },
+  ],
+  content: (
     <>
-      <SEO
-        title="Auto do Ślubu Mazowieckie — Wynajem BMW | AutoDoŚlubu Warszawa & Radom"
-        description="Wynajem auta do ślubu w całym województwie mazowieckim. BMW z szoferem — Radom, Warszawa, Grójec, Kozienice i okolice. Bezpłatna dekoracja. ☎ +48 881 358 838"
-        canonical="https://autodoslubuwarszawa.pl/auto-do-slubu-mazowieckie"
-      />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <h2>Wynajem auta do ślubu na Mazowszu</h2>
+      <p>
+        Województwo mazowieckie to tysiące kościołów, dworków i stodół weselnych, często kilkadziesiąt kilometrów od większego miasta. Nasze dwa
+        BMW z szoferem dojeżdżają wszędzie tam, gdzie planujecie ślub: do wiejskiej parafii pod Kozienicami, pałacu w Radziejowicach czy sali
+        weselnej pod Siedlcami.
+      </p>
+      <p>
+        Auta stacjonują w Radomiu i obsługują także Warszawę, więc cały południowy i środkowy region jest w zasięgu bezpłatnego dojazdu. Dalsze
+        trasy wyceniamy jasno: {EXTRA_KM_PRICE} zł za kilometr poza {FREE_RADIUS_KM} km, bez ukrytych opłat.
+      </p>
 
-      {/* HERO */}
-      <section className="location-hero" aria-label="Auto do ślubu Mazowieckie">
-        <div className="container">
-          <nav className="breadcrumb" aria-label="Breadcrumb">
-            <ol className="breadcrumb__list">
-              <li><Link to="/">Strona główna</Link></li>
-              <li aria-hidden="true">›</li>
-              <li aria-current="page">Auto do ślubu Mazowieckie</li>
-            </ol>
-          </nav>
-          <span className="hero__eyebrow">Wynajem auta ślubnego — całe Mazowsze</span>
-          <h1 className="location-hero__title">
-            Auto do Ślubu <span className="gold-text">Mazowieckie</span>
-          </h1>
-          <p className="location-hero__subtitle">
-            Obsługujemy wynajem auta do ślubu w całym województwie mazowieckim — od Radomia i Warszawy,
-            przez Grójec, Kozienice, Białobrzegi, aż po Siedlce i Ostrołękę. Luksusowe BMW z eleganckim
-            szoferem dotrze do Ciebie, gdziekolwiek na Mazowszu organizujesz ślub.
-          </p>
-          <div className="hero__cta">
-            <a href="tel:+48881358838" className="btn btn-primary">📞 Zadzwoń teraz</a>
-            <Link to="/kontakt" className="btn btn-outline">✉️ Zapytaj o termin</Link>
-          </div>
-        </div>
-      </section>
+      <h3>Co oferujemy Parom Młodym na Mazowszu</h3>
+      <ul className="location-list">
+        <li>✅ <Link to="/flota/bmw-650i-gran-coupe">BMW 650i Gran Coupé</Link> lub <Link to="/flota/bmw-4-cabrio">BMW 4 Cabrio</Link> z szoferem</li>
+        <li>✅ Dekoracja florystyczna w każdym pakiecie</li>
+        <li>✅ Postój na sesję w plenerze: nad Pilicą, w Kampinosie, w pałacowym parku</li>
+        <li>✅ Dojazd gratis do {FREE_RADIUS_KM} km od Radomia lub Warszawy</li>
+        <li>✅ Kortez weselny z kilku aut</li>
+        <li>✅ Wesela w sąsiednich województwach po jednej, ustalonej cenie</li>
+      </ul>
 
-      {/* MAIN CONTENT */}
-      <section className="location-content">
-        <div className="container">
-          <div className="location-content__grid">
+      <h3>Popularne miejsca ślubów na Mazowszu</h3>
+      <ul className="location-list">
+        <li>🏰 Pałace i dworki: Wilanów, Radziejowice, Jabłonna, Opinogóra, Chlewiska</li>
+        <li>⛪ Sanktuaria i kościoły: Niepokalanów, Czerwińsk, Studzianna, Wysokie Koło</li>
+        <li>🌿 Śluby plenerowe: nad Wisłą, nad Pilicą, w Puszczy Kampinoskiej i Kozienickiej</li>
+        <li>🏨 Stodoły weselne, winnice i hotele w całym województwie</li>
+      </ul>
 
-            {/* LEFT: Rich text content */}
-            <div className="location-content__text">
-              <h2>Wynajem auta do ślubu na Mazowszu</h2>
-              <p>
-                Województwo mazowieckie to region pełen pięknych kościołów, dworków i sali weselnych.
-                <strong> AutoDoŚlubu Warszawa & Radom</strong> to jedyna firma w regionie oferująca wynajem luksusowych BMW
-                z szoferem obejmujący całe Mazowsze — od Radomia na południu, przez Warszawę, aż po
-                najdalsze zakątki województwa.
-              </p>
-              <p>
-                Niezależnie od tego, czy ślub odbywa się w małej wiosce pod Kozienicami, czy w prestiżowej
-                sali weselnej w centrum Warszawy — nasz kierowca dotrze punktualnie, a luksusowe BMW
-                doda Waszej uroczystości wyjątkowego blasku.
-              </p>
+      <h3>Miasta i gminy, do których jeździmy</h3>
+      <div className="location-cities">
+        {cities.map(({ city, href }) =>
+          href ? (
+            <Link key={city} to={href} className="location-city-tag location-city-tag--link">📍 {city}</Link>
+          ) : (
+            <span key={city} className="location-city-tag">📍 {city}</span>
+          ),
+        )}
+      </div>
 
-              <h3>Przewóz do ślubu Mazowieckie — co oferujemy?</h3>
-              <ul className="location-list">
-                <li>✅ Wynajem BMW z szoferem na całe Mazowsze</li>
-                <li>✅ Bezpłatna dekoracja florystyczna w każdym pakiecie</li>
-                <li>✅ Postój na sesję zdjęciową w wybranym miejscu</li>
-                <li>✅ Bezpłatny dojazd w promieniu 20 km od Radomia lub Warszawy</li>
-                <li>✅ Korteze weselne — kilka aut naraz</li>
-                <li>✅ Obsługa wesel w województwach sąsiednich</li>
-              </ul>
-
-              <h3>Popularne lokalizacje ślubne na Mazowszu</h3>
-              <p>
-                Na Mazowszu nie brakuje wyjątkowych miejsc do ślubu i sesji zdjęciowych.
-                Obsługujemy m.in.:
-              </p>
-              <ul className="location-list">
-                <li>🏰 Dworki i pałace — Wilanów, Radziejowice, Opinogóra</li>
-                <li>⛪ Historyczne kościoły — Radom, Warszawa, Grójec</li>
-                <li>🌿 Plenerowe ceremononie — nad Wisłą, w Puszczy Kampinoskiej</li>
-                <li>🏨 Sale weselne — hotel, stajnia, winnica, stodoła</li>
-              </ul>
-
-              <h3>Kortez weselny na Mazowszu</h3>
-              <p>
-                Organizujemy eleganckie korteze weselne na terenie całego Mazowsza.
-                Nasz cortège z dwóch BMW robi niesamowite wrażenie. Zapewniamy:
-                koordynację szoferów, synchronizację tras, punktualność i profesjonalizm.
-                Jeśli potrzebujesz więcej niż dwóch pojazdów, skontaktuj się z nami — mamy
-                zaprzyjaźnione firmy z którymi współpracujemy.
-              </p>
-
-              <h3>Wszystkie miasta w województwie mazowieckim — nasz obszar obsługi</h3>
-              <p>
-                Obsługujemy wynajem auta do ślubu w następujących miastach i gminach Mazowsza:
-              </p>
-              <div className="location-cities">
-                {mazowieckieCities.map(({ city, href }) => (
-                  href
-                    ? <Link key={city} to={href} className="location-city-tag location-city-tag--link">📍 {city}</Link>
-                    : <span key={city} className="location-city-tag">📍 {city}</span>
-                ))}
-              </div>
-
-              <h3>Obsługujemy też sąsiednie województwa</h3>
-              <p>
-                Nie ograniczamy się tylko do Mazowsza. Obsługujemy również wesela w województwach
-                łódzkim, świętokrzyskim i lubelskim. W takich przypadkach ustalamy indywidualną
-                cenę zależną od trasy. Zadzwoń lub napisz po wycenę.
-              </p>
-            </div>
-
-            {/* RIGHT: Contact card */}
-            <aside className="location-sidebar">
-              <div className="location-sidebar__card">
-                <h3>Zapytaj o termin na Mazowszu</h3>
-                <p>Wolne terminy 2026 / 2027 — rezerwuj z wyprzedzeniem!</p>
-                <a href="tel:+48881358838" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }}>
-                  📞 +48 881 358 838
-                </a>
-                <Link to="/kontakt" className="btn btn-gold-outline" style={{ display: 'block', textAlign: 'center' }}>
-                  ✉️ Formularz kontaktowy
-                </Link>
-                <hr style={{ margin: '1.5rem 0', borderColor: 'var(--gold)', opacity: 0.3 }} />
-                <ul className="location-sidebar__features">
-                  <li>🚗 BMW 650i Gran Coupé lub BMW 4 Cabrio</li>
-                  <li>💐 Bezpłatna dekoracja kwiatowa</li>
-                  <li>📸 Postój na sesję zdjęciową</li>
-                  <li>👨‍✈️ Elegancki szofer w cenie</li>
-                  <li>🗺️ Całe Mazowsze bez dopłat w 20 km</li>
-                </ul>
-              </div>
-              <div className="location-sidebar__rating">
-                <div className="location-sidebar__stars">★★★★★</div>
-                <p><strong>5,0/5</strong> — na podstawie 85 opinii par z Mazowsza</p>
-              </div>
-              <div className="location-sidebar__links">
-                <h4>Dedykowane strony lokalne:</h4>
-                <Link to="/auto-do-slubu-radom" className="location-sidebar__city-link">
-                  → Auto do ślubu Radom
-                </Link>
-                <Link to="/auto-do-slubu-warszawa" className="location-sidebar__city-link">
-                  → Auto do ślubu Warszawa
-                </Link>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="faq" aria-labelledby="mazowieckie-faq-title" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
-        <div className="container">
-          <h2 className="section-title" id="mazowieckie-faq-title">Pytania — wynajem auta do ślubu Mazowieckie</h2>
-          <div className="section-divider" aria-hidden="true"></div>
-          <div className="faq__list">
-            {faqSchema.mainEntity.map((item, i) => (
-              <div className="faq-item faq-item--open" key={i}>
-                <div className="faq-item__question" style={{ cursor: 'default' }}>
-                  {item.name}
-                </div>
-                <div className="faq-item__answer" style={{ display: 'block' }}>
-                  <div className="faq-item__answer-inner">
-                    <p>{item.acceptedAnswer.text}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="cta" aria-labelledby="mazowieckie-cta-title">
-        <div className="container">
-          <span className="cta__eyebrow">Obsługujemy całe Mazowsze — 2026 / 2027</span>
-          <h2 className="cta__title" id="mazowieckie-cta-title">Zarezerwuj Auto do Ślubu na Mazowszu</h2>
-          <p className="cta__subtitle">
-            Gdziekolwiek na Mazowszu organizujesz swój ślub — dotrzemy do Ciebie z luksusowym BMW.
-            Zadzwoń i sprawdź dostępność terminu.
-          </p>
-          <a className="cta__phone" href="tel:+48881358838">📞 +48 881 358 838</a>
-          <div className="cta__actions">
-            <Link to="/kontakt" className="btn btn-dark">✉️ Napisz do nas</Link>
-            <a href="tel:+48881358838" className="btn btn-dark">📞 Zadzwoń teraz</a>
-          </div>
-        </div>
-      </section>
+      <h3>Sąsiednie województwa</h3>
+      <p>
+        Obsługujemy też wesela w województwach łódzkim, świętokrzyskim i lubelskim, na przykład w Skarżysku-Kamiennej, Starachowicach, Ostrowcu
+        Świętokrzyskim, Puławach czy Tomaszowie Mazowieckim. Cena obejmuje wtedy cały dojazd i jest znana przed rezerwacją.
+      </p>
     </>
-  )
+  ),
+}
+
+export default function MazowieckiePage() {
+  return <LocationPage page={page} />
 }

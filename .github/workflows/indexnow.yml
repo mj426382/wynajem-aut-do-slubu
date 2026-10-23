@@ -1,0 +1,60 @@
+name: IndexNow – autodoslubuwarszawa.pl
+
+# After every successful Vercel production deployment, tell IndexNow (Bing, Yandex, Seznam, Naver) which sitemap URLs
+# were added, changed (<lastmod>) or removed since the previous successful production deployment.
+# Blog bot posts are deployed the same way, so they are submitted too. Never fails on network errors.
+
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "Baseline commit (sha). Empty: previous successful production deployment."
+        type: string
+        required: false
+        default: ""
+      dry_run:
+        description: "Only print what would be submitted"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  deployments: read
+
+jobs:
+  indexnow:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: indexnow
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Submit URLs changed since the previous production deployment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOYMENT_SHA: ${{ github.event.deployment.sha || github.sha }}
+          DEPLOYMENT_ID: ${{ github.event.deployment.id }}
+          SINCE: ${{ inputs.since }}
+          DRY_RUN: ${{ inputs.dry_run == true && '1' || '0' }}
+        run: |
+          args=(--sha "$DEPLOYMENT_SHA")
+          if [ -n "$SINCE" ]; then
+            args+=(--since "$SINCE")
+          else
+            args+=(--github-previous)
+            if [ -n "$DEPLOYMENT_ID" ]; then args+=(--deployment-id "$DEPLOYMENT_ID"); fi
+          fi
+          if [ "$DRY_RUN" = "1" ]; then args+=(--dry-run); fi
+          node scripts/indexnow.js "${args[@]}"

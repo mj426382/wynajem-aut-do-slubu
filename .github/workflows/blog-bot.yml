@@ -1,0 +1,152 @@
+name: 📝 Blog bot – autodoslubuwarszawa.pl
+
+# Fully automatic, twice a week (Mon and Thu):
+#   1. a NEW article from the researched topic plan (scripts/blog/blog-keywords.json – cluster rotation, seasonal
+#      windows, pillar guides) and
+#   2. a REFRESH of the thinnest legacy post (same URL, rewritten into a real guide, modifiedAt = today).
+# Drafts that fail the quality gates (scripts/blog/blog_quality.py) are regenerated with feedback (up to 3 drafts).
+# The site is then linted, built, prerendered and checked like in CI, and only then pushed to main – Vercel deploys it,
+# and the IndexNow workflow notifies Bing and others. Keep PUBLISH_WEEKDAYS in scripts/blog/blog_plan.py in sync.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Co zrobić"
+        type: choice
+        options: [both, new, refresh]
+        default: both
+      dry_run:
+        description: "Bez API i bez publikacji – przykładowy artykuł, bramki jakości i build"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "0 6 * * 1,4" # pon, czw 06:00 UTC
+
+concurrency:
+  group: blog-bot
+  cancel-in-progress: false
+
+jobs:
+  blog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      models: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install requests -q
+
+      - name: Topic plan is valid
+        id: plan
+        run: |
+          python3 scripts/blog/blog_plan.py --validate
+          {
+            echo "### Następne tematy z planu"
+            echo '```json'
+            python3 scripts/blog/blog_plan.py --next 5
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: New article (AI + quality gates)
+        id: new
+        if: inputs.mode != 'refresh'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MODELS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BLOG_MODE: new
+          BLOG_DRY_RUN: ${{ inputs.dry_run == true && '1' || '0' }}
+        run: python3 scripts/blog/generate_blog_post.py
+
+      - name: Refresh the thinnest old post (AI + quality gates)
+        id: refresh
+        if: inputs.mode != 'new' && inputs.dry_run != true
+        continue-on-error: true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MODELS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BLOG_MODE: refresh
+        run: python3 scripts/blog/generate_blog_post.py
+
+      - name: No duplicate blog posts
+        id: duplicates
+        run: python3 scripts/blog/check_blog_duplicates.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Lint, build, prerender and check the site (same gates as CI)
+        id: build
+        run: |
+          npm ci
+          npm run lint
+          npm run build
+          node scripts/check-build.js
+
+      - name: Publish to main (Vercel deploys)
+        id: publish
+        if: inputs.dry_run != true && (steps.new.outputs.slug != '' || steps.refresh.outputs.slug != '')
+        env:
+          NEW_TITLE: ${{ steps.new.outputs.title }}
+          REFRESH_SLUG: ${{ steps.refresh.outputs.slug }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/blog/posts public/sitemap.xml scripts/blog/blog-keywords-used.json
+          msg="feat(blog):"
+          [ -n "$NEW_TITLE" ] && msg="$msg ${NEW_TITLE}"
+          [ -n "$REFRESH_SLUG" ] && msg="$msg (odświeżono /blog/${REFRESH_SLUG})"
+          git commit -m "$msg ($(date -u +%F))"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 15
+          done
+          echo "::error::Could not push to main"
+          exit 1
+
+      - name: Wait until the article is live
+        id: live
+        if: steps.publish.outcome == 'success' && steps.new.outputs.slug != ''
+        run: |
+          url="https://autodoslubuwarszawa.pl/blog/${{ steps.new.outputs.slug }}"
+          for i in $(seq 1 40); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$url")
+            if [ "$code" = "200" ]; then echo "Live: $url"; exit 0; fi
+            sleep 15
+          done
+          echo "::warning::$url is not live after 10 minutes – check the Vercel deployment"
+
+      - name: Run summary
+        if: always()
+        env:
+          NEW: ${{ steps.new.outcome }}
+          REFRESH: ${{ steps.refresh.outcome }}
+          BUILD: ${{ steps.build.outcome }}
+          PUBLISH: ${{ steps.publish.outcome }}
+          SLUG: ${{ steps.new.outputs.slug }}
+          WORDS: ${{ steps.new.outputs.words }}
+          RSLUG: ${{ steps.refresh.outputs.slug }}
+        run: |
+          icon() { case "$1" in success) echo "✅";; failure) echo "❌";; skipped|"") echo "⏭️";; *) echo "⚠️ $1";; esac; }
+          {
+            echo "### Wynik przebiegu"
+            echo "| Krok | Wynik |"
+            echo "|---|---|"
+            echo "| Nowy wpis | $(icon "$NEW") |"
+            echo "| Odświeżenie starego wpisu | $(icon "$REFRESH") |"
+            echo "| Lint, build, prerender, kontrola | $(icon "$BUILD") |"
+            echo "| Publikacja na main | $(icon "$PUBLISH") |"
+            [ -n "$SLUG" ] && echo "" && echo "Nowy: https://autodoslubuwarszawa.pl/blog/${SLUG} · ${WORDS} słów"
+            [ -n "$RSLUG" ] && echo "Odświeżony: https://autodoslubuwarszawa.pl/blog/${RSLUG}"
+            true
+          } >> "$GITHUB_STEP_SUMMARY"
