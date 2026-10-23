@@ -104,8 +104,43 @@ async function icons() {
   }
 }
 
+/**
+ * Blog covers (3:2): real photos of our cars, 1200 px for the post header / OG and 600 px for the cards.
+ * The crop window is given per photo so the car (and the couple) are never cut. Keep the ids in sync with
+ * src/blog/covers.js.
+ */
+const COVERS = [
+  { id: 'bmw6-para', src: 'bmw6/bmw6-wedding.jpg' },
+  { id: 'bmw6-fajerwerki', src: 'bmw6/bmw6-wedding-portrait.jpg', top: 0.56 },
+  { id: 'bmw4-front', src: 'bmw4/bmw4-front-angle.jpg', top: 0.5 },
+  { id: 'bmw4-dach', src: 'bmw4/bmw4-original.jpg', top: 0.5 },
+  { id: 'bmw4-willa', src: 'bmw4/bmw4-front-villa.jpg', top: 0.48 },
+]
+
+async function blogCovers() {
+  const outDir = resolve(publicDir, 'images', 'blog')
+  mkdirSync(outDir, { recursive: true })
+  for (const c of COVERS) {
+    // Phone photos carry an EXIF rotation: bake it in first so width/height match what we crop.
+    const upright = await sharp(resolve(srcDir, c.src)).rotate().toBuffer()
+    const input = sharp(upright)
+    const { width, height } = await input.metadata()
+    const cropH = Math.min(height, Math.round(width / 1.5))
+    const cropW = Math.round(cropH * 1.5)
+    const top = Math.max(0, Math.min(height - cropH, Math.round(height * (c.top ?? 0.5) - cropH / 2)))
+    const left = Math.round((width - cropW) / 2)
+    for (const w of [1200, 600]) {
+      const base = input.clone().extract({ left, top, width: cropW, height: cropH }).resize({ width: w, withoutEnlargement: true })
+      await base.clone().jpeg({ quality: 80, mozjpeg: true, progressive: true }).toFile(resolve(outDir, `cover-${c.id}-${w}.jpg`))
+      await base.clone().webp({ quality: 76 }).toFile(resolve(outDir, `cover-${c.id}-${w}.webp`))
+    }
+    console.log(`✅ images/blog/cover-${c.id} (${cropW}×${cropH} crop)`)
+  }
+}
+
 async function main() {
   await photos()
+  await blogCovers()
   await ogImages()
   await icons()
 }

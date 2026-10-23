@@ -14,7 +14,7 @@ export function pageTitle(title) {
  * The per-route <head> shared by every page: title, description, canonical, Open Graph, Twitter, JSON-LD.
  * `path` is the route ("/blog"); the canonical and og:url are built from it, so no page can get them wrong.
  */
-export default function SEO({ title, description, path, image = DEFAULT_OG_IMAGE, imageAlt = DEFAULT_OG_ALT, type = 'website', jsonLd = [], noindex = false, children }) {
+export default function SEO({ title, description, path, image = DEFAULT_OG_IMAGE, imageAlt = DEFAULT_OG_ALT, imageWidth = OG_IMAGE_WIDTH, imageHeight = OG_IMAGE_HEIGHT, type = 'website', jsonLd = [], noindex = false, children }) {
   const url = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`
   const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`
   const fullTitle = pageTitle(title)
@@ -31,8 +31,8 @@ export default function SEO({ title, description, path, image = DEFAULT_OG_IMAGE
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="pl_PL" />
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:image:width" content={OG_IMAGE_WIDTH} />
-      <meta property="og:image:height" content={OG_IMAGE_HEIGHT} />
+      <meta property="og:image:width" content={imageWidth} />
+      <meta property="og:image:height" content={imageHeight} />
       <meta property="og:image:alt" content={imageAlt} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />

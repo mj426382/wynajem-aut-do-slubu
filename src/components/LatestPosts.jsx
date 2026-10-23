@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { blogIndex } from '../blog/index.js'
 import { formatPlDate } from '../data/site'
+import BlogCardCover, { coversForList } from './BlogCardCover'
 
 /** Newest posts (optionally one category first) – internal links from the money pages into the blog and back. */
 export default function LatestPosts({ category, limit = 3, title = 'Z bloga ślubnego' }) {
@@ -8,17 +9,16 @@ export default function LatestPosts({ category, limit = 3, title = 'Z bloga ślu
   const rest = blogIndex.filter((p) => !preferred.includes(p))
   const posts = [...preferred, ...rest].slice(0, limit)
   if (posts.length === 0) return null
+  const covers = coversForList(posts)
   return (
     <section className="latest-posts" aria-labelledby="latest-posts-title">
       <div className="container">
         <h2 className="section-title" id="latest-posts-title">{title}</h2>
         <div className="section-divider" aria-hidden="true"></div>
         <div className="blog-grid">
-          {posts.map((post) => (
+          {posts.map((post, i) => (
             <article className="blog-card" key={post.slug}>
-              <div className="blog-card__image" aria-hidden="true">
-                <span style={{ fontSize: '3rem' }}>{post.emoji}</span>
-              </div>
+              <BlogCardCover post={post} cover={covers[i]} />
               <div className="blog-card__body">
                 <div className="blog-card__meta">
                   <span className="blog-card__category">{post.category}</span>

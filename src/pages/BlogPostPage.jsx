@@ -3,8 +3,9 @@ import { useParams, Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import NotFoundPage from './NotFoundPage'
 import { blogIndex, getCachedPost, loadPost, postExists } from '../blog/index.js'
-import { BLOG_OG_IMAGE, LOGO_URL, ORG_ID, PHONE_DISPLAY, PHONE_E164, SITE_NAME, SITE_URL, formatPlDate } from '../data/site'
+import { LOGO_URL, ORG_ID, PHONE_DISPLAY, PHONE_E164, SITE_NAME, SITE_URL, formatPlDate } from '../data/site'
 import { trackLead } from '../consent/googleTag'
+import { coverFor } from '../blog/covers'
 import Icon from '../components/Icon'
 
 function stripTags(html) {
@@ -61,6 +62,7 @@ export default function BlogPostPage() {
   }
 
   const canonical = `${SITE_URL}/blog/${post.slug}`
+  const cover = coverFor(post)
   const faq = extractFaq(post.content)
   const others = blogIndex.filter((p) => p.slug !== post.slug)
   const related = [...others.filter((p) => p.category === post.category), ...others].filter((p, i, all) => all.indexOf(p) === i).slice(0, 3)
@@ -83,7 +85,7 @@ export default function BlogPostPage() {
       url: canonical,
       mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
       isPartOf: { '@id': `${SITE_URL}/blog#blog` },
-      image: { '@type': 'ImageObject', url: BLOG_OG_IMAGE, width: 1200, height: 630 },
+      image: { '@type': 'ImageObject', url: `${SITE_URL}${cover.large}`, width: 1200, height: 800 },
     },
     {
       '@context': 'https://schema.org',
@@ -105,7 +107,7 @@ export default function BlogPostPage() {
 
   return (
     <>
-      <SEO title={post.metaTitle} description={post.metaDescription} path={`/blog/${post.slug}`} image={BLOG_OG_IMAGE} imageAlt={post.title} type="article" jsonLd={jsonLd}>
+      <SEO title={post.metaTitle} description={post.metaDescription} path={`/blog/${post.slug}`} image={cover.large} imageAlt={cover.alt} imageWidth="1200" imageHeight="800" type="article" jsonLd={jsonLd}>
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time" content={post.modifiedAt} />
         <meta property="article:section" content={post.category} />
@@ -133,6 +135,10 @@ export default function BlogPostPage() {
             </div>
             <h1 className="blog-post__title">{post.title}</h1>
             <p className="blog-post__lead">{post.excerpt}</p>
+            <picture className="blog-post__cover">
+              <source srcSet={cover.largeWebp} type="image/webp" />
+              <img src={cover.large} alt={cover.alt} width="1200" height="800" fetchPriority="high" />
+            </picture>
           </header>
 
           <div className="blog-post__content" dangerouslySetInnerHTML={{ __html: post.content }} />

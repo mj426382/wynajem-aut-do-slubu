@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import { blogIndex } from '../blog/index.js'
 import { BLOG_CATEGORIES, BLOG_OG_IMAGE, ORG_ID, SITE_URL, formatPlDate } from '../data/site'
+import BlogCardCover, { coversForList } from '../components/BlogCardCover'
 
 export default function BlogPage() {
   const [category, setCategory] = useState('Wszystkie')
@@ -31,6 +32,7 @@ export default function BlogPage() {
     },
   ]
 
+  const covers = coversForList(posts)
   return (
     <>
       <SEO
@@ -57,11 +59,9 @@ export default function BlogPage() {
             </div>
           </div>
           <div className="blog-grid">
-            {posts.map((post) => (
+            {posts.map((post, i) => (
               <article className="blog-card" key={post.slug}>
-                <div className="blog-card__image" aria-hidden="true">
-                  <span style={{ fontSize: '4rem' }}>{post.emoji}</span>
-                </div>
+                <BlogCardCover post={post} cover={covers[i]} />
                 <div className="blog-card__body">
                   <div className="blog-card__meta">
                     <span className="blog-card__category">{post.category}</span>
