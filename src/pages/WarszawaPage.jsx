@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import LocationPage from '../components/LocationPage'
 import { DEPOSIT_PERCENT, FREE_RADIUS_KM, PACKAGE_HOURS, PRICE_MAX, PRICE_MIN } from '../data/site'
+import Icon from '../components/Icon'
 
 const districts = ['Śródmieście', 'Mokotów', 'Wilanów', 'Ursynów', 'Żoliborz', 'Bielany', 'Wola', 'Bemowo', 'Praga-Południe', 'Praga-Północ', 'Białołęka', 'Targówek', 'Wawer', 'Ochota', 'Włochy', 'Ursus']
 const suburbs = ['Pruszków', 'Piaseczno', 'Legionowo', 'Łomianki', 'Marki', 'Ząbki', 'Otwock', 'Józefów', 'Konstancin-Jeziorna', 'Raszyn', 'Sulejówek', 'Wołomin']
@@ -64,12 +65,12 @@ const page = {
 
       <h3>Co zawiera wynajem auta do ślubu w Warszawie</h3>
       <ul className="location-list">
-        <li>✅ Elegancki szofer znający Warszawę i trasy alternatywne</li>
-        <li>✅ Dekoracja florystyczna dopasowana do kolorystyki wesela</li>
-        <li>✅ Postój na sesję: Stare Miasto, Łazienki, Wilanów lub inne miejsce</li>
-        <li>✅ Dojazd po Parę Młodą w dowolnej dzielnicy bez dopłat</li>
-        <li>✅ Przyjazd na salę weselną w Warszawie lub pod miastem</li>
-        <li>✅ Organizacja kortezu z kilku aut</li>
+        <li><Icon name="check" /> Elegancki szofer znający Warszawę i trasy alternatywne</li>
+        <li><Icon name="check" /> Dekoracja florystyczna dopasowana do kolorystyki wesela</li>
+        <li><Icon name="check" /> Postój na sesję: Stare Miasto, Łazienki, Wilanów lub inne miejsce</li>
+        <li><Icon name="check" /> Dojazd po Parę Młodą w dowolnej dzielnicy bez dopłat</li>
+        <li><Icon name="check" /> Przyjazd na salę weselną w Warszawie lub pod miastem</li>
+        <li><Icon name="check" /> Organizacja kortezu z kilku aut</li>
       </ul>
 
       <h3>Kościoły i urzędy, pod które podjeżdżamy najczęściej</h3>
@@ -88,14 +89,14 @@ const page = {
       <h3>Dzielnice Warszawy, które obsługujemy</h3>
       <div className="location-cities">
         {districts.map((d) => (
-          <span key={d} className="location-city-tag">📍 {d}</span>
+          <span key={d} className="location-city-tag"><Icon name="pin" /> {d}</span>
         ))}
       </div>
 
       <h3>Aglomeracja warszawska bez dopłat do {FREE_RADIUS_KM} km</h3>
       <div className="location-cities">
         {suburbs.map((d) => (
-          <span key={d} className="location-city-tag">📍 {d}</span>
+          <span key={d} className="location-city-tag"><Icon name="pin" /> {d}</span>
         ))}
       </div>
       <p>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import { EMAIL, FREE_RADIUS_KM, ORG_ID, PHONE_DISPLAY, PHONE_E164, PRICE_MAX, PRICE_MIN, SITE_URL } from '../data/site'
 import { trackLead } from '../consent/googleTag'
+import Icon from '../components/Icon'
 
 const jsonLd = [
   {
@@ -137,7 +138,7 @@ export default function ContactPage() {
                   <Link to="/polityka-prywatnosci">polityką prywatności</Link>.
                 </p>
                 <button type="submit" className="form-submit" disabled={status === 'sending'}>
-                  {status === 'sending' ? 'Wysyłanie…' : '✉️ Wyślij zapytanie'}
+                  {status === 'sending' ? 'Wysyłanie…' : 'Wyślij zapytanie'}
                 </button>
                 {status === 'sent' && (
                   <p className="form-status form-status--ok" role="status">
@@ -157,11 +158,11 @@ export default function ContactPage() {
                 <h2 style={{ fontSize: '1.25rem' }}>Dane kontaktowe</h2>
                 <address style={{ fontStyle: 'normal' }}>
                   <div className="contact-info-item">
-                    <span className="contact-info-item__icon" aria-hidden="true">📞</span>
+                    <Icon name="phone" />
                     <a href={`tel:${PHONE_E164}`} onClick={() => trackLead('phone', 'kontakt')}>{PHONE_DISPLAY}</a>
                   </div>
                   <div className="contact-info-item">
-                    <span className="contact-info-item__icon" aria-hidden="true">✉️</span>
+                    <Icon name="mail" />
                     <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
                   </div>
                 </address>
@@ -171,10 +172,10 @@ export default function ContactPage() {
               <div className="contact-info-card">
                 <h2 style={{ fontSize: '1.25rem' }}>Zanim napiszesz</h2>
                 <ul className="contact-info-list">
-                  <li>💰 Pakiet 3 h z szoferem: {PRICE_MIN}–{PRICE_MAX} zł</li>
-                  <li>📍 Dojazd gratis do {FREE_RADIUS_KM} km od Warszawy lub Radomia</li>
-                  <li>💐 Dekoracja i postój na sesję w cenie</li>
-                  <li>📅 Rezerwację potwierdza zadatek i umowa</li>
+                  <li><Icon name="wallet" /> Pakiet 3 h z szoferem: {PRICE_MIN}–{PRICE_MAX} zł</li>
+                  <li><Icon name="pin" /> Dojazd gratis do {FREE_RADIUS_KM} km od Warszawy lub Radomia</li>
+                  <li><Icon name="flower" /> Dekoracja i postój na sesję w cenie</li>
+                  <li><Icon name="calendar" /> Rezerwację potwierdza zadatek i umowa</li>
                 </ul>
                 <p style={{ marginTop: '1rem' }}>
                   <Link to="/auto-do-slubu-warszawa">Ślub w Warszawie</Link> · <Link to="/auto-do-slubu-radom">Ślub w Radomiu</Link> ·{' '}

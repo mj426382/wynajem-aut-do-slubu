@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import LocationPage from '../components/LocationPage'
 import { EXTRA_KM_PRICE, FREE_RADIUS_KM, PACKAGE_HOURS, PRICE_MAX, PRICE_MIN } from '../data/site'
+import Icon from '../components/Icon'
 
 const cities = [
   { city: 'Warszawa', href: '/auto-do-slubu-warszawa' },
@@ -89,29 +90,29 @@ const page = {
 
       <h3>Co oferujemy Parom Młodym na Mazowszu</h3>
       <ul className="location-list">
-        <li>✅ <Link to="/flota/bmw-650i-gran-coupe">BMW 650i Gran Coupé</Link> lub <Link to="/flota/bmw-4-cabrio">BMW 4 Cabrio</Link> z szoferem</li>
-        <li>✅ Dekoracja florystyczna w każdym pakiecie</li>
-        <li>✅ Postój na sesję w plenerze: nad Pilicą, w Kampinosie, w pałacowym parku</li>
-        <li>✅ Dojazd gratis do {FREE_RADIUS_KM} km od Radomia lub Warszawy</li>
-        <li>✅ Kortez weselny z kilku aut</li>
-        <li>✅ Wesela w sąsiednich województwach po jednej, ustalonej cenie</li>
+        <li><Icon name="check" /> <Link to="/flota/bmw-650i-gran-coupe">BMW 650i Gran Coupé</Link> lub <Link to="/flota/bmw-4-cabrio">BMW 4 Cabrio</Link> z szoferem</li>
+        <li><Icon name="check" /> Dekoracja florystyczna w każdym pakiecie</li>
+        <li><Icon name="check" /> Postój na sesję w plenerze: nad Pilicą, w Kampinosie, w pałacowym parku</li>
+        <li><Icon name="check" /> Dojazd gratis do {FREE_RADIUS_KM} km od Radomia lub Warszawy</li>
+        <li><Icon name="check" /> Kortez weselny z kilku aut</li>
+        <li><Icon name="check" /> Wesela w sąsiednich województwach po jednej, ustalonej cenie</li>
       </ul>
 
       <h3>Popularne miejsca ślubów na Mazowszu</h3>
       <ul className="location-list">
-        <li>🏰 Pałace i dworki: Wilanów, Radziejowice, Jabłonna, Opinogóra, Chlewiska</li>
-        <li>⛪ Sanktuaria i kościoły: Niepokalanów, Czerwińsk, Studzianna, Wysokie Koło</li>
-        <li>🌿 Śluby plenerowe: nad Wisłą, nad Pilicą, w Puszczy Kampinoskiej i Kozienickiej</li>
-        <li>🏨 Stodoły weselne, winnice i hotele w całym województwie</li>
+        <li><Icon name="castle" /> Pałace i dworki: Wilanów, Radziejowice, Jabłonna, Opinogóra, Chlewiska</li>
+        <li><Icon name="church" /> Sanktuaria i kościoły: Niepokalanów, Czerwińsk, Studzianna, Wysokie Koło</li>
+        <li><Icon name="tree" /> Śluby plenerowe: nad Wisłą, nad Pilicą, w Puszczy Kampinoskiej i Kozienickiej</li>
+        <li><Icon name="building" /> Stodoły weselne, winnice i hotele w całym województwie</li>
       </ul>
 
       <h3>Miasta i gminy, do których jeździmy</h3>
       <div className="location-cities">
         {cities.map(({ city, href }) =>
           href ? (
-            <Link key={city} to={href} className="location-city-tag location-city-tag--link">📍 {city}</Link>
+            <Link key={city} to={href} className="location-city-tag location-city-tag--link"><Icon name="pin" /> {city}</Link>
           ) : (
-            <span key={city} className="location-city-tag">📍 {city}</span>
+            <span key={city} className="location-city-tag"><Icon name="pin" /> {city}</span>
           ),
         )}
       </div>

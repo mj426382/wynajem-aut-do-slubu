@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { PHONE_DISPLAY, PHONE_E164 } from '../data/site'
 import { trackLead } from '../consent/googleTag'
+import Icon from './Icon'
 
 const linkClass = ({ isActive }) => (isActive ? 'navbar__link navbar__link--active' : 'navbar__link')
 
@@ -38,7 +39,7 @@ export default function Navbar() {
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__container">
         <Link to="/" className="navbar__logo" onClick={close} aria-label="AutoDoŚlubu Warszawa & Radom – strona główna">
-          <span className="navbar__logo-icon" aria-hidden="true">♛</span>
+          <span className="navbar__logo-icon" aria-hidden="true"><Icon name="crown" size={30} /></span>
           <div>
             <span className="navbar__logo-main">AutoDoŚlubu</span>
             <span className="navbar__logo-sub">Warszawa &amp; Radom</span>
@@ -57,12 +58,12 @@ export default function Navbar() {
               <ul className="navbar__dropdown-menu">
                 <li>
                   <NavLink to="/flota/bmw-650i-gran-coupe" className="navbar__dropdown-item" onClick={close}>
-                    🏆 BMW 650i Gran Coupé
+                    <Icon name="gem" /> BMW 650i Gran Coupé
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/flota/bmw-4-cabrio" className="navbar__dropdown-item" onClick={close}>
-                    🌹 BMW 4 Cabrio
+                    <Icon name="flower" /> BMW 4 Cabrio
                   </NavLink>
                 </li>
               </ul>
@@ -77,17 +78,17 @@ export default function Navbar() {
               <ul className="navbar__dropdown-menu">
                 <li>
                   <NavLink to="/auto-do-slubu-warszawa" className="navbar__dropdown-item" onClick={close}>
-                    📍 Auto do ślubu Warszawa
+                    <Icon name="pin" /> Auto do ślubu Warszawa
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/auto-do-slubu-radom" className="navbar__dropdown-item" onClick={close}>
-                    📍 Auto do ślubu Radom
+                    <Icon name="pin" /> Auto do ślubu Radom
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/auto-do-slubu-mazowieckie" className="navbar__dropdown-item" onClick={close}>
-                    📍 Auto do ślubu Mazowieckie
+                    <Icon name="pin" /> Auto do ślubu Mazowieckie
                   </NavLink>
                 </li>
               </ul>
@@ -101,7 +102,7 @@ export default function Navbar() {
             Kontakt
           </NavLink>
           <a href={`tel:${PHONE_E164}`} className="navbar__phone" onClick={() => trackLead('phone', 'navbar')}>
-            📞 {PHONE_DISPLAY}
+            <Icon name="phone" /> {PHONE_DISPLAY}
           </a>
         </nav>
         <button className="navbar__hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Zamknij menu' : 'Otwórz menu'} aria-expanded={menuOpen}>

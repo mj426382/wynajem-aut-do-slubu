@@ -1,33 +1,34 @@
 import { FREE_RADIUS_KM } from '../data/site'
+import Icon from './Icon'
 
 const features = [
   {
-    icon: '💎',
+    icon: 'gem',
     title: 'Dwa luksusowe BMW',
     desc: 'BMW 650i xDrive Gran Coupé (V8, 4×4) i BMW 4 Cabrio z elektrycznym dachem. Oba auta serwisowane, umyte i przygotowane dzień przed ślubem.',
   },
   {
-    icon: '👨‍✈️',
+    icon: 'chauffeur',
     title: 'Szofer w cenie',
     desc: 'Elegancko ubrany, punktualny i dyskretny kierowca, który zna trasy w Warszawie i Radomiu i przyjeżdża z zapasem czasu.',
   },
   {
-    icon: '🌹',
+    icon: 'flower',
     title: 'Dekoracja florystyczna gratis',
     desc: 'Białe wstążki, bukiet na masce i dekoracja wnętrza w każdym pakiecie. Kolory dopasowujemy do motywu Waszego wesela.',
   },
   {
-    icon: '📸',
+    icon: 'camera',
     title: 'Postój na sesję zdjęciową',
     desc: 'Zatrzymujemy się tam, gdzie chce fotograf: Stare Miasto, Łazienki, Wilanów albo park w Radomiu. Bez pośpiechu.',
   },
   {
-    icon: '📍',
+    icon: 'pin',
     title: `Dojazd gratis do ${FREE_RADIUS_KM} km`,
     desc: `Warszawa, Radom i okolice do ${FREE_RADIUS_KM} km bez dopłat. Dalej na Mazowszu i w sąsiednich województwach — wycena indywidualna.`,
   },
   {
-    icon: '🕐',
+    icon: 'clock',
     title: 'Jasne zasady rezerwacji',
     desc: 'Potwierdzony termin, zadatek i umowa. Jeden pakiet 3-godzinny obejmuje dojazd, kościół lub USC, sesję i przyjazd na salę.',
   },
@@ -45,7 +46,7 @@ export default function FeaturesSection() {
         <div className="features__grid">
           {features.map((f) => (
             <article className="feature-card" key={f.title}>
-              <span className="feature-card__icon" aria-hidden="true">{f.icon}</span>
+              <span className="feature-card__icon" aria-hidden="true"><Icon name={f.icon} size={30} /></span>
               <h3 className="feature-card__title">{f.title}</h3>
               <p className="feature-card__desc">{f.desc}</p>
             </article>

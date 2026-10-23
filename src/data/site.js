@@ -25,9 +25,9 @@ export const CARS = [
     path: '/flota/bmw-650i-gran-coupe',
     name: 'BMW 650i xDrive Gran Coupé (F06)',
     shortName: 'BMW 650i Gran Coupé',
-    image: '/images/bmw6/bmw6-front-1600.jpg',
-    imageWebp: '/images/bmw6/bmw6-front-1600.webp',
-    imageAlt: 'BMW 650i xDrive Gran Coupé – luksusowe auto do ślubu udekorowane białymi kwiatami',
+    image: '/images/bmw6/bmw6-wedding-1600.jpg',
+    imageWebp: '/images/bmw6/bmw6-wedding-1600.webp',
+    imageAlt: 'Białe BMW 650i xDrive Gran Coupé udekorowane na ślub, obok Para Młoda i fajerwerki',
   },
   {
     slug: 'bmw-4-cabrio',

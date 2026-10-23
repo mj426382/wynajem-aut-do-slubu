@@ -35,13 +35,13 @@ const car = {
     },
   ],
   features: [
-    { icon: '🌬️', label: 'Elektryczny miękki dach — otwiera się w 18 sekund' },
-    { icon: '🪑', label: 'Koniakowa tapicerka skórzana' },
-    { icon: '🔥', label: 'Podgrzewane fotele i ogrzewanie szyi' },
-    { icon: '🎵', label: 'System audio Hi-Fi BMW' },
-    { icon: '🏎️', label: 'Pakiet aerodynamiczny Maxton Design' },
-    { icon: '💐', label: 'Dekoracja florystyczna w cenie' },
-    { icon: '👨‍✈️', label: 'Elegancki szofer w cenie' },
+    { icon: 'wind', label: 'Elektryczny miękki dach — otwiera się w 18 sekund' },
+    { icon: 'seat', label: 'Koniakowa tapicerka skórzana' },
+    { icon: 'flame', label: 'Podgrzewane fotele i ogrzewanie szyi' },
+    { icon: 'music', label: 'System audio Hi-Fi BMW' },
+    { icon: 'gauge', label: 'Pakiet aerodynamiczny Maxton Design' },
+    { icon: 'flower', label: 'Dekoracja florystyczna w cenie' },
+    { icon: 'chauffeur', label: 'Elegancki szofer w cenie' },
   ],
   description: (
     <>

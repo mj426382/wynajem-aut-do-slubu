@@ -5,6 +5,7 @@ import NotFoundPage from './NotFoundPage'
 import { blogIndex, getCachedPost, loadPost, postExists } from '../blog/index.js'
 import { BLOG_OG_IMAGE, LOGO_URL, ORG_ID, PHONE_DISPLAY, PHONE_E164, SITE_NAME, SITE_URL, formatPlDate } from '../data/site'
 import { trackLead } from '../consent/googleTag'
+import Icon from '../components/Icon'
 
 function stripTags(html) {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
@@ -148,8 +149,8 @@ export default function BlogPostPage() {
             <h2 style={{ color: '#fff', fontFamily: 'var(--font-main)', marginBottom: '0.75rem', fontSize: '1.5rem' }}>Zarezerwuj auto do ślubu</h2>
             <p>BMW 650i Gran Coupé lub BMW 4 Cabrio z szoferem i dekoracją w Warszawie, Radomiu i na Mazowszu. Sprawdźcie wolny termin.</p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link to="/kontakt" className="btn btn-primary">✉️ Zapytaj o dostępność</Link>
-              <a href={`tel:${PHONE_E164}`} className="btn btn-outline" onClick={() => trackLead('phone', 'blog-post')}>📞 {PHONE_DISPLAY}</a>
+              <Link to="/kontakt" className="btn btn-primary"><Icon name="mail" /> Zapytaj o dostępność</Link>
+              <a href={`tel:${PHONE_E164}`} className="btn btn-outline" onClick={() => trackLead('phone', 'blog-post')}><Icon name="phone" /> {PHONE_DISPLAY}</a>
             </div>
           </div>
 

@@ -6,6 +6,7 @@ import FAQSection, { faqSchema } from './FAQSection'
 import LatestPosts from './LatestPosts'
 import { FREE_RADIUS_KM, ORG_ID, PHONE_DISPLAY, PHONE_E164, PRICE_MAX, PRICE_MIN, SITE_URL } from '../data/site'
 import { trackLead } from '../consent/googleTag'
+import Icon from './Icon'
 
 /** One template for the two fleet pages: gallery with lightbox, specs, FAQ and the Product/Vehicle structured data. */
 export default function CarPage({ car }) {
@@ -56,10 +57,14 @@ export default function CarPage({ car }) {
     <>
       <SEO title={car.metaTitle} description={car.metaDescription} path={car.path} image={car.gallery[0].full} imageAlt={car.gallery[0].alt} jsonLd={[breadcrumbs, product, faqSchema(car.faqs)]} />
 
-      <section className="car-page-hero" aria-label={car.name}>
-        <div className="car-page-hero__bg" style={{ backgroundImage: `url(${car.gallery[0].full})` }} aria-hidden="true" />
-        <div className="car-page-hero__overlay" aria-hidden="true" />
-        <div className="container car-page-hero__content">
+      <section className="hero hero--split car-hero" aria-label={car.name}>
+        <div className="hero__inner">
+        <picture className="hero__photo">
+          {car.heroDesktop && <source media="(min-width: 900px)" srcSet={car.heroDesktop} />}
+          <source srcSet={car.gallery[0].webp} type="image/webp" />
+          <img src={car.gallery[0].thumb} alt={car.gallery[0].alt} fetchPriority="high" width="800" height="533" />
+        </picture>
+        <div className="hero__content">
           <nav className="breadcrumb breadcrumb--light" aria-label="Breadcrumb">
             <ol className="breadcrumb__list">
               <li><Link to="/">Strona główna</Link></li>
@@ -68,14 +73,15 @@ export default function CarPage({ car }) {
             </ol>
           </nav>
           <span className="hero__eyebrow">{car.eyebrow}</span>
-          <h1 className="car-page-hero__title">
+          <h1 className="hero__title">
             {car.h1} <span className="gold-text">{car.h1Accent}</span>
           </h1>
-          <p className="car-page-hero__subtitle">{car.lead}</p>
+          <p className="hero__subtitle">{car.lead}</p>
           <div className="hero__cta">
-            <Link to="/kontakt" className="btn btn-primary">✉️ Zapytaj o dostępność</Link>
-            <a href={`tel:${PHONE_E164}`} className="btn btn-outline" onClick={() => trackLead('phone', car.path)}>📞 {PHONE_DISPLAY}</a>
+            <Link to="/kontakt" className="btn btn-primary"><Icon name="mail" /> Zapytaj o dostępność</Link>
+            <a href={`tel:${PHONE_E164}`} className="btn btn-outline" onClick={() => trackLead('phone', car.path)}><Icon name="phone" /> {PHONE_DISPLAY}</a>
           </div>
+        </div>
         </div>
       </section>
 
@@ -92,7 +98,7 @@ export default function CarPage({ car }) {
                   <img src={photo.thumb} alt={photo.alt} className="gallery__img" loading={index === 0 ? 'eager' : 'lazy'} width="800" height="534" />
                 </picture>
                 <div className="gallery__overlay" aria-hidden="true">
-                  <span className="gallery__zoom">🔍</span>
+                  <span className="gallery__zoom"><Icon name="zoom" /></span>
                 </div>
               </button>
             ))}
@@ -102,7 +108,7 @@ export default function CarPage({ car }) {
 
       {lightbox !== null && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia" onClick={() => setLightbox(null)}>
-          <button className="lightbox__close" onClick={() => setLightbox(null)} aria-label="Zamknij">✕</button>
+          <button className="lightbox__close" onClick={() => setLightbox(null)} aria-label="Zamknij"><Icon name="close" /></button>
           <button className="lightbox__nav lightbox__nav--prev" onClick={(e) => { e.stopPropagation(); setLightbox((i) => (i - 1 + car.gallery.length) % car.gallery.length) }} aria-label="Poprzednie zdjęcie">‹</button>
           <div className="lightbox__content" onClick={(e) => e.stopPropagation()}>
             <img src={car.gallery[lightbox].full} alt={car.gallery[lightbox].alt} className="lightbox__img" />
@@ -124,8 +130,8 @@ export default function CarPage({ car }) {
                 Zobacz, jak wygląda wynajem w <Link to="/auto-do-slubu-warszawa">Warszawie</Link> i w <Link to="/auto-do-slubu-radom">Radomiu</Link>.
               </p>
               <div className="hero__cta" style={{ marginTop: '2rem' }}>
-                <a href={`tel:${PHONE_E164}`} className="btn btn-primary" onClick={() => trackLead('phone', `${car.path}-specs`)}>📞 {PHONE_DISPLAY}</a>
-                <Link to="/kontakt" className="btn btn-gold-outline">✉️ Formularz kontaktowy</Link>
+                <a href={`tel:${PHONE_E164}`} className="btn btn-primary" onClick={() => trackLead('phone', `${car.path}-specs`)}><Icon name="phone" /> {PHONE_DISPLAY}</a>
+                <Link to="/kontakt" className="btn btn-gold-outline"><Icon name="mail" /> Formularz kontaktowy</Link>
               </div>
             </div>
             <div className="car-specs__features">
@@ -133,7 +139,7 @@ export default function CarPage({ car }) {
               <ul className="car-features-list">
                 {car.features.map((f) => (
                   <li key={f.label} className="car-features-list__item">
-                    <span className="car-features-list__icon" aria-hidden="true">{f.icon}</span>
+                    <span className="car-features-list__icon" aria-hidden="true"><Icon name={f.icon} size={20} /></span>
                     {f.label}
                   </li>
                 ))}

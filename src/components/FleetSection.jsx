@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CARS } from '../data/site'
+import Icon from './Icon'
 
 const DETAILS = {
   'bmw-650i-gran-coupe': {
@@ -49,7 +50,7 @@ export default function FleetSection({ title = 'Samochody do ślubu — BMW z sz
                   </ul>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     <Link to={car.path} className="btn btn-gold-outline" style={{ display: 'block', textAlign: 'center' }}>
-                      📸 Zdjęcia i szczegóły
+                      <Icon name="camera" /> Zdjęcia i szczegóły
                     </Link>
                     <Link to="/kontakt" className="btn btn-primary" style={{ display: 'block', textAlign: 'center' }}>
                       Zapytaj o dostępność

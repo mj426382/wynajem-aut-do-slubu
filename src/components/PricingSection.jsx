@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { DEPOSIT_PERCENT, EXTRA_KM_PRICE, FREE_RADIUS_KM, PACKAGE_HOURS, PRICE_MAX, PRICE_MIN } from '../data/site'
+import Icon from './Icon'
 
 /** Honest price table from src/data/site.js – the same numbers appear in FAQ answers, schema and the blog bot prompt. */
 export default function PricingSection() {
@@ -22,19 +23,19 @@ export default function PricingSection() {
             <tbody>
               <tr>
                 <td>{PACKAGE_HOURS} godziny z eleganckim szoferem (dojazd po Parę, kościół lub USC, sesja, sala)</td>
-                <td>✅ tak</td>
+                <td><Icon name="check" /> tak</td>
               </tr>
               <tr>
                 <td>Dekoracja florystyczna auta (wstążki, bukiet na masce, wnętrze)</td>
-                <td>✅ tak</td>
+                <td><Icon name="check" /> tak</td>
               </tr>
               <tr>
                 <td>Postój na sesję zdjęciową w wybranym miejscu</td>
-                <td>✅ tak</td>
+                <td><Icon name="check" /> tak</td>
               </tr>
               <tr>
                 <td>Dojazd w promieniu {FREE_RADIUS_KM} km od Warszawy lub Radomia</td>
-                <td>✅ tak</td>
+                <td><Icon name="check" /> tak</td>
               </tr>
               <tr>
                 <td>Każda dodatkowa godzina lub kilometry poza {FREE_RADIUS_KM} km</td>

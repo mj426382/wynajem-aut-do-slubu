@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
+import Icon from '../components/Icon'
 
 export default function NotFoundPage() {
   return (
@@ -13,9 +14,9 @@ export default function NotFoundPage() {
             Adres mógł się zmienić albo wpis został połączony z innym. Zobacz ofertę, blog albo napisz do nas.
           </p>
           <div className="not-found__actions">
-            <Link to="/" className="btn btn-primary">🏠 Strona główna</Link>
-            <Link to="/blog" className="btn btn-outline">📝 Blog</Link>
-            <Link to="/kontakt" className="btn btn-outline">✉️ Kontakt</Link>
+            <Link to="/" className="btn btn-primary"><Icon name="home" /> Strona główna</Link>
+            <Link to="/blog" className="btn btn-outline"><Icon name="book" /> Blog</Link>
+            <Link to="/kontakt" className="btn btn-outline"><Icon name="mail" /> Kontakt</Link>
           </div>
         </div>
       </section>

@@ -6,6 +6,7 @@ import CTASection from './CTASection'
 import LatestPosts from './LatestPosts'
 import { CARS, FREE_RADIUS_KM, ORG_ID, PHONE_DISPLAY, PHONE_E164, PRICE_MAX, PRICE_MIN, SITE_URL } from '../data/site'
 import { trackLead } from '../consent/googleTag'
+import Icon from './Icon'
 
 /**
  * One template for the three local landing pages (Warszawa, Radom, Mazowieckie). The page object holds the copy;
@@ -52,8 +53,8 @@ export default function LocationPage({ page }) {
           </h1>
           <p className="location-hero__subtitle">{page.lead}</p>
           <div className="hero__cta">
-            <Link to="/kontakt" className="btn btn-primary">✉️ Zapytaj o termin</Link>
-            <a href={`tel:${PHONE_E164}`} className="btn btn-outline" onClick={() => trackLead('phone', page.path)}>📞 Zadzwoń teraz</a>
+            <Link to="/kontakt" className="btn btn-primary"><Icon name="mail" /> Zapytaj o termin</Link>
+            <a href={`tel:${PHONE_E164}`} className="btn btn-outline" onClick={() => trackLead('phone', page.path)}><Icon name="phone" /> Zadzwoń teraz</a>
           </div>
         </div>
       </section>
@@ -68,18 +69,18 @@ export default function LocationPage({ page }) {
                 <h2 style={{ fontSize: '1.25rem' }}>{page.sidebarTitle}</h2>
                 <p>Pakiet {PRICE_MIN}–{PRICE_MAX} zł za 3 h z szoferem. Terminy 2026 / 2027.</p>
                 <a href={`tel:${PHONE_E164}`} className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginBottom: '1rem' }} onClick={() => trackLead('phone', `${page.path}-sidebar`)}>
-                  📞 {PHONE_DISPLAY}
+                  <Icon name="phone" /> {PHONE_DISPLAY}
                 </a>
                 <Link to="/kontakt" className="btn btn-gold-outline" style={{ display: 'block', textAlign: 'center' }}>
-                  ✉️ Formularz kontaktowy
+                  <Icon name="mail" /> Formularz kontaktowy
                 </Link>
                 <hr style={{ margin: '1.5rem 0', borderColor: 'var(--gold)', opacity: 0.3 }} />
                 <ul className="location-sidebar__features">
-                  <li>🚗 {CARS[0].shortName} lub {CARS[1].shortName}</li>
-                  <li>💐 Dekoracja florystyczna w cenie</li>
-                  <li>📸 Postój na sesję zdjęciową</li>
-                  <li>👨‍✈️ Elegancki szofer w cenie</li>
-                  <li>📍 Dojazd gratis do {FREE_RADIUS_KM} km</li>
+                  <li><Icon name="car" /> {CARS[0].shortName} lub {CARS[1].shortName}</li>
+                  <li><Icon name="flower" /> Dekoracja florystyczna w cenie</li>
+                  <li><Icon name="camera" /> Postój na sesję zdjęciową</li>
+                  <li><Icon name="chauffeur" /> Elegancki szofer w cenie</li>
+                  <li><Icon name="pin" /> Dojazd gratis do {FREE_RADIUS_KM} km</li>
                 </ul>
               </div>
               <div className="location-sidebar__links">

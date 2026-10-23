@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { EMAIL, FREE_RADIUS_KM, PHONE_DISPLAY, PHONE_E164, SERVING_SINCE } from '../data/site'
 import { GA4_CONFIGURED, openCookieSettings, trackLead } from '../consent/googleTag'
+import Icon from './Icon'
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <div className="footer__logo">
-              <span className="footer__logo-icon" aria-hidden="true">♛</span>
+              <span className="footer__logo-icon" aria-hidden="true"><Icon name="crown" size={30} /></span>
               <div>
                 <span className="footer__logo-main">AutoDoŚlubu</span>
                 <span className="footer__logo-sub">Warszawa &amp; Radom</span>
@@ -46,11 +47,11 @@ export default function Footer() {
             <h3 className="footer__col-title">Kontakt</h3>
             <address style={{ fontStyle: 'normal' }}>
               <div className="footer__contact-item">
-                <span aria-hidden="true">📞</span>
+                <Icon name="phone" />
                 <a href={`tel:${PHONE_E164}`} onClick={() => trackLead('phone', 'footer')}>{PHONE_DISPLAY}</a>
               </div>
               <div className="footer__contact-item">
-                <span aria-hidden="true">✉️</span>
+                <Icon name="mail" />
                 <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </div>
             </address>

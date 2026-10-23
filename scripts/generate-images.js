@@ -73,7 +73,7 @@ async function ogCard(source, file, card) {
 
 async function ogImages() {
   mkdirSync(resolve(publicDir, 'og'), { recursive: true })
-  await ogCard('bmw6/bmw6-front.jpg', resolve(publicDir, 'og-image.jpg'), {
+  await ogCard('bmw6/bmw6-wedding.jpg', resolve(publicDir, 'og-image.jpg'), {
     title: 'Auto do ślubu Warszawa i Radom',
     subtitle: 'BMW z szoferem · dekoracja gratis · postój na sesję',
     footer: 'autodoslubuwarszawa.pl · +48 881 358 838',

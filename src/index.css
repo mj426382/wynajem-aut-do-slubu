@@ -2432,61 +2432,52 @@ main {
 .fleet-card__title a { color: inherit; }
 .fleet-card__title a:hover { color: var(--gold-dark); }
 
-/* ===== HERO WITH PHOTO ===== */
-.hero--photo {
-  min-height: 92vh;
-  min-height: 92svh;
-  background: var(--dark);
-  align-items: flex-end;
-  padding: 6.5rem 1.25rem 3rem;
-}
-.hero--photo::before { display: none; }
-.hero__media,
-.hero__media img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 60%;
-}
-.hero__shade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.35) 0%, rgba(10, 10, 10, 0.55) 45%, rgba(10, 10, 10, 0.92) 100%);
-}
-.hero--photo .hero__content { max-width: 760px; }
-.hero--photo .hero__eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 1.5px;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-}
-.hero--photo .hero__title {
-  font-size: 2.1rem;
-  line-height: 1.15;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
-}
-.hero--photo .hero__title .gold-text {
+/* ===== HERO: REAL WEDDING PHOTO + TEXT (photo never covered) ===== */
+.hero--split {
+  min-height: auto;
   display: block;
-  font-size: 0.62em;
-  margin-top: 0.5rem;
+  text-align: center;
+  padding: 0 0 2.5rem;
+  background: linear-gradient(180deg, #0f0f0f 0%, var(--dark-2) 100%);
 }
-.hero--photo .hero__subtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
-  margin-bottom: 1.75rem;
+.hero--split::before { display: none; }
+.hero--split .hero__inner { max-width: 1200px; margin: 0 auto; }
+.hero--split .hero__photo img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 55%;
 }
-.hero--photo .hero__cta { flex-direction: column; width: 100%; }
-.hero--photo .hero__cta .btn { width: 100%; max-width: 360px; }
-.hero--photo .hero__badges { margin-top: 1.5rem; font-size: 0.8rem; }
-.hero--photo .hero__badges li { background: rgba(0, 0, 0, 0.45); }
-@media (min-width: 768px) {
-  .hero--photo { align-items: center; padding-bottom: 4rem; }
-  .hero--photo .hero__title { font-size: 3.2rem; }
-  .hero--photo .hero__subtitle { font-size: 1.15rem; }
-  .hero--photo .hero__cta { flex-direction: row; justify-content: center; }
-  .hero--photo .hero__cta .btn { width: auto; }
+.hero--split .hero__content { padding: 1.5rem 1.25rem 0; max-width: 680px; margin: 0 auto; }
+.hero--split .hero__eyebrow { font-size: 0.7rem; letter-spacing: 1.5px; margin-bottom: 1rem; }
+.hero--split .hero__title { font-size: 2rem; line-height: 1.15; }
+.hero--split .hero__title .gold-text { display: block; font-size: 0.62em; margin-top: 0.45rem; }
+.hero--split .hero__subtitle { font-size: 1rem; color: rgba(255, 255, 255, 0.85); margin-bottom: 1.5rem; }
+.hero--split .hero__cta { flex-direction: column; align-items: center; }
+.hero--split .hero__cta .btn { width: 100%; max-width: 360px; }
+.hero--split .hero__badges { margin-top: 1.25rem; font-size: 0.8rem; }
+@media (min-width: 900px) {
+  .hero--split { padding: 3.5rem 2rem 4rem; text-align: left; }
+  .hero--split .hero__inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .hero--split .hero__photo { order: 2; }
+  .hero--split .hero__photo img {
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    object-position: center;
+  }
+  .hero--split .hero__content { order: 1; padding: 0; margin: 0; }
+  .hero--split .hero__title { font-size: 3.2rem; }
+  .hero--split .hero__subtitle { font-size: 1.15rem; margin-left: 0; }
+  .hero--split .hero__cta { flex-direction: row; justify-content: flex-start; }
+  .hero--split .hero__cta .btn { width: auto; }
+  .hero--split .hero__badges { justify-content: flex-start; }
 }
 
 /* ===== MOBILE STICKY CTA ===== */
@@ -2529,3 +2520,33 @@ main {
 .form-group textarea[aria-invalid='true'] { border-color: #c62828; }
 .form-error { color: #b71c1c; font-size: 0.85rem; margin-top: 0.35rem; }
 .form-hint { color: var(--gray); font-size: 0.8rem; margin-top: 0.35rem; }
+
+/* ===== SVG ICONS ===== */
+.icon { display: inline-block; vertical-align: -0.2em; flex-shrink: 0; }
+.btn .icon, .navbar__phone .icon, .cta__phone .icon { margin-right: 0.45rem; }
+.feature-card__icon { color: var(--gold); display: inline-flex; }
+.car-features-list__icon { color: var(--gold); display: inline-flex; }
+.location-list li .icon, .location-sidebar__features li .icon, .contact-info-list li .icon { color: var(--gold-dark); margin-right: 0.4rem; }
+.location-city-tag .icon { color: var(--gold-dark); margin-right: 0.25rem; vertical-align: -0.15em; }
+.pricing__table .icon { color: #2e7d32; margin-right: 0.3rem; }
+.navbar__dropdown-item .icon { color: var(--gold); margin-right: 0.4rem; }
+.navbar__logo-icon, .footer__logo-icon { color: var(--gold); display: inline-flex; }
+.footer__contact-item .icon, .contact-info-item__icon .icon { color: var(--gold); }
+.gallery__zoom { color: #fff; display: inline-flex; }
+
+/* ===== SHOW WHOLE PHOTOS (couple + car), never crop to the car ===== */
+.gallery__grid { align-items: start; }
+.gallery__item { aspect-ratio: auto; }
+.gallery__img { height: auto; object-fit: contain; }
+.car-page-hero__bg { background-image: var(--hero-bg); }
+@media (max-width: 767px) {
+  .car-page-hero__bg { background-image: var(--hero-bg-m, var(--hero-bg)); background-position: center 70%; }
+}
+
+/* ===== CAR PAGE HERO: whole photo, no cropping ===== */
+.car-hero .hero__photo img { aspect-ratio: auto; height: auto; object-fit: contain; }
+.car-hero .breadcrumb { justify-content: center; margin-bottom: 1rem; }
+@media (min-width: 900px) {
+  .car-hero .hero__photo img { aspect-ratio: auto; max-height: none; }
+  .car-hero .breadcrumb { justify-content: flex-start; }
+}

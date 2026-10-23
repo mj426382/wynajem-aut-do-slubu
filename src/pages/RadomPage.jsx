@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import LocationPage from '../components/LocationPage'
 import { DEPOSIT_PERCENT, FREE_RADIUS_KM, PACKAGE_HOURS, PRICE_MAX, PRICE_MIN } from '../data/site'
+import Icon from '../components/Icon'
 
 const towns = ['Kozienice', 'Białobrzegi', 'Zwoleń', 'Pionki', 'Grójec', 'Nowe Miasto nad Pilicą', 'Przysucha', 'Szydłowiec', 'Lipsko', 'Iłża', 'Skaryszew', 'Jedlnia-Letnisko', 'Wolanów', 'Jedlińsk']
 
@@ -62,12 +63,12 @@ const page = {
 
       <h3>Co zawiera wynajem auta do ślubu w Radomiu</h3>
       <ul className="location-list">
-        <li>✅ Elegancki, punktualny szofer w cenie wynajmu</li>
-        <li>✅ Dekoracja florystyczna dopasowana do kolorów wesela</li>
-        <li>✅ Postój na sesję zdjęciową bez limitu w ramach pakietu</li>
-        <li>✅ Dojazd gratis do {FREE_RADIUS_KM} km od Radomia</li>
-        <li>✅ Dwa luksusowe BMW do wyboru lub kortez z obu aut</li>
-        <li>✅ Umowa i potwierdzony termin</li>
+        <li><Icon name="check" /> Elegancki, punktualny szofer w cenie wynajmu</li>
+        <li><Icon name="check" /> Dekoracja florystyczna dopasowana do kolorów wesela</li>
+        <li><Icon name="check" /> Postój na sesję zdjęciową bez limitu w ramach pakietu</li>
+        <li><Icon name="check" /> Dojazd gratis do {FREE_RADIUS_KM} km od Radomia</li>
+        <li><Icon name="check" /> Dwa luksusowe BMW do wyboru lub kortez z obu aut</li>
+        <li><Icon name="check" /> Umowa i potwierdzony termin</li>
       </ul>
 
       <h3>Kościoły w Radomiu, pod które podjeżdżamy</h3>
@@ -86,7 +87,7 @@ const page = {
       <h3>Miejscowości wokół Radomia</h3>
       <div className="location-cities">
         {towns.map((t) => (
-          <span key={t} className="location-city-tag">📍 {t}</span>
+          <span key={t} className="location-city-tag"><Icon name="pin" /> {t}</span>
         ))}
       </div>
       <p>
