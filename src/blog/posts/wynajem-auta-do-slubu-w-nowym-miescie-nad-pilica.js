@@ -1,52 +1,16 @@
 export const slug = 'wynajem-auta-do-slubu-w-nowym-miescie-nad-pilica'
-export const title = 'Wynajem Auta do Ślubu w Nowym Mieście nad Pilicą – Luksus i Styl'
-export const metaTitle = 'Wynajem Auta do Ślubu w Nowym Mieście nad Pilicą'
-export const metaDescription = 'Szukacie samochodu ślubnego w Nowym Mieście nad Pilicą? Sprawdź, jak nasze BMW zapewni elegancję i wygodę w Waszym wyjątkowym dniu.'
+export const title = 'Wynajem auta do ślubu Nowe Miasto nad Pilicą – trasa z Radomia'
+export const metaTitle = 'Auto do ślubu Nowe Miasto nad Pilicą – BMW z szoferem'
+export const metaDescription = 'Wynajem auta do ślubu w Nowym Mieście nad Pilicą: dojazd z Radomia, plenery nad rzeką, godziny dnia i wybór BMW. Zapytajcie o wycenę.'
 export const date = '2026-04-30'
-export const modifiedAt = '2026-04-30'
-export const readTime = 2
+export const modifiedAt = '2026-10-24'
+export const readTime = 5
 export const category = 'Mazowsze'
-export const excerpt = 'Szukacie samochodu ślubnego w Nowym Mieście nad Pilicą? Sprawdź, jak nasze BMW zapewni elegancję i wygodę w Waszym wyjątkowym dniu.'
-export const emoji = '🌹'
-export const tags = ['wynajem auta ślubnego', 'Nowe Miasto nad Pilicą', 'BMW na ślub', 'auto na wesele']
+export const excerpt = 'Planujecie ślub w Nowym Mieście nad Pilicą? Zobaczcie, jak przyjeżdżamy z Radomia, gdzie zrobić zdjęcia i jak ułożyć godziny.'
+export const emoji = '🌾'
+export const tags = ['wynajem auta do ślubu', 'Nowe Miasto nad Pilicą', 'ślub nad Pilicą', 'BMW z szoferem', 'auto do ślubu Radom']
 
 export const content = `
-<p>Planujecie ślub w Nowym Mieście nad Pilicą i zastanawiacie się, jak sprawić, by ten dzień był jeszcze bardziej wyjątkowy? Wybór odpowiedniego auta ślubnego to kluczowy element, który doda Waszej uroczystości klasy i stylu. Oto jak AutoDoŚlubu Warszawa &amp; Radom może uczynić Wasz wielki dzień niezapomnianym.</p>
-
-<h2>Dlaczego warto wybrać BMW na ślub?</h2>
-<p>Luksusowe BMW to idealny wybór dla par, które pragną połączyć elegancję z nowoczesnością. W naszej ofercie znajdziecie dwa wyjątkowe modele:</p>
-<ul>
-  <li><strong>BMW 650i xDrive Gran Coupé</strong> – sportowa sylwetka, 450 KM pod maską i luksusowe wykończenie wnętrza.</li>
-  <li><strong>BMW 4 Cabrio</strong> – elektryczny miękki dach otwierający się w 18 sekund, idealny wybór na letnie śluby.</li>
-</ul>
-<p>Oba modele nie tylko zapewniają wygodę, ale także doskonale prezentują się na ślubnych zdjęciach i w królewskim orszaku.</p>
-
-<h2>Auto ślubne w Nowym Mieście nad Pilicą – co oferujemy?</h2>
-<p>AutoDoŚlubu Warszawa &amp; Radom oferuje kompleksową obsługę wynajmu aut do ślubu w Nowym Mieście nad Pilicą i okolicach. Nasza oferta obejmuje:</p>
-<ul>
-  <li>Profesjonalnego szofera – elegancki, punktualny i dyskretny.</li>
-  <li>Bezpłatną dekorację florystyczną – wstążki, bukiety i dopasowane ozdoby wnętrza.</li>
-  <li>Postój na sesję zdjęciową – bez pośpiechu, by uchwycić każdą chwilę.</li>
-  <li>Bezpłatny dojazd w promieniu 30 km od Nowego Miasta nad Pilicą.</li>
-</ul>
-<p>Ceny wynajmu zaczynają się już od 800 zł za 3 godziny, co czyni naszą ofertę jedną z najbardziej atrakcyjnych w regionie.</p>
-
-<h2>Popularne lokalizacje ślubne w Nowym Mieście nad Pilicą</h2>
-<p>Nowe Miasto nad Pilicą i jego okolice oferują wiele urokliwych miejsc na ślub i wesele. Oto kilka z nich:</p>
-<ul>
-  <li><strong>Kościół pw. Św. Michała Archanioła</strong> – zabytkowa świątynia, idealna na eleganckie ceremonie.</li>
-  <li><strong>Hotel Manor House SPA</strong> – malownicze miejsce na organizację wesela w stylu klasycznym.</li>
-  <li><strong>Pałac Mała Wieś</strong> – elegancka sala weselna w otoczeniu pięknych ogrodów.</li>
-</ul>
-<p>Niezależnie od wybranej lokalizacji, nasze BMW podkreśli wyjątkowość tego dnia.</p>
-
-<h2>Jak zarezerwować auto do ślubu?</h2>
-<p>Rezerwacja auta ślubnego jest prosta i szybka. Polecamy dokonać rezerwacji z odpowiednim wyprzedzeniem – najlepiej kilka miesięcy przed planowaną datą ślubu. Skontaktujcie się z nami, aby omówić szczegóły i potwierdzić dostępność wybranego modelu.</p>
-
-<h2>Podsumowanie</h2>
-<p>Wasz ślub w Nowym Mieście nad Pilicą zasługuje na oprawę pełną klasy i luksusu. Wybierając BMW od AutoDoŚlubu Warszawa &amp; Radom, możecie być pewni, że Wasz dzień będzie jeszcze bardziej wyjątkowy. Sprawdźcie naszą ofertę i przekonajcie się, dlaczego zaufało nam już tyle Par Młodych.</p>
-
-<p>Gotowi na <strong>luksusowe auto do ślubu</strong>? <a href='/kontakt'>Sprawdź dostępność terminów</a> i zarezerwuj Wasze wymarzone BMW już dziś.</p>
-
-<p>Sprawdź naszą pełną ofertę na <a href="/">stronie głównej AutoDoŚlubu Warszawa &amp; Radom</a>.</p>
+<p>Wynajem auta do ślubu w Nowym Mieście nad Pilicą jest jak najbardziej możliwy, choć to wyjazd poza nasz bezpłatny promień: białe BMW z szoferem przyjeżdża z Radomia, a trasa liczy ok. 50–55 km, więc koszt dojazdu poznacie w wycenie przed rezerwacją. Na miejscu czeka Was spokojne miasteczko z rynkiem, zielenią i doliną Pilicy, które pozwalają zrobić piękne zdjęcia bez długich przejazdów.</p> <p>Ten tekst przeprowadzi Was przez decyzje, które warto podjąć wcześnie, pokaże typowy rozkład godzin i podpowie, jak przygotować się na lokalne drogi.</p> <h2>Skąd przyjeżdżamy i jak liczymy drogę</h2> <p>Najbliższą bazą jest Radom. Z centrum miasta jedzie się zwykle około godziny, drogami przez mniejsze miejscowości północnej części regionu radomskiego. Pierwsze 30 km wliczone jest w pakiet, każdy dalszy kilometr kosztuje 3 zł, a sumę za cały dojazd i powrót podajemy jednym zdaniem w umowie – bez dopisywania czegokolwiek w dniu ślubu.</p> <p>Ceny pakietu 3 h z szoferem mieszczą się w przedziale 800–1200 zł. Konkretną kwotę ustalamy po wyborze auta i daty. Szczegóły oferty na południe Mazowsza znajdziecie na stronie <a href='/auto-do-slubu-radom'>auto do ślubu w Radomiu i okolicach</a>.</p> <h2>Cztery decyzje przed podpisaniem umowy</h2> <p>Przy ślubie w mniejszej miejscowości oddalonej od bazy kilka spraw trzeba rozstrzygnąć wcześniej niż w dużym mieście. Dzięki temu szofer zna plan, a Wy nie musicie niczego dopowiadać w dniu uroczystości.</p> <h3>Decyzja 1: skąd odbieramy Pannę Młodą</h3> <p>Dom rodzinny pod miastem, mieszkanie w Nowym Mieście, a może pokój w obiekcie, gdzie odbędzie się przyjęcie? Każdy z tych punktów zmienia długość pierwszego przejazdu. Prześlijcie dokładną lokalizację z mapy, bo przy domach na wsiach numeracja bywa myląca.</p> <h3>Decyzja 2: czy Pan Młody jedzie tym samym autem</h3> <p>Zgodnie z tradycją Pan Młody przyjeżdża po narzeczoną, ale niektóre pary wolą spotkać się dopiero przed kościołem. Drugi wariant oznacza dodatkowy kurs, dlatego trzeba go uwzględnić w czasie pakietu albo zamówić drugie auto.</p> <h3>Decyzja 3: gdzie i jak długo trwa sesja</h3> <p>Postój na zdjęcia jest w cenie. Ustalcie z fotografem, czy wystarczy Wam kwadrans przy rzece, czy wolicie dłuższą sesję w plenerze.</p> <h3>Decyzja 4: jeden samochód czy kortez</h3> <p>Jeśli świadkowie lub rodzice mają jechać w eleganckim aucie, możemy podstawić oba nasze BMW, a przy większej kolumnie – również auta zaprzyjaźnionych firm. Więcej o organizacji przeczytacie we wpisie o <a href='/blog/kortez-weselny-planowanie'>planowaniu korteżu weselnego</a>.</p> <h2>Ceremonia i plener w dolinie Pilicy</h2> <p>Ślub kościelny pary z Nowego Miasta odbywa się zwykle w kościele parafialnym w centrum, niedaleko rynku, a cywilny – w miejscowym Urzędzie Stanu Cywilnego. Przy rynku ruch jest niewielki, ale w sobotę przed południem parkuje tam sporo aut, więc szofer zatrzymuje się na chwilę tylko po to, by Was wysadzić, a potem czeka nieco dalej.</p> <p>Na zdjęcia polecamy przede wszystkim okolice rzeki. Nadrzeczne łąki, stare drzewa i piaszczyste brzegi Pilicy dają naturalne, sielskie tło, a otwarte pola wokół miasta wyglądają szczególnie dobrze w czerwcu i we wrześniu. W mieście warto też poszukać zacienionych alejek parkowych na wypadek upału. Przy wodzie pamiętajcie o środku na komary i wygodnych butach na zmianę, bo przejście przez łąkę w szpilkach bywa trudne. Jeśli marzycie o zdjęciach w bardziej miejskim stylu, zajrzyjcie do wpisu o <a href='/blog/slub-w-radomiu-top-sala-weselna-i-auto'>ślubie w Radomiu</a>.</p> <h2>Rozkład godzin – przykładowy scenariusz</h2> <p>Tabela pokazuje przykładowy plan przy ślubie kościelnym o 16:00 i przyjęciu w obiekcie kilka kilometrów za miastem. Najważniejsze są odstępy między punktami, nie konkretne godziny.</p> <table> <thead><tr><th>Kiedy</th><th>Co się dzieje</th><th>Na co zwrócić uwagę</th></tr></thead> <tbody> <tr><td>14:15</td><td>Auto wyjeżdża z Radomia</td><td>Zapas na drogi lokalne</td></tr> <tr><td>15:15</td><td>Podjazd pod dom Panny Młodej</td><td>Zdjęcia z rodzicami przy samochodzie</td></tr> <tr><td>15:40</td><td>Wyjazd do kościoła</td><td>Krótki odcinek, bez pośpiechu</td></tr> <tr><td>16:00–17:00</td><td>Msza</td><td>Szofer czeka w pobliżu</td></tr> <tr><td>17:10–17:40</td><td>Plener nad Pilicą</td><td>Najlepsze światło późnym latem</td></tr> <tr><td>18:00</td><td>Wjazd na przyjęcie</td><td>Uzgodnione miejsce zatrzymania przy wejściu</td></tr> </tbody> </table> <h2>Które BMW na ślub w małym mieście</h2> <p>Przy dłuższej trasie z Radomia i drogach różnej jakości dobrze sprawdza się <a href='/flota/bmw-650i-gran-coupe'>BMW 650i xDrive Gran Coupé</a>. Napęd 4×4 radzi sobie na mokrym asfalcie i żwirowym podjeździe, a cztery drzwi ułatwiają wsiadanie w sukni z długim trenem. Ten model jest dobrym wyborem przez cały rok.</p> <p>Jeśli ślub wypada od późnej wiosny do początku jesieni, rozważcie <a href='/flota/bmw-4-cabrio'>BMW 4 Cabrio</a>. Otwarty dach podczas krótkiego przejazdu nad rzekę daje zupełnie inne zdjęcia, a gdy zacznie padać, dach zamyka się w 18 sekund. Koniakowa skóra i pakiet Maxton Design nadają autu sportowy charakter.</p> <h2>Drogi lokalne, kurz i sezon prac polowych</h2> <p>Między wioskami wokół Nowego Miasta drogi są węższe, a latem i wczesną jesienią często spotyka się na nich maszyny rolnicze. Szofer zna takie warunki i planuje przejazd z zapasem, ale Wy również możecie pomóc: jeśli dojazd do domu prowadzi drogą gruntową, napiszcie o tym wcześniej, abyśmy wybrali najdogodniejszy punkt odbioru. Po deszczu polne drogi bywają błotniste, dlatego sesję w polu lepiej zaplanować tam, gdzie auto może stanąć na utwardzonym poboczu, a Wy przejść kilka kroków pieszo. W suche dni warto mieć w aucie chusteczki do butów, bo kurz z poboczy szybko osiada na jasnych tkaninach.</p> <h2>Ostatni tydzień przed ślubem – lista do odhaczenia</h2> <p>Kilka dni przed uroczystością szofer dzwoni, aby potwierdzić szczegóły. Żeby ta rozmowa trwała kilka minut, przygotujcie wcześniej odpowiedzi na poniższe punkty:</p> <ul> <li>dokładne adresy i pinezki: dom, kościół lub urząd, miejsce sesji, sala,</li> <li>godzina rozpoczęcia ceremonii i przewidywany czas jej trwania,</li> <li>numer telefonu do świadka, który w dniu ślubu będzie kontaktem dla szofera,</li> <li>kolorystyka kwiatów, do której dopasujemy dekorację florystyczną,</li> <li>informacja, czy w aucie mają jechać dodatkowe osoby, na przykład dzieci z kwiatami,</li> <li>uwagi o dojeździe: brama, wąski wjazd, droga gruntowa, miejsce do zawrócenia.</li> </ul> <p>Dzięki temu w dniu ślubu nikt z rodziny nie musi pilotować auta przez telefon, a Wy możecie skupić się na sobie i gościach.</p> <h2>Najczęstsze pytania</h2> <h3>Ile wcześniej rezerwować auto na ślub w Nowym Mieście nad Pilicą?</h3> <p>Terminy w sezonie letnim znikają najszybciej, więc warto zapytać od razu po ustaleniu daty ślubu. Rezerwację potwierdza umowa i zadatek. Więcej podpowiedzi znajdziecie w tekście <a href='/blog/jak-wczesnie-rezerwowac-auto-do-slubu'>jak wcześnie rezerwować auto do ślubu</a>.</p> <h3>Czy dojazd z Radomia jest wliczony w cenę?</h3> <p>Wliczone jest pierwsze 30 km. Nowe Miasto leży dalej, więc pozostałą część trasy wyceniamy przed rezerwacją.</p> <h3>Czy szofer poczeka w trakcie mszy?</h3> <p>Tak. Czas ceremonii wlicza się w pakiet, a szofer pozostaje w pobliżu kościoła i podjeżdża pod wejście, gdy wychodzicie.</p> <h3>Co jeśli w dniu ślubu będzie padać?</h3> <p>Wtedy lepiej sprawdzi się 650i z zamkniętym nadwoziem, a sesję przenosimy pod drzewa lub robimy ją z parasolem przy samym aucie. Cabrio ma szczelny dach, więc też dowiezie Was suchych.</p>
+<p>Planujecie ślub w Warszawie, Radomiu lub na Mazowszu? <a href='/kontakt'>Sprawdźcie wolny termin</a> naszego BMW z szoferem albo zobaczcie <a href='/'>pełną ofertę aut do ślubu</a>.</p>
 `
