@@ -411,7 +411,9 @@ def run_new():
 
 
 def run_refresh():
-    refreshed = {u["slug"] for u in ledger if u.get("kind") == "refresh"}
+    # A post that failed its drafts is skipped from now on (the batch must not retry it forever); delete its
+    # "refresh-failed" ledger entry to try it again.
+    refreshed = {u["slug"] for u in ledger if u.get("kind") in ("refresh", "refresh-failed")}
     thin = sorted(
         (p for p in site["posts"] if word_count_html(p["content"]) < REFRESH_BELOW and p["slug"] not in refreshed),
         key=lambda p: (word_count_html(p["content"]), p["date"] or ""),
@@ -424,7 +426,9 @@ def run_refresh():
     keyword = re.split(r"\s[–—-]\s", post["title"])[0]
     article, _ = draft_loop(brief_refresh(post), "guide", keyword, [], post["category"], refresh_slug=post["slug"])
     if not article:
-        fail(f"Nie udało się odświeżyć /blog/{post['slug']}")
+        ledger.append({"slug": post["slug"], "date": DATE_ISO, "kind": "refresh-failed"})
+        LEDGER_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        fail(f"Nie udało się odświeżyć /blog/{post['slug']} – pominięty w kolejnych przebiegach")
     out = write_post(article, post["date"], DATE_ISO)
     ledger.append({"slug": post["slug"], "date": DATE_ISO, "kind": "refresh", "words_before": word_count_html(post["content"])})
     return article, out, keyword
