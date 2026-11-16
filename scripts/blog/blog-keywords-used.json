@@ -348,5 +348,13 @@
     "kind": "refresh",
     "words_before": 597,
     "by": "manual"
+  },
+  {
+    "keyword": "sesja ślubna zimą",
+    "slug": "sesja-slubna-zima",
+    "date": "2026-11-16",
+    "cluster": "sesja-i-zdjecia",
+    "type": "seasonal",
+    "kind": "new"
   }
 ]
