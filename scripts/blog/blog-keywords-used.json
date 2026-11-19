@@ -356,5 +356,13 @@
     "cluster": "sesja-i-zdjecia",
     "type": "seasonal",
     "kind": "new"
+  },
+  {
+    "keyword": "ślub w boże narodzenie",
+    "slug": "slub-w-boze-narodzenie",
+    "date": "2026-11-19",
+    "cluster": "sezonowosc",
+    "type": "seasonal",
+    "kind": "new"
   }
 ]
