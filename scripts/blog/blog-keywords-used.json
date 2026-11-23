@@ -364,5 +364,13 @@
     "cluster": "sezonowosc",
     "type": "seasonal",
     "kind": "new"
+  },
+  {
+    "keyword": "ile kosztuje ślub i wesele 2027",
+    "slug": "ile-kosztuje-slub-i-wesele-2027",
+    "date": "2026-11-23",
+    "cluster": "koszty-i-cennik",
+    "type": "seasonal",
+    "kind": "new"
   }
 ]
