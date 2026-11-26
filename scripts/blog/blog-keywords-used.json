@@ -372,5 +372,13 @@
     "cluster": "koszty-i-cennik",
     "type": "seasonal",
     "kind": "new"
+  },
+  {
+    "keyword": "ślub w sylwestra",
+    "slug": "slub-w-sylwestra",
+    "date": "2026-11-26",
+    "cluster": "sezonowosc",
+    "type": "seasonal",
+    "kind": "new"
   }
 ]
